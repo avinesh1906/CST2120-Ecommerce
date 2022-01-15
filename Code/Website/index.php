@@ -14,4 +14,4 @@
 <?php
     // php function to generate the footer
     generateFooter($pageName);
-?>0
+?>
