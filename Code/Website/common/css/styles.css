@@ -66,6 +66,11 @@ body,footer {
 .nav-center form {
 	text-align: right;
 	right: 0;
+	border: #33383b;
+}
+
+.nav-center form input {
+	border-radius: 5px;
 }
 
 .nav-other .navbar-item {
