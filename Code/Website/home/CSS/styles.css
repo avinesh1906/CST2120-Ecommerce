@@ -1,0 +1,26 @@
+.carousel-content{
+    display: flex;
+    width:100%;
+}
+.carousel-image{
+    width: 50%;
+}
+.carousel-side-caption {
+    width:50%;
+    background-color: aliceblue;
+    padding: 0% 8%;
+    text-align: center;
+}
+
+.carousel-side-caption h5 {
+    padding-top: 15%;
+    font-size: 45px;
+}
+
+.carousel-side-caption p {
+    padding-top: 5%;
+}
+
+.carousel-side-caption p#author {
+    font-size: 15px;
+}
