@@ -12,6 +12,14 @@ body,footer {
     font-size: 20px;
 }
 
+.main-body{
+	width: 100%;
+  	min-height: 70vh;
+  	height: auto;
+  	position: relative;
+  	background-color: #FBF7F0; 
+}
+
 .nav-bar {
 	padding-top: 1%;
     display: flex;
@@ -41,20 +49,23 @@ body,footer {
 
 .nav-category {
     float:left;
-    width: 50%;
+    width: 45%;
 }
 
 .nav-other{
-    width: 25%;
+    width: 30%;
     padding-right: 1%;
 }
 
 .nav-center {
-	right: 0;
-	width: 25%;
+	width: 35%;
 	display: flex;
-    padding-right: 2%;
 	padding-top: 0.5%;
+}
+
+.nav-center form {
+	text-align: right;
+	right: 0;
 }
 
 .nav-other .navbar-item {
@@ -63,7 +74,8 @@ body,footer {
 }
 
 .navbar-brand {
-    padding-left: 2%;
+	padding-top: 0;
+    padding-left: 1%;
 }
 
 /* Navigation bar Title */
@@ -77,17 +89,15 @@ body,footer {
   overflow: hidden;
 }
 
-
-
 /* Navigation Hover */
 .navbar-item li a:hover {
     background-color: #FBF7F0;
-    color: #71C9CE;
 }
   
 /* Navigation active */
 .navbar-item li a#active {
-
+	background-color: #555555;
+	color: #FBF7F0;
 }
   
 .footer{
@@ -115,19 +125,19 @@ body,footer {
 
 /* Footer title */
 .footer h3{
-	color:  #ffffff;
+	color:  #FEFBF3;
 	font:  36px, cursive;
 	margin: 0;
 }
 
 .footer h3 span{
-	color:  lightseagreen;
+	color:  #79B4B7;
 }
 
 /* Footer links */
 
 .footer .footer-links{
-	color:  #ffffff;
+	color:  #FEFBF3;
 	margin: 20px 0 12px;
 	padding: 0;
 }
@@ -141,7 +151,7 @@ body,footer {
 }
 
 .footer .author{
-	color:  #222;
+	color:  #D9E4DD;
 	font-size: 14px;
 	font-weight: normal;
 	margin: 0;
@@ -159,8 +169,8 @@ body,footer {
 }
 
 .footer .center-footer i{
-	background-color:  #33383b;
-	color: #ffffff;
+	background-color: #33383b;
+	color: #FBF7F0;
 	font-size: 25px;
 	width: 38px;
 	height: 38px;
@@ -178,10 +188,10 @@ body,footer {
 
 .footer .center-footer p{
 	display: inline-block;
-	color: #ffffff;
-  font-weight:400;
+  	font-weight:400;
 	vertical-align: middle;
 	margin:0;
+	color: #FBF7F0;
 }
 
 .footer .center-footer p span{
@@ -192,7 +202,7 @@ body,footer {
 }
 
 .footer .center-footer p a{
-	color:  lightseagreen;
+	color:  #79B4B7;
 	text-decoration: none;;
 }
 
@@ -201,7 +211,6 @@ body,footer {
   font-weight:300;
   font-size: 20px;
   left: 0;
-  color: #fff;
   display: inline-block;
   padding-right: 5px;
 }
@@ -214,7 +223,7 @@ body,footer {
 
 .footer .description{
 	line-height: 20px;
-	color:  #92999f;
+	color:  #FBF7F0;
 	font-size: 13px;
 	font-weight: normal;
 	margin: 0;
@@ -222,7 +231,6 @@ body,footer {
 
 .footer .description span{
 	display: block;
-	color:  #ffffff;
 	font-size: 14px;
 	font-weight: bold;
 	margin-bottom: 20px;
