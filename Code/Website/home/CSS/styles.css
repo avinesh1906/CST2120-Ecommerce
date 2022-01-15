@@ -24,3 +24,55 @@
 .carousel-side-caption p#author {
     font-size: 15px;
 }
+
+.top-product {
+    background-color: #FEFBF3;
+    overflow: hidden;
+    width: 100%;
+}
+
+.top-product .title {
+    text-align: center;
+    padding-top: 2%;
+}
+
+.top-product .options{
+    width: 100%;
+    padding: 1% 30%;
+}
+
+.top-product .options-item{
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.top-product .options-item li {
+    float:left;
+    padding-left: 10%;
+}
+
+.card-scroll{
+    max-width: 30%;
+    padding: .75rem;
+    border: 0;
+    flex-basis: 33.333%;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.row{
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1%;
+}
+
+.card-img-top{
+    border: 5px solid;
+    color: #555555;
+}
+
+
