@@ -67,14 +67,15 @@ function generateNavBar($pagename){
     echo '<span>TiMoris</span>';
     echo '</a>';
     echo '<div class="navigation-container ">';
-    echo '<div class="nav-category"'
+
+    echo '<div class="nav-category">';
     echo '<ul class="navbar-item">';
 
     // Array of pages to link
     $linkNames = array("Home", "Pencil", "Watercolor", "Graffiti", "Spray");
-    $linkFolderHomeRoot = array("./", "./pencil/", "./watercolor/", "./spray/");
-    $linkFolderName = array("../", "../pencil/", "../watercolor/", "../spray/");
-    $linkFileName = array("index.php", "pencil.php", "watercolor.php", "spray.php");
+    $linkFolderHomeRoot = array("./", "./pencil/", "./watercolor/", "./graffiti/", "./spray/");
+    $linkFolderName = array("../", "../pencil/", "../watercolor/", "../graffiti/", "../spray/");
+    $linkFileName = array("index.php", "pencil.php", "watercolor.php", "graffiti.php", "graffiti.php");
 
     // Loop through the navigation items 
     for ($x = 0; $x < count($linkNames); $x++){
@@ -104,6 +105,7 @@ function generateNavBar($pagename){
             <input type="text" placeholder="Search" name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
+        </div>
     ';
 
     echo '<div class="nav-other">';
