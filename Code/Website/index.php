@@ -80,11 +80,11 @@
         <h4> Top Product </h4>
     </div>
     <div class="options">
-        <ul class="options-item">
-            <li> FEATURED </li>
-            <li> LATEST </li>
-            <li> BESTSELLER </li>
-        </ul>
+        <div class="options-item" id="top-product-item">
+            <button id="featured"> FEATURED </button>
+            <button id="latest"> LATEST </button>
+            <button id="bestseller"> BESTSELLER </button>
+        </div>
     </div>
 
     <div class="featured">
@@ -242,5 +242,6 @@
 
 <?php
     // php function to generate the footer
+    generateJavaScript($pageName);
     generateFooter($pageName);
 ?>

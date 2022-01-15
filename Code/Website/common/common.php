@@ -228,6 +228,13 @@ function generateFooter($pagename){
             </div>
         </footer>
     ';
+}
+
+function generateJavaScript($title){
+    if ($title == "Home") {
+        echo '<script type="module" src="./home/js/home.js">';
+    }
+    echo '</script>';
     echo '</body>';
     echo '</html>';
 }
