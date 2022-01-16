@@ -25,7 +25,7 @@
         </div>
         <!-- Register button -->
         <div class="registerBtn">
-            <button>Create Account</button>   
+            <button onclick="location.href='../register/register.php';">Create Account</button>   
         </div>
     </div>
     <div class="login">
