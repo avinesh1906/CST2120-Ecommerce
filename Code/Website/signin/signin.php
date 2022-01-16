@@ -10,14 +10,19 @@
     generateHeader($pageName, $folderName);
     generateNavBar($pageName);
 ?>
+<!-- Sign In -->
 <div class="signIn-title">
     <h1>Already Registered?</h1>
 </div>
+<!-- Sign In body -->
 <div class="signIn-body">
+    <!-- Register section -->
     <div class="register">
+        <!-- title -->
         <div class="title">
             New Customer
         </div>
+        <!-- body -->
         <div class="body">
             By creating an account you will be able to shop 
             faster, be up to date on an order's status, and 
@@ -28,19 +33,24 @@
             <button onclick="location.href='../register/register.php';">Create Account</button>   
         </div>
     </div>
+    <!-- Login section -->
     <div class="login">
+        <!-- Title -->
         <div class="title">
             Login
         </div>
+        <!-- Body -->
         <div class="body">
             If you have an account, please log in.
             <!-- Login form -->
             <section name="login_form">
                 <div class="login_form ">
+                    <!-- Username -->
                     <div class="username">
                         <input autocomplete="off" type="text" class="form-control" id="Username" onkeyup="usernameValidation()" placeholder="username">
                         <span id="usr_details"></span>
                     </div>
+                    <!-- Password -->
                     <div class="password">
                         <input  autocomplete="off" type="password" class="form-control" id="Password" onkeyup="passwordValidation()" placeholder="password" >
                         <span id="pwd_details"></span>
@@ -54,6 +64,7 @@
         </div>
     </div>
 </div>
+
 <?php
     // php function to generate the footer
     generateJavaScript($pageName);
