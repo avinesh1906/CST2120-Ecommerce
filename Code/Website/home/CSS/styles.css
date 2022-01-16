@@ -140,6 +140,17 @@
     display: flex;
 
 }
+
+.painting a {
+    color: #181D31;
+    text-decoration: none;
+}
+
+.painting a:hover {
+    color: #E26A2C;
+    text-decoration: none;
+}
+
 .first-column {
     max-height: 350px;
     max-width: 400px;
