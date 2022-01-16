@@ -265,7 +265,55 @@
         </div>
     </div>
 </div>
-
+<div class="home-catogory">
+    <div class="description">
+        <h2>
+            Our Categories
+        </h2>
+        <div class="description-body">
+        Discover Mauritius Through Original Paintings
+        </div>
+        <button>Shop Now</button>
+    </div>
+    <div class="painting">
+        <div class="first-column">
+            <div class="card">
+                <img class="card-img-top" src="./common/img/pencil_African.jpg" alt="Pencil African">
+                <div class="card-body">
+                    <h5 class="card-title">Portrait Painting</h5>
+                </div>
+            </div>
+        </div>
+        <div class="second-column">
+            <div class="card">
+                <img class="card-img" src="./common/img/mauritius_greeting.jpg" alt="Mauritius Greeting">
+                <div class="card-body">
+                    <h5 class="card-title">Landscape Painting</h5>
+                </div>
+            </div>
+            <div class="card" style="padding-top: 5%">
+                <img class="card-img" src="./common/img/eyeoil.jpg" alt="Mauritius Greeting">
+                <div class="card-body">
+                    <h5 class="card-title">Oil Painting</h5>
+                </div>
+            </div>
+        </div>
+        <div class="third-column">
+            <div class="card">
+                <img class="card-img" src="./common/img/dancing_Abstract.jpg" alt="Mauritius Greeting">
+                <div class="card-body">
+                    <h5 class="card-title">Abstract Painting</h5>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 8%">
+                <img class="card-img" src="./common/img/mauritiusHistorical.jpg" alt="Mauritius Greeting">
+                <div class="card-body" >
+                    <h5 class="card-title">Historical Painting</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <?php
     // php function to generate the footer
     generateJavaScript($pageName);
