@@ -1,0 +1,165 @@
+.carousel-content{
+    display: flex;
+    width:100%;
+}
+.carousel-image{
+    width: 50%;
+}
+.carousel-side-caption {
+    width:50%;
+    background-color: aliceblue;
+    padding: 0% 8%;
+    text-align: center;
+}
+
+.carousel-side-caption h5 {
+    padding-top: 15%;
+    font-size: 45px;
+}
+
+.carousel-side-caption p {
+    padding-top: 5%;
+}
+
+.carousel-side-caption p#author {
+    font-size: 15px;
+}
+
+.top-product {
+    background-color: #FEFBF3;
+    overflow: hidden;
+    width: 100%;
+}
+
+.top-product .title {
+    text-align: center;
+    padding-top: 2%;
+}
+
+.top-product .options{
+    width: 100%;
+    padding: 1% 30%;
+    text-align: center;
+}
+
+.options .optionbar-item{
+    list-style-type: none;
+    overflow: hidden;
+    padding: 1%;
+}
+
+.top-product .options-item{
+    margin-left: 15%;
+}
+
+.top-product .option-item{
+    float:left;
+    border: 0px;
+    background-color: #FBF7F0;
+    margin-left: 5%;
+}
+
+.top-product .option-item a{
+    padding: 5%;
+}
+
+.top-product .options #active{
+    background-color: #9D9D9D;
+    color: #FEFBF3;
+    border-radius: 5px;
+}
+
+.top-product .options button:hover{
+    background-color: #555555;
+    color: #CDC9C3;
+    border-radius: 5px;
+}
+
+.card-scroll{
+    max-width: 30%;
+    padding: .75rem;
+    border: 0;
+    flex-basis: 33.333%;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.row{
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1%;
+}
+
+.card-img-top{
+    border: 5px solid;
+    color: #555555;
+}
+
+ .latest, .bestseller {
+    display: none;
+}
+
+.home-catogory{
+    display: flex;
+    width: 100%;
+    background-color: #FEFBF3;
+}
+
+.home-catogory .description{
+    width: 30%;
+    background-color: #F8F0DF;
+    margin-top: 7%;
+    margin-bottom: 7%;
+    padding-top: 10%;
+    border-top: solid 5px #9D9D9D;
+    border-left: solid 5px #9D9D9D;
+    border-bottom: solid 5px #9D9D9D;
+}
+
+.home-catogory .description h2{
+    text-align: center;
+}
+
+.home-catogory .description .description-body{
+    margin: 2% 3%;
+}
+
+.home-catogory .description button{
+    margin-top: 5%;
+    margin-left: 35%;
+}
+.home-catogory .painting{
+    width: 70%;
+    background-color: #9D9D9D;
+}
+.painting {
+    display: flex;
+
+}
+.first-column {
+    max-height: 350px;
+    max-width: 400px;
+    margin-top: 8%;
+    margin-left: 4%;
+}
+
+.second-column{
+    max-width: 350px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.second-column .card {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.third-column {
+    max-width: 300px;
+    margin-right: 2%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}

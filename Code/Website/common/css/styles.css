@@ -21,10 +21,11 @@ body,footer {
 }
 
 .nav-bar {
-	padding-top: 1%;
+	padding-top: 0.5%;
     display: flex;
     width:100%;
     background-color: #CDC9C3;
+	font-size: 17px;
 }
 
 /* Common text-align CSS */
@@ -112,7 +113,7 @@ body,footer {
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-	padding: 55px 50px;
+	padding: 2% 3%;
 }
 
 .footer .left-Footer,
@@ -131,7 +132,7 @@ body,footer {
 /* Footer title */
 .footer h3{
 	color:  #FEFBF3;
-	font:  36px, cursive;
+	font:  40px, cursive;
 	margin: 0;
 }
 
@@ -236,7 +237,7 @@ body,footer {
 
 .footer .description span{
 	display: block;
-	font-size: 14px;
+	font-size: 17px;
 	font-weight: bold;
 	margin-bottom: 20px;
 }

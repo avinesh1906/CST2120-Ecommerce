@@ -32,7 +32,12 @@ function generateHeader($title, $directoryname){
             
             echo '<!-- External '. $directoryname . ' CSS -->';
             echo '<link href="./'. $directoryname .'/css/styles.css" type="text/css" rel="stylesheet">';
-
+            
+            echo '<!-- Bootstrap JS -->';
+            echo '<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>';
+            echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>';
+            echo '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>';
+            
         } else {
             // other directory locations
             echo '<!-- Tab icon-->';
@@ -67,14 +72,15 @@ function generateNavBar($pagename){
     echo '<span>TiMoris</span>';
     echo '</a>';
     echo '<div class="navigation-container ">';
-    echo '<div class="nav-category"'
+
+    echo '<div class="nav-category">';
     echo '<ul class="navbar-item">';
 
     // Array of pages to link
     $linkNames = array("Home", "Pencil", "Watercolor", "Graffiti", "Spray");
-    $linkFolderHomeRoot = array("./", "./pencil/", "./watercolor/", "./spray/");
-    $linkFolderName = array("../", "../pencil/", "../watercolor/", "../spray/");
-    $linkFileName = array("index.php", "pencil.php", "watercolor.php", "spray.php");
+    $linkFolderHomeRoot = array("./", "./pencil/", "./watercolor/", "./graffiti/", "./spray/");
+    $linkFolderName = array("../", "../pencil/", "../watercolor/", "../graffiti/", "../spray/");
+    $linkFileName = array("index.php", "pencil.php", "watercolor.php", "graffiti.php", "graffiti.php");
 
     // Loop through the navigation items 
     for ($x = 0; $x < count($linkNames); $x++){
@@ -104,6 +110,7 @@ function generateNavBar($pagename){
             <input type="text" placeholder="Search" name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
+        </div>
     ';
 
     echo '<div class="nav-other">';
@@ -221,6 +228,13 @@ function generateFooter($pagename){
             </div>
         </footer>
     ';
+}
+
+function generateJavaScript($title){
+    if ($title == "Home") {
+        echo '<script type="module" src="./home/js/home.js">';
+    }
+    echo '</script>';
     echo '</body>';
     echo '</html>';
 }
