@@ -1,57 +1,82 @@
-.carousel-content{
+/* Common display flex */
+.carousel-content,
+.row,
+.home-catogory,
+.painting
+{
     display: flex;
-    width:100%;
 }
-.carousel-image{
+
+/* Carousel CSS */
+
+/* Common carousel width */
+.carousel-image,
+.carousel-side-caption 
+{
     width: 50%;
 }
+
+/* Carousel content CSS */
+.carousel-content{
+    width:100%;
+}
+
+/* Carousel Caption CSS */
 .carousel-side-caption {
-    width:50%;
     background-color: aliceblue;
     padding: 0% 8%;
     text-align: center;
 }
 
+/* Carousel side Title CSS */
 .carousel-side-caption h5 {
     padding-top: 15%;
     font-size: 45px;
 }
 
+/* Carousel side caption body CSS */
 .carousel-side-caption p {
     padding-top: 5%;
 }
 
+/* Carousel side caption author CSS */
 .carousel-side-caption p#author {
     font-size: 15px;
 }
 
+/* Top Product CSS */
 .top-product {
     background-color: #FEFBF3;
     overflow: hidden;
     width: 100%;
 }
 
+/* Top product title CSS */
 .top-product .title {
     text-align: center;
     padding-top: 2%;
 }
 
+/* Top product option CSS */
 .top-product .options{
     width: 100%;
     padding: 1% 30%;
     text-align: center;
 }
 
+/* Top product option navbar CSS */
 .options .optionbar-item{
     list-style-type: none;
     overflow: hidden;
     padding: 1%;
 }
 
+/* Top product option all item CSS */
 .top-product .options-item{
     margin-left: 15%;
 }
 
+/* Top product option unique item CSS */
 .top-product .option-item{
     float:left;
     border: 0px;
@@ -59,22 +84,26 @@
     margin-left: 5%;
 }
 
+/* Option list title CSS */
 .top-product .option-item a{
     padding: 5%;
 }
 
+/* Active Product CSS */
 .top-product .options #active{
     background-color: #9D9D9D;
     color: #FEFBF3;
     border-radius: 5px;
 }
 
+/* Button hover top product CSS */
 .top-product .options button:hover{
     background-color: #555555;
     color: #CDC9C3;
     border-radius: 5px;
 }
 
+/* Make card scroll hor */
 .card-scroll{
     max-width: 30%;
     padding: .75rem;
@@ -84,9 +113,9 @@
     flex-shrink: 0;
 }
 
+/* Card row CSS */
 .row{
     align-items: stretch;
-    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -94,23 +123,26 @@
     padding: 1%;
 }
 
+/* Card top image CSS */
 .card-img-top{
     border: 5px solid;
     color: #555555;
 }
 
- .latest, .bestseller {
+/* Latest choice CSS */
+.latest, .bestseller {
     display: none;
 }
 
+/* Category CSS */
 .home-catogory{
-    display: flex;
     width: 100%;
     background-color: #FEFBF3;
     margin-top: 1%;
     margin-bottom: 1%;
 }
 
+/* Category decription CSS */
 .home-catogory .description{
     width: 30%;
     background-color: #F8F0DF;
@@ -122,37 +154,41 @@
     border-bottom: solid 5px #9D9D9D;
 }
 
+/* Category description title css */
 .home-catogory .description h2{
     text-align: center;
 }
 
+/* Category description body content css */
 .home-catogory .description .description-body{
     margin: 2% 3%;
 }
 
+/* Category description button css */
 .home-catogory .description button{
     margin-top: 5%;
     margin-left: 35%;
 }
+
+/* Category painting css */
 .home-catogory .painting{
     width: 70%;
     background-color: #9D9D9D;
 }
-.painting {
-    display: flex;
 
-}
-
+/* Painting link  CSS */
 .painting a {
     color: #181D31;
     text-decoration: none;
 }
 
+/* Painting link  CSS when hover*/
 .painting a:hover {
     color: #E26A2C;
     text-decoration: none;
 }
 
+/* 1st column  css */
 .first-column {
     max-height: 350px;
     max-width: 400px;
@@ -160,19 +196,27 @@
     margin-left: 4%;
 }
 
+/* 2nd column  css */
 .second-column{
     max-width: 350px;
     padding-left: 2%;
     padding-right: 2%;
 }
+/* 2nd column card CSS*/
 .second-column .card {
     margin-top: 5%;
     margin-bottom: 5%;
 }
 
+/* 3rd column css */
 .third-column {
     max-width: 300px;
     margin-right: 2%;
     margin-top: 5%;
     margin-bottom: 3%;
+}
+
+/* card painting css */
+.painting .card{
+    border: solid 3px black;
 }
