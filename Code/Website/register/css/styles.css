@@ -1,9 +1,11 @@
+/* register title css */
 .register-title{
     text-align: center;
     padding-top: 2%;
     font-size: 30px;
 }
 
+/* form layout css */
 .form-layout {
     width: 50%;
     margin-left: 25%;
@@ -19,16 +21,19 @@
     width: 225px;
 }
 
+/* register footer css */
 .register_footer {
     margin-top: 2%;
     margin-left: 3%;
 }
 
+/* Regiser button hover CSS */
 .register_footer button:hover{
     background-color: #456268;
     color: #D9E4DD;
 }
 
+/* Register footer content CSS */
 .register_footer a {
     font-size: 20px;
     text-decoration: none;
@@ -36,14 +41,17 @@
     margin-left: 1%;
 }
 
+/* Register footer content hover CSS */
 .register_footer a:hover{
     color: #456268;
 }
 
+/* form input css */
 .form_input input {
     width: 60%;
 }
 
+/* form details css */
 .form_details{
     margin: 1%;
 }

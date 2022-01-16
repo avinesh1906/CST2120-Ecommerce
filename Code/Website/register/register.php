@@ -10,6 +10,7 @@
     generateHeader($pageName, $folderName);
     generateNavBar($pageName);
 ?>
+<!-- Title -->
 <div class="register-title">
     Create Account
 </div>
