@@ -39,16 +39,40 @@
 .top-product .options{
     width: 100%;
     padding: 1% 30%;
+    text-align: center;
+}
+
+.options .optionbar-item{
+    list-style-type: none;
+    overflow: hidden;
+    padding: 1%;
 }
 
 .top-product .options-item{
-    list-style-type: none;
-    overflow: hidden;
+    margin-left: 15%;
 }
 
-.top-product .options-item li {
+.top-product .option-item{
     float:left;
-    padding-left: 10%;
+    border: 0px;
+    background-color: #FBF7F0;
+    margin-left: 5%;
+}
+
+.top-product .option-item a{
+    padding: 5%;
+}
+
+.top-product .options #active{
+    background-color: #9D9D9D;
+    color: #FEFBF3;
+    border-radius: 5px;
+}
+
+.top-product .options button:hover{
+    background-color: #555555;
+    color: #CDC9C3;
+    border-radius: 5px;
 }
 
 .card-scroll{

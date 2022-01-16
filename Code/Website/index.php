@@ -81,9 +81,24 @@
     </div>
     <div class="options">
         <div class="options-item" id="top-product-item">
-            <button id="featured"> FEATURED </button>
-            <button id="latest"> LATEST </button>
-            <button id="bestseller"> BESTSELLER </button>
+            <ul class="optionbar-item">
+                <li class="option-item">
+                    <a class="option-link featuredBtn" id="active"  name="featured">
+                        FEATURED
+                    </a>
+                </li>
+                <li class="option-item">
+                    <a class="option-link latestBtn" name="latest">
+                    LATEST
+                    </a>
+                </li>
+                <li class="option-item">
+                    <a class="option-link bestsellerBtn" name="bestseller"> 
+                    BESTSELLER
+                    </a>
+                </li>
+            </ul>
+
         </div>
     </div>
 
@@ -96,17 +111,6 @@
                     <p class="card-text">If I'd observed all the rules, I'd never have got anywhere</p>
                     <div class="card-details">
                         <p>Rs 1500 </p>
-                        <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
-                    </div>
-                </div>
-            </div>
-            <div class="card-scroll">
-                <img class="card-img-top" src="./common/img/lion.jpeg" alt="lion" height="450px" width="95%">
-                <div class="card-body">
-                    <h5 class="card-title"> Le Désir d'imagination</h5>
-                    <p class="card-text">L’imagination fait du désir une passion heureuse.</p>
-                    <div class="card-details">
-                        <p>Rs 800 </p>
                         <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
                     </div>
                 </div>
@@ -134,6 +138,19 @@
                     </div>
                 </div>
             </div>
+            <div class="card-scroll">
+                <img class="card-img-top" src="./common/img/bonnie.jpg" alt="Bonnie" height="450px" width="95%">
+                <div class="card-body">
+                    <h5 class="card-title">Bonnie Painting</h5>
+                    <p class="card-text">
+                        The shadows & light in her character were captured when she finally showed me her dark side
+                    </p>
+                    <div class="card-details">
+                        <p>Rs 1250 </p>
+                        <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
+                    </div>    
+                </div>
+            </div>
         </div>
     </div>
 
@@ -142,56 +159,16 @@
             <div class="card-scroll">
                 <img class="card-img-top" src="./common/img/cat.jpeg" alt="cat" height="450px" width="95%">
                 <div class="card-body">
-                    <h5 class="card-title">Marilyn Monroe</h5>
-                    <p class="card-text">If I'd observed all the rules, I'd never have got anywhere</p>
+                    <h5 class="card-title">Meow</h5>
+                    <p class="card-text">I wish I could write as mysterious as a cat.</p>
                     <div class="card-details">
                         <p>Rs 1500 </p>
                         <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
                     </div>
                 </div>
             </div>
-
             <div class="card-scroll">
-                <img class="card-img-top" src="./common/img/women.jpeg" alt="women" height="450px" width="95%">
-                <div class="card-body">
-                    <h5 class="card-title">La beauté de faiblesse</h5>
-                    <p class="card-text">La beauté sans grâce  est un printemps sans verdure.
-                    </p>
-                    <div class="card-details">
-                        <p>Rs 1250 </p>
-                        <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
-                    </div>    
-                </div>
-            </div>
-            <div class=" card-scroll">
-                <img class="card-img-top" src="./common/img/sunset.jpeg" alt="Chinese" height="450px" width="95%">
-                <div class="card-body">
-                    <h5 class="card-title">Shameless spring</h5>
-                    <p class="card-text">The first blooms of spring always make my heart sing</p>
-                    <div class="card-details">
-                        <p>Rs 850 </p>
-                        <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
-                    </div>
-                </div>
-            </div>
-            <div class=" card-scroll">
-                <img class="card-img-top" src="./common/img/lacote.png" alt="lacote" height="450px" width="95%">
-                <div class="card-body">
-                    <h5 class="card-title">Shameless spring</h5>
-                    <p class="card-text">The first blooms of spring always make my heart sing</p>
-                    <div class="card-details">
-                        <p>Rs 850 </p>
-                        <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div class="bestseller">
-        <div class="card-deck row">
-            <div class="card-scroll">
-                <img class="card-img-top" src="./common/img/wolves.jpeg" alt="wolf" height="450px" width="95%">
+                <img class="card-img-top" src="./common/img/lion.jpeg" alt="lion" height="450px" width="95%">
                 <div class="card-body">
                     <h5 class="card-title"> Le Désir d'imagination</h5>
                     <p class="card-text">L’imagination fait du désir une passion heureuse.</p>
@@ -202,10 +179,54 @@
                 </div>
             </div>
             <div class="card-scroll">
+                <img class="card-img-top" src="./common/img/women.jpeg" alt="women" height="450px" width="95%">
+                <div class="card-body">
+                    <h5 class="card-title">The mysterious smile</h5>
+                    <p class="card-text"> 
+                        For the nature of women is closely allied to art.
+                    </p>
+                    <div class="card-details">
+                        <p>Rs 1250 </p>
+                        <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
+                    </div>    
+                </div>
+            </div>
+            <div class=" card-scroll">
+                <img class="card-img-top" src="./common/img/wolves.jpeg" alt="Chinese" height="450px" width="95%">
+                <div class="card-body">
+                    <h5 class="card-title">Anything Pawssible</h5>
+                    <p class="card-text">
+                        Be the person your dog think you are.
+                    </p>
+                    <div class="card-details">
+                        <p>Rs 850 </p>
+                        <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bestseller">
+        <div class="card-deck row">
+            <div class="card-scroll">
+                <img class="card-img-top" src="./common/img/desi.jpg" alt="wolf" height="450px" width="95%">
+                <div class="card-body">
+                    <h5 class="card-title">Desi </h5>
+                    <p class="card-text">
+                        Out of sight but on your mind.
+                    </p>
+                    <div class="card-details">
+                        <p>Rs 800 </p>
+                        <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-scroll">
                 <img class="card-img-top" src="./common/img/watercolor_landscape_mauritius.jpg" alt="mauritius landscape" height="450px" width="95%">
                 <div class="card-body">
-                    <h5 class="card-title">La beauté de faiblesse</h5>
-                    <p class="card-text">La beauté sans grâce  est un printemps sans verdure.
+                    <h5 class="card-title">Feel zafr la</h5>
+                    <p class="card-text">
+                        Lavi ene zoli vwayaz.
                     </p>
                     <div class="card-details">
                         <p>Rs 1250 </p>
@@ -216,8 +237,11 @@
             <div class=" card-scroll">
                 <img class="card-img-top" src="./common/img/sunset.jpeg" alt="Chinese" height="450px" width="95%">
                 <div class="card-body">
-                    <h5 class="card-title">Shameless spring</h5>
-                    <p class="card-text">The first blooms of spring always make my heart sing</p>
+                    <h5 class="card-title">Soleil p alle dormi</h5>
+                    <p class="card-text">
+                        Sunset are proof that endings can often be beautiful too.
+
+                    </p>
                     <div class="card-details">
                         <p>Rs 850 </p>
                         <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
@@ -227,8 +251,10 @@
             <div class=" card-scroll">
                 <img class="card-img-top" src="./common/img/lacote.png" alt="lacote" height="450px" width="95%">
                 <div class="card-body">
-                    <h5 class="card-title">Shameless spring</h5>
-                    <p class="card-text">The first blooms of spring always make my heart sing</p>
+                    <h5 class="card-title">Zenfant la cote</h5>
+                    <p class="card-text">
+                        Tou mo fami peser mo fine né lor bord la cote
+                    </p>
                     <div class="card-details">
                         <p>Rs 850 </p>
                         <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
