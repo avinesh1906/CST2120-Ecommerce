@@ -50,7 +50,7 @@ body,footer {
 
 .nav-category {
     float:left;
-    width: 45%;
+    width: 50%;
 }
 
 .nav-other{
@@ -59,9 +59,10 @@ body,footer {
 }
 
 .nav-center {
-	width: 35%;
+	width: 20%;
 	display: flex;
 	padding-top: 0.5%;
+	margin-left: 5%;
 }
 
 .nav-center form {

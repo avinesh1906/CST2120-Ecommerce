@@ -77,10 +77,10 @@ function generateNavBar($pagename){
     echo '<ul class="navbar-item">';
 
     // Array of pages to link
-    $linkNames = array("Home", "Pencil", "Watercolor", "Graffiti", "Spray");
-    $linkFolderHomeRoot = array("./", "./pencil/", "./watercolor/", "./graffiti/", "./spray/");
-    $linkFolderName = array("../", "../pencil/", "../watercolor/", "../graffiti/", "../spray/");
-    $linkFileName = array("index.php", "pencil.php", "watercolor.php", "graffiti.php", "graffiti.php");
+    $linkNames = array("Home", "Portrait", "Landscape", "Oil", "Abstract", "Historical");
+    $linkFolderHomeRoot = array("./", "./portrait/", "./landscape/", "./oil/", "./abstract/", "./historical/");
+    $linkFolderName = array("../", "../portrait/", "../landscape/", "../oil/", "../abstract/", "../historical/");
+    $linkFileName = array("index.php", "peportraitncil.php", "landscape.php", "oil.php", "abstract.php" ,"historical.php");
 
     // Loop through the navigation items 
     for ($x = 0; $x < count($linkNames); $x++){
