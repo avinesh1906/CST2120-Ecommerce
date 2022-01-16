@@ -1,0 +1,48 @@
+.signIn-title {
+    text-align: center;
+    padding-top: 1%;
+}
+
+.signIn-body {
+    display: flex;
+    width: 100%;
+}
+
+.signIn-body .register,
+.signIn-body .login{
+    width:50%;
+    margin:2%;
+    padding: 1%;
+    border: solid 1px #9D9D9D;
+}
+
+.signIn-body .register .title,
+.signIn-body .login .title{
+    font-size: 30px;
+}
+
+.signIn-body .register .registerBtn,
+.signIn-body .login .login_btn
+{
+    margin-top: 2%;
+}
+
+.signIn-body .login .login_btn {
+    margin-left: 45%;
+}
+
+.signIn-body .login .login_form {
+    padding-top: 3%;
+    padding-right: 5%;
+}
+
+.signIn-body .login .login_form .password {
+    padding-top: 2%;
+}
+
+.signIn-body .register .registerBtn button:hover,
+.signIn-body .login .login_btn button:hover
+{
+    background-color: #191919;
+    color: #F8F0DF;
+}
