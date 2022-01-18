@@ -136,7 +136,7 @@
                 <div class="col">
                     <div class="card">
                         <!-- image -->
-                        <img class="card-img-top" src="./img/horse.jpg" alt="horse" height="150px" width="80%">
+                        <img class="card-img-top" src="./img/horse.jpg" alt="horse" height="200px">
                         <!-- content -->
                         <div class="card-body">
                             <h5 class="card-title">Mauritius Horses</h5>
@@ -150,7 +150,7 @@
                 <div class="col">
                     <div class="card">
                         <!-- image -->
-                        <img class="card-img-top" src="./img/lion.jfif" alt="lion" height="150px" width="80%">
+                        <img class="card-img-top" src="./img/lion.jfif" alt="lion" height="200px" >
                         <!-- content -->
                         <div class="card-body">
                             <h5 class="card-title">Lion Mountain</h5>
@@ -164,7 +164,7 @@
                 <div class="col">
                     <div class="card">
                         <!-- image -->
-                        <img class="card-img-top" src="./img/boat.jpg" alt="boat" height="150px" width="80%">
+                        <img class="card-img-top" src="./img/boat.jpg" alt="boat" height="200px" >
                         <!-- content -->
                         <div class="card-body">
                             <h5 class="card-title">Sunset</h5>
@@ -178,7 +178,7 @@
                 <div class="col">
                     <div class="card">
                         <!-- image -->
-                        <img class="card-img-top" src="./img/mbg.jfif" alt="mbg" height="150px" width="80%">
+                        <img class="card-img-top" src="./img/mbg.jfif" alt="mbg" height="200px" >
                         <!-- content -->
                         <div class="card-body">
                             <h5 class="card-title">Mahebourg Waterfront</h5>
@@ -192,7 +192,7 @@
                 <div class="col">
                     <div class="card">
                         <!-- image -->
-                        <img class="card-img-top" src="./img/fishing.jfif" alt="fishing" height="150px" width="80%">
+                        <img class="card-img-top" src="./img/fishing.jfif" alt="fishing" height="200px" >
                         <!-- content -->
                         <div class="card-body">
                             <h5 class="card-title">Out for fishing</h5>

@@ -239,7 +239,7 @@
             <!-- 4th card -->
             <div class=" card-scroll">
                 <!-- image -->
-                <img class="card-img-top" src="./common/img/wolves.jpeg" alt="Chinese" height="450px" width="95%">
+                <img class="card-img-top" src="./common/img/wolves.jpeg" alt="Wolves" height="450px" width="95%">
                 <!-- content -->
                 <div class="card-body">
                     <h5 class="card-title">Anything Pawssible</h5>
@@ -292,7 +292,7 @@
             <!-- 3rd card -->
             <div class=" card-scroll">
                 <!-- image -->
-                <img class="card-img-top" src="./common/img/sunset.jpeg" alt="Chinese" height="450px" width="95%">
+                <img class="card-img-top" src="./common/img/sunset.jpeg" alt="Sunset" height="450px" width="95%">
                 <!-- content -->
                 <div class="card-body">
                     <h5 class="card-title">Soleil p alle dormi</h5>

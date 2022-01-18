@@ -235,10 +235,27 @@ function generateFooter($pagename){
 }
 
 function generateJavaScript($title){
-    if ($title == "Home" ) {
-        echo '<script type="module" src="./home/js/home.js">';
-    } else if ($title ==  "Oil"){
-        echo '<script type="module" src="./js/oil.js">';
+    // Array Dictionary 
+    $linkNames = array(
+        "Home" => "./home/js/home.js", 
+        "Portrait" => "./js/portrait.js", 
+        "Oil" => "./js/oil.js", 
+        "Cart" => "./js/cart.js", 
+        "About Us" => "./js/aboutus.js",
+        "Historical" => "./js/historical.js",
+        "Landscape" => "./js/landscape.js",
+        "Register" => "./js/register.js",
+        "Sign In" => "./js/signin.js"
+    );
+    
+    echo '<script src = "'. $linkNames[$title] .'">'; 
+    echo '</script>';
+
+    echo '<script ';
+    if ($title == "Home") {
+        echo 'src = "./common/js/common.js">';
+    } else {
+        echo 'src = "../common/js/common.js">';
     }
 
     echo '</script>';
