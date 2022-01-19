@@ -245,7 +245,8 @@ function generateJavaScript($title){
         "Historical" => "./js/historical.js",
         "Landscape" => "./js/landscape.js",
         "Register" => "./js/register.js",
-        "Sign In" => "./js/signin.js"
+        "Sign In" => "./js/signin.js",
+        "Abstract" => "./js/abstract.js",
     );
     
     echo '<script src = "'. $linkNames[$title] .'">'; 
