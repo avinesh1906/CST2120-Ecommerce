@@ -23,6 +23,7 @@
            <li><a href="#">Sign up</a></li>
            <li><a href="#">Add Products</a></li>
            <li><a href="#">View Products</a></li>
+           <li><a href="#">Delete Products</a></li>
            <li><a href="#">Edit Products</a></li>
            <li><a href="#">Customer Orders</a></li>
            
@@ -36,11 +37,11 @@
      </nav>
 
      <div class="sidemenu">
-        <div class="logo-details">
+        <div class="logo-detailing">
           <i class='bx bxl-c-plus-plus'></i>
           <span class="logo_name">Side Menu</span>
         </div>
-          <ul class="nav-links">
+          <ul class="nav-linking">
             <li>
               <a href="#" class="active">
                 <i class='bx bx-grid-alt' ></i>
@@ -125,7 +126,7 @@
           </div>
         </nav>
     
-        <div class="home-content">
+        <div class="content_home">
           <div class="overview-boxes">
             <div class="box">
               <div class="right-side">
@@ -173,7 +174,7 @@
             </div>
           </div>
     
-          <div class="sales-boxes">
+          <div class="salestabs">
             <div class="recent-sales box">
               <div class="title">Recent Sales</div>
               <div class="sales-details">
@@ -276,7 +277,7 @@
       </section>
     
       <script>
-       let sidebar = document.querySelector(".sidebar");
+       let sidebar = document.querySelector(".sidemenu");
     let sidebarBtn = document.querySelector(".sidebarBtn");
     sidebarBtn.onclick = function() {
       sidebar.classList.toggle("active");
