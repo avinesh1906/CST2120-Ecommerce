@@ -42,7 +42,7 @@
         <fieldset>
         
         <!-- Form Name -->
-        <legend> ADD PRODUCTS</legend>
+        <legend> DELETE PRODUCTS</legend>
         
         <!-- Text input-->
         <div class="form-group">
@@ -82,9 +82,9 @@
         
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="inventory">INVENTORY</label>  
+          <label class="col-md-4 control-label" for="inventory">QUANTITY REMAINING</label>  
           <div class="col-md-4">
-          <input id="INVENTORY" name="inventory" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required="" type="text">
+          <input id="inventory" name="inventory" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required="" type="text">
             
           </div>
         </div>
@@ -93,29 +93,30 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="date">DATE</label>  
           <div class="col-md-4">
-          <input id="date" name="date" placeholder="DATE ADDED" class="form-control input-md" required="" type="text">
+          <input id="date" name="date" placeholder="DATE DELETED" class="form-control input-md" required="" type="text">
             
           </div>
         </div>
         
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="approved_by">APPROVED BY</label>  
+          <label class="col-md-4 control-label" for="removed_by">REMOVED BY</label>  
           <div class="col-md-4">
-          <input id="approved_by" name="approved_by" placeholder="APPROVED BY" class="form-control input-md" required="" type="text">
+          <input id="removed_by" name="removed_by" placeholder="REMOVED BY" class="form-control input-md" required="" type="text">
             
          <!-- File Button --> 
         <div class="form-group">
-          <label class="col-md-4 control-label" for="imagefile">ADD IMAGE</label>
+          <label class="col-md-4 control-label" for="imagefile">REPLACE IMAGE</label>
           <div class="col-md-4">
             <input id="imagefile" name="imagefile" class="input-file" type="file">
           </div>
         </div>
+      
         
         <!-- Button -->
         <div class="form-group">
           <div class="col-md-4">
-            <button id="addbutton" name="addbutton" class="btn btn-primary">ADD</button>
+            <button id="deletebutton" name="deletebutton" class="btn btn-primary">DELETE</button>
           </div>
           </div>
         </fieldset>
