@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page </title>
+    <!-- linking the navbar to page -->
     <?php include ("PHP/common.php");
     navbar();
     ?>
@@ -11,7 +12,7 @@
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
+  <!-- creating a side menu bar -->
      <div class="sidemenu">
         <div class="logo-detailing">
           <i class='bx bxl-c-plus-plus'></i>
@@ -19,6 +20,7 @@
         </div>
           <ul class="nav-linking">
             <li>
+              <!-- adding elements to the side menu bar -->
               <a href="#" class="active">
                 <i class='bx bx-grid-alt' ></i>
                 <span class="links_name">Dashboard</span>
@@ -88,20 +90,23 @@
       </div>
       <section class="home-section">
         <nav>
+          <!-- creating a dashboard -->
           <div class="sidemenu-button">
             <i class='bx bx-menu sidebarBtn'></i>
             <span class="dashboard">Dashboard</span>
           </div>
+        <!-- adding a search bar to the dashboard -->
           <div class="search-box">
             <input type="text" placeholder="Search...">
             <i class='bx bx-search' ></i>
           </div>
+          <!--adding a bar to show the name of logged-in user -->
           <div class="profile-details">
             <span class="admin_name">Smreeti</span>
             <i class='bx bx-chevron-down' ></i>
           </div>
         </nav>
-    
+        <!-- adding the analytics of the total number of orders received recently -->
         <div class="content_home">
           <div class="overview-boxes">
             <div class="box">
@@ -115,6 +120,7 @@
               </div>
               <i class='bx bx-cart-alt cart'></i>
             </div>
+             <!-- adding the analytics of the total sales -->
             <div class="box">
               <div class="right-side">
                 <div class="box-topic">Total Sales</div>
@@ -126,6 +132,7 @@
               </div>
               <i class='bx bxs-cart-add cart two' ></i>
             </div>
+             <!-- adding the analytics from the recent sales -->
             <div class="box">
               <div class="right-side">
                 <div class="box-topic">Total Profit</div>
@@ -137,6 +144,7 @@
               </div>
               <i class='bx bx-cart cart three' ></i>
             </div>
+             <!-- adding the analytics of the total return obtained from recent sales -->
             <div class="box">
               <div class="right-side">
                 <div class="box-topic">Total Return</div>
@@ -149,12 +157,13 @@
               <i class='bx bxs-cart-download cart four' ></i>
             </div>
           </div>
-    
+     <!-- adding the analytics from the recent sales -->
           <div class="salestabs">
             <div class="recent-sales box">
               <div class="title">Recent Sales</div>
               <div class="sales-details">
                 <ul class="details">
+                  <!-- table displaying the recent purchases of customers -->
                   <li class="topic">Date</li>
                   <li><a href="#">19 Jan 2022</a></li>
                   <li><a href="#">19 Jan 2022</a></li>
@@ -203,6 +212,7 @@
                  <li><a href="#">Rs 1500</a></li>
               </ul>
               </div>
+                 <!-- button to see all recent sales since the previous day -->
               <div class="button">
                 <a href="#">See All</a>
               </div>
@@ -212,6 +222,7 @@
               <ul class="top-sales-details">
                 <li>
                 <a href="#">
+                   <!-- adding  the best selling products to a table -->
                   <span class="product">Landscape of Mahebourg</span>
                 </a>
                 <span class="price">Rs 1500</span>
@@ -251,7 +262,7 @@
           </div>
         </div>
       </section>
-    
+     <!-- to make the sidemenu bar active -->
       <script>
        let sidebar = document.querySelector(".sidemenu");
     let sidebarBtn = document.querySelector(".sidebarBtn");
@@ -264,59 +275,59 @@
     }
      </script>
 
-<footer class="footer1">
-  
-  <div class="footer-left">
-  <h3>Ti<span>Moris</span></h3>
-  <p class="footer-links">
-  <a href="index.php">Home</a>
-  .
-  <a href="login.php">Login</a>
-  ·
-  <a href="#">About</a>
-  ·
-  <a href="#">Privacy Policy</a>
-  ·
-  <a href="#">Faq</a>
-  ·
-  <a href="#">Contact</a>
-  </p>
-  
-  <p class="footer-company-name">Ti Moris &copy; 2022</p>
-  </div>
-  
-  <div class="footer-center">
-  <div>
-  <i class="fa fa-map-marker"></i>
-  <p><span>Avenue des Palmiers </span> Curepipe,Mauritius</p>
-  </div>
-  
-  <div>
-  <i class="fa fa-phone"></i>
-  <p>+230 59484598</p>
-  </div>
-  
-  <div>
-  <i class="fa fa-envelope"></i>
-  <p><a href="SJ983@live.mdx.ac.uk">SJ983@live.mdx.ac.uk</a></p>
-  </div>
-  
-  </div>
-  
-  <div class="footer-right">
-  
-  <p class="footer-company-about">
-  <span>About the company</span>
-  Ecommerce website selling local paintings; 
-  </p>
-  <div class="footer-icons">
-  <a href="#"><i class="fa fa-facebook"></i></a>
-  <a href="#"><i class="fa fa-twitter"></i></a>
-  <a href="#"><i class="fa fa-linkedin"></i></a>
-  <a href="#"><i class="fa fa-github"></i></a>
-  
-  </div>  
-  </footer>
+      <footer class="footer1">
+        <!-- linking footer to the other pages -->
+      <div class="footer-left">
+      <h3>Ti<span>Moris</span></h3>
+      <p class="footer-links">
+      <a href="index.php">Home</a>
+      .
+      <a href="login.php">Login</a>
+      ·
+      <a href="#">About</a>
+      ·
+      <a href="#">Privacy Policy</a>
+      ·
+      <a href="#">Faq</a>
+      ·
+      <a href="#">Contact</a>
+      </p>
+      
+      <p class="footer-company-name">Ti Moris &copy; 2022</p>
+      </div>
+         <!-- adding details to footer -->
+      <div class="footer-center">
+      <div>
+      <i class="fa fa-map-marker"></i>
+      <p><span>Avenue des Palmiers </span> Curepipe,Mauritius</p>
+      </div>
+      
+      <div>
+      <i class="fa fa-phone"></i>
+      <p>+230 59484598</p>
+      </div>
+      
+      <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="SJ983@live.mdx.ac.uk">SJ983@live.mdx.ac.uk</a></p>
+      </div>
+      
+      </div>
+      
+      <div class="footer-right">
+      
+      <p class="footer-company-about">
+      <span>About the company</span>
+      Ecommerce website selling local paintings; 
+      </p>
+      <div class="footer-icons">
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-github"></i></a>
+      
+      </div>  
+      </footer>
   </body>
 </html>
   

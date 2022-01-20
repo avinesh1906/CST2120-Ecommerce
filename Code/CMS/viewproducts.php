@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Products </title>
+    <!-- linking the navbar to page -->
     <?php include ("PHP/common.php");
     navbar();
     ?>
@@ -11,7 +12,6 @@
         h3 {text-align: center;}
         .product {text-align: center;}
         div {text-align: center;}
-        .tools{size: 100px;}
         
     </style>
     <link rel="stylesheet"type="text/css" href="./CSS/addproducts.css">
@@ -20,6 +20,7 @@
 <body>
 
      <body>
+          <!-- adding product to product list with corresponding image-->
         <div class="products products-table">
             <div class="product">
                 <div class="product-img">
@@ -33,6 +34,7 @@
                     <p class="product-text genre">Portrait</p>
                 </div>
             </div>
+            <!-- adding product to product list -->
             <div class="product">
                 <div class="product-img">
                     <img src="./IMAGES/cap_malhereux.jpg"alt="Ti Moris"width="800" height="600">
@@ -45,6 +47,7 @@
                     <p class="product-text genre">Landscape</p>
                 </div>
             </div>
+            <!-- adding product to product list -->
             <div class="product">
                 <div class="product-img">
                     <img src="./IMAGES/lacote.png"alt="Ti Moris"width="800" height="600">
@@ -58,6 +61,7 @@
                 </div>
             </div>
             </div>
+            <!-- adding product to product list -->
             <div class="product">
                 <div class="product-img">
                     <img src="./IMAGES/slaves.jpg"alt="Ti Moris"width="800" height="600">
@@ -70,6 +74,7 @@
                     <p class="product-text genre">Landscape</p>
                 </div>
             </div>
+            <!-- adding product to product list -->
             <div class="product">
                 <div class="product-img">
                     <img src="./IMAGES/sega.jpg"alt="Ti Moris"width="800" height="600">
@@ -92,7 +97,7 @@
 
 
     <footer class="footer1">
-  
+   <!-- linking footer to the other pages -->
         <div class="footer-left">
         <h3>Ti<span>Moris</span></h3>
         <p class="footer-links">
@@ -111,7 +116,7 @@
         
         <p class="footer-company-name">Ti Moris &copy; 2022</p>
         </div>
-        
+           <!-- adding details to footer -->
         <div class="footer-center">
         <div>
         <i class="fa fa-map-marker"></i>

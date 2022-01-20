@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
+    <!-- linking the navbar to page -->
     <?php include ("PHP/common.php");
     navbar();
     ?>
@@ -12,10 +13,10 @@
 </head>
 <body>
 
-   <form action="login.html" method="post">
+   <form action="login.php" method="post">
    
       <h1>Login</h1>
-      
+       <!-- creating the login form -->
       <fieldset>
          <legend><span class="number">1.</span>Enter your information</legend>
          <label for="name">Full Name:</label><br>
@@ -34,7 +35,7 @@
    </form>
 
    <footer class="footer1">
-   
+    <!-- linking footer to the other pages -->
    <div class="footer-left">
    <h3>Ti<span>Moris</span></h3>
    <p class="footer-links">
@@ -50,7 +51,7 @@
    ·
    <a href="#">Contact</a>
    </p>
-   
+    <!-- adding details to footer -->
    <p class="footer-company-name">Ti Moris &copy; 2022</p>
    </div>
    

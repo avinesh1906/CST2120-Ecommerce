@@ -10,6 +10,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
   }
+  /* styling the side bar*/
   .sidemenu{
     position: absolute;
     height: 100%;
@@ -21,6 +22,7 @@
     width: 60px;
     position: flex !important;
   }
+  /* adding logo details*/
   .sidemenu .logo-detailing{
     height: 80px;
     display: flex;
@@ -46,6 +48,7 @@
     list-style: none;
     height: 50px;
   }
+  /* adjucting links in the side menu bar*/
   .sidemenu .nav-linking li a{
     height: 100%;
     width: 100%;
@@ -54,6 +57,7 @@
     text-decoration: none;
     transition: all 0.4s ease;
   }
+  /* adding colour to the side menu bar*/
   .sidemenu .nav-linking li a.active{
     background: #24A19C;
   }
@@ -108,6 +112,7 @@
     left: 60px;
     width: calc(100% - 60px);
   }
+  /* styling the sidemenu button*/
   .home-section nav .sidemenu-button{
     display: flex;
     align-items: center;
@@ -118,6 +123,7 @@
     font-size: 35px;
     margin-right: 10px;
   }
+  /*styling the dashboard's search bar */
   .home-section nav .search-box{
     position: relative;
     height: 50px;
@@ -189,6 +195,7 @@
     padding: 0 20px;
     margin-bottom: 26px;
   }
+  /*styling the analytics boxes */
   .overview-boxes .box{
     display: flex;
     align-items: center;
@@ -242,6 +249,7 @@
     border-radius: 12px;
     margin: -15px 0 0 6px;
   }
+  /*adding colour to the analytics boxes */
   .content_home .box .cart.two{
      color: #91C483;
      background: #C0F2D8;
@@ -316,7 +324,7 @@
     background:  #0d3073;
   }
   
-  /* Right box */
+  /* Right table containing recent sales */
   .content_home .salestabs .top-sales{
     width: 35%;
     background: #fff;
@@ -325,6 +333,7 @@
     border-radius: 12px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
+  /* styling the top sales analytics*/
   .salestabs .top-sales li{
     display: flex;
     align-items: center;
@@ -350,7 +359,7 @@
     font-weight: 400;
     color: #333;
   }
-  /* Responsive Media Query */
+  /* reponsive with media query */
   @media (max-width: 1240px) {
     .sidemenu{
       width: 60px;
@@ -363,7 +372,7 @@
       left: 60px;
     }
     .sidemenu.active ~ .home-section{
-      /* width: calc(100% - 220px); */
+  
       overflow: hidden;
       left: 220px;
     }
@@ -649,7 +658,7 @@
   .content .space{
     margin: 10px 0;
   }
-
+/*styling the footer */
   footer{
     display: flex;
     bottom: 0;
@@ -687,7 +696,7 @@
     color:  #24A19C;
    }
     
-    
+    /*adjusting footer links */
    .footer1 .footer-links{
     color:  #ffffff;
     margin: 20px 0 12px;

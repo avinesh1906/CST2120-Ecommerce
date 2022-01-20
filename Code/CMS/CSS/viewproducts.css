@@ -3,7 +3,7 @@ body {
     color: #384047;
   }
   
-  
+     /*styling the header */
   nav{
     background: #DACC96;
     display: flex !important;
@@ -13,6 +13,7 @@ body {
     height: 120px;
     padding: 15 100px;
   }
+   /*adjusting the logo*/
   nav .logo{
     top: 0 !important;
     left: 0 !important;
@@ -21,6 +22,7 @@ body {
     font-weight: 600;
     letter-spacing: -2px;
   }
+  /*adding spacing between header elements */
   nav .nav-items{
     display: flex;
     flex: 1;
@@ -36,6 +38,7 @@ body {
     font-weight: 500;
     text-decoration: none;
   }
+/* change colour of elements while hovering over them*/
   nav .nav-items li a:hover{
     color: #71C9CE;
   }
@@ -234,7 +237,7 @@ body {
   .content .space{
     margin: 10px 0;
   }
-
+/*styling area to input images of products*/
   input,
   textarea,
   button {
@@ -268,11 +271,6 @@ body {
       color: white;
   }
 
-
-  .tools {
-      overflow: auto;
-      zoom: 1;
-  }
 
   .search-area {
       float: left;
@@ -309,7 +307,7 @@ body {
           width: 100%;
       }
   }
-
+/* adjusting painting captions*/
   .products {
       width: 100%;
       font-family: Raleway;
@@ -355,7 +353,7 @@ body {
       margin: 7px 0 0 0;
       color: #777;
   }
-
+/* styling product price*/
   .product .price {
       font-family: sans-serif;
       font-size: 16px;
@@ -424,7 +422,7 @@ body {
     }
 
 
-
+/* styling footer*/
   footer{
     display: flex;
     bottom: 0;
@@ -501,7 +499,7 @@ body {
     margin: 10px 15px;
     vertical-align: middle;
    }
-    
+    /* adding footer details*/
    .footer1 .footer-center i.fa-envelope{
     font-size: 20px !important;
     line-height: 38px;

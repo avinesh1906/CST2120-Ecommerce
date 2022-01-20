@@ -20,7 +20,7 @@
         <!--Page Label-->
         <legend> EDIT PRODUCTS</legend>
         
-        <!-- Text input-->
+       <!-- Editing ProductID field-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="product_id"> CHANGE PRODUCT ID</label>  
           <div class="col-md-4">
@@ -29,7 +29,7 @@
           </div>
         </div>
         
-        <!-- Text input-->
+        <!-- Changing product name-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="painting_name"> CHANGE PRODUCT NAME</label>  
           <div class="col-md-4">
@@ -39,7 +39,7 @@
         </div>
         
         
-         <!-- Textarea -->
+         <!-- Changing product description -->
          <div class="form-group">
             <label class="col-md-4 control-label" for="painting_des"> CHANGE PRODUCT DESCRIPTION</label>
             <div class="col-md-4">                     
@@ -47,7 +47,7 @@
             </div>
           </div>
 
-        <!-- Select Basic -->
+        <!-- Changing product category -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="painting_category"> CHANGE PRODUCT CATEGORY</label>
           <div class="col-md-4">
@@ -56,7 +56,7 @@
           </div>
         </div>
         
-        <!-- Text input-->
+        <!-- Changing quantity remaining-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="inventory">QUANTITY REMAINING</label>  
           <div class="col-md-4">
@@ -65,7 +65,7 @@
           </div>
         </div>
          
-        <!-- Text input-->
+        <!-- Adding date product was edited-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="date">DATE</label>  
           <div class="col-md-4">
@@ -74,7 +74,7 @@
           </div>
         </div>
         
-        <!-- Text input-->
+        <!-- User editing product details -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="edited_by">EDITED BY</label>  
           <div class="col-md-4">
@@ -89,7 +89,7 @@
         </div>
       
         
-        <!-- Button -->
+        <!-- Edit button -->
         <div class="form-group">
           <div class="col-md-4">
             <button id="deletebutton" name="deletebutton" class="btn btn-primary">EDIT</button>
@@ -100,7 +100,7 @@
         </form>
         
      <footer class="footer1">
-         
+          <!-- linking footer to the other pages -->
      <div class="footer-left">
         <h3>Ti<span>Moris</span></h3>
         <p class="footer-links">

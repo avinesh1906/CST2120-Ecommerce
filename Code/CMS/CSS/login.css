@@ -3,7 +3,7 @@ body {
     color: #384047;
   }
   
-  
+ /*styling the header */
   nav{
     background: #DACC96;
     display: flex !important;
@@ -13,6 +13,7 @@ body {
     height: 120px;
     padding: 15 100px;
   }
+  /*adjusting the logo*/
   nav .logo{
     top: 0 !important;
     left: 0 !important;
@@ -21,6 +22,7 @@ body {
     font-weight: 600;
     letter-spacing: -2px;
   }
+  /*adding spacing between header elements */
   nav .nav-items{
     display: flex;
     flex: 1;
@@ -36,9 +38,12 @@ body {
     font-weight: 500;
     text-decoration: none;
   }
+  /* change colour of elements while hovering over them*/
   nav .nav-items li a:hover{
     color: #71C9CE;
   }
+
+
   nav form{
     display: flex;
     height: 60px;
@@ -234,6 +239,7 @@ body {
   .content .space{
     margin: 10px 0;
   }
+  /*adjusting form */
   form {
     max-width: 500px;
     max-height: 700px !important;
@@ -243,7 +249,7 @@ body {
     background: #f4f7f8;
     border-radius: 8px;
   }
-
+/* styling login button*/
   button{
     margin: 20px!important;
     padding: 15px;
@@ -260,7 +266,7 @@ body {
     text-align: center;
   }
 
- 
+ /* styling footer*/
   footer{
     display: flex;
     bottom: 0;
@@ -298,7 +304,7 @@ body {
     color:  #24A19C;
    }
     
-    
+    /*styling footer links */
    .footer1 .footer-links{
     color:  #ffffff;
     margin: 20px 0 12px;

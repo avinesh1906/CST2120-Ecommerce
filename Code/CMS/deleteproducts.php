@@ -20,7 +20,7 @@
         <!--Page Label-->
         <legend> DELETE PRODUCTS</legend>
         
-        <!-- Adding ProductID field-->
+       
         <div class="form-group">
           <label class="col-md-4 control-label" for="product_id">PRODUCT ID</label>  
           <div class="col-md-4">
