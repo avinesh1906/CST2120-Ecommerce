@@ -10,6 +10,7 @@
     generateHeader($pageName, $folderName);
     generateNavBar($pageName);
 ?>
+<!-- Personal info title -->
 <div class="myAccount-title">
     Edit Personal Information
     <!-- Title bottom border line -->
@@ -20,17 +21,17 @@
         <!-- Full name -->
         <div class="form_input">
             <label for="fullname" class="form-label"> Fullname: </label>
-            <input autocomplete="off" value = "Avinesh Culloo" type="text" id="fullname" onkeyup="usernameValidation()">
+            <input autocomplete="off" value = "Avinesh Culloo" type="text" id="fullname">
         </div>
         <!-- Email -->
         <div class="form_input">
             <label for="email" class="form-label"> Email: </label>
-            <input autocomplete="off" value= "avineshculloo@gmail.com" type="email" id="email" onkeyup="usernameValidation()">
+            <input autocomplete="off" value= "avineshculloo@gmail.com" type="email" id="email">
         </div>
         <!-- Phone Number -->
         <div class="form_input">
             <label for="telephone" class="form-label"> Phone Number:  </label>
-            <input autocomplete="off" value = "+230 58352200" type="tel" id="telephone" onkeyup="usernameValidation()">
+            <input autocomplete="off" value = "+230 58352200" type="tel" id="telephone">
         </div>
         <!-- Date of Birth -->
         <div class="form_input">
@@ -47,6 +48,7 @@
             </select>
         </div>               
     </div>
+    <!-- button class -->
     <div class="btn">
         <button onclick="location.href='./profile.php'"> Cancel</button>
         <button id ="secondBtn"> Save Changes</button>
@@ -54,6 +56,5 @@
 </div>
 <?php
     // php function to generate the footer
-    generateJavaScript($pageName);
     generateFooter($pageName);
 ?>

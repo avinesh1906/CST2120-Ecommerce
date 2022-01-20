@@ -10,19 +10,25 @@
     generateHeader($pageName, $folderName);
     generateNavBar($pageName);
 ?>
+<!-- customer information class -->
 <div class="customerInfo">
+    <!-- header title  -->
     <div class="header">
         Contact Information
     </div>
+    <!-- phone number -->
     <div class="phone">
         <label>Phone Number: </label>
         <input placeholder="Mobile Phone Number" value="+230 58352200"></input>
     </div>
     <div id="line"></div>
+    <!-- Shipping address  -->
     <div class="header">
         Shipping Address
     </div>
+    <!-- address  -->
     <div class="address">
+        <!-- country -->
         <div class="country">   
             <select id="country" name="country">
                 <option value="MU">Mauritius</option>
@@ -280,6 +286,7 @@
                 <option value="ZW">Zimbabwe</option>
             </select>
         </div>
+        <!-- name -->
         <div class="name">   
             <div class="first">
                 <label>First Name</label>
@@ -292,10 +299,12 @@
                 <input value="Culloo"></input>
             </div>
         </div>
+        <!-- street -->
         <div class="street">
             <label>Address</label>
             <input value="9, Rue de bon "></input>
         </div>
+        <!-- city and postal code -->
         <div class="city">
             <div class="city_name">
                 <label>City</label>
@@ -309,16 +318,21 @@
             </div>
         </div>
     </div>
+    <!-- confirm btn or return to cart -->
     <div class="btn">
         <button>Confirm</button>
         <a href="../cart/cart.php">Return to cart</a>
     </div>
 </div>
+<!-- product information -->
 <div class="productInfo">
+    <!-- priduct list -->
     <div class="productList">
+        <!-- image -->
         <div class="img">
-        <img src="../common/img/desi.jpg" alt="Desi" width="100px" height="100px">
+            <img src="../common/img/desi.jpg" alt="Desi" width="100px" height="100px">
         </div>
+        <!-- product details -->
         <div class="details">
             Desi Portrait Painting
             <br>
@@ -331,6 +345,7 @@
         </div>
     </div>
     <div id="line"></div>
+    <!-- subtotal -->
     <div class="subtotal">
         <div class="label">
             Subtotal
@@ -339,6 +354,7 @@
             Rs 1600
         </div>
     </div>
+    <!-- tax -->
     <div class="tax">
         <div class="label">
             Tax (5% of Rs 1600)
@@ -347,6 +363,7 @@
             Rs 80
         </div>
     </div>
+    <!-- shipping -->
     <div class="shipping">
         <div class="label">
             Shipping
@@ -356,6 +373,7 @@
         </div>
     </div>
     <div id="line"></div>
+    <!-- total -->
     <div class="total">
         <div class="label">
             Total

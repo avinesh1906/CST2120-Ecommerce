@@ -11,7 +11,7 @@
     generateNavBar($pageName);
 ?>
 <div class="myAccount-title">
-    Edit Password
+    Change Password
     <!-- Title bottom border line -->
     <div id="line"></div>
 </div>
@@ -21,14 +21,14 @@
         <div class="form_details">
             <label for="current_password" class="form-label"> Current </label>
             <div class="form-input">
-                <input autocomplete="off" type="password" id="current_password" onkeyup="oldPassword()">
+                <input autocomplete="off" type="password" id="current_password">
             </div>
         </div>
         <!-- New Password -->
         <div class="form_details">
             <label for="new_password" class="form-label"> New </label>
             <div class="form-input">
-                <input autocomplete="off" type="password" id="new_password" onkeyup="passwordValidation()">
+                <input autocomplete="off" type="password" id="new_password">
                 <i id="toggleEye" name="new_password" class=" fa fa-eye"></i>
             </div>   
         </div>
@@ -36,7 +36,7 @@
         <div class="form_details">
             <label for="confirm_password" class="form-label"> Retype New </label>
             <div class="form-input">
-                <input autocomplete="off" type="password" id="confirm_password" onkeyup="confirmPassword()">
+                <input autocomplete="off" type="password" id="confirm_password">
             </div>
         </div>
         <!-- Form text -->
@@ -51,6 +51,5 @@
 </div> 
 <?php
     // php function to generate the footer
-    generateJavaScript($pageName);
     generateFooter($pageName);
 ?>

@@ -223,3 +223,7 @@
 .painting .card{
     border: solid 3px black;
 }
+
+.recommendation{
+    width: 99%;
+}

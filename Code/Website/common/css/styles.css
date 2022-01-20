@@ -12,6 +12,7 @@ body,footer {
     font-size: 20px;
 }
 
+/* main body css */
 .main-body{
 	width: 100%;
   	min-height: 70vh;
@@ -20,6 +21,7 @@ body,footer {
   	background-color: #FBF7F0; 
 }
 
+/* navigation bar css */
 .nav-bar {
 	padding-top: 0.5%;
     display: flex;
@@ -48,16 +50,19 @@ body,footer {
     float: left;
 }
 
+/* navigation category css */
 .nav-category {
     float:left;
     width: 50%;
 }
 
+/* navigation bar other item css */
 .nav-other{
     width: 30%;
     padding-right: 1%;
 }
 
+/* center item in navigation css */
 .nav-center {
 	width: 20%;
 	display: flex;
@@ -65,21 +70,25 @@ body,footer {
 	margin-left: 5%;
 }
 
+/* search bar layout in nav css */
 .nav-center form {
 	text-align: right;
 	right: 0;
 	border: #33383b;
 }
 
+/* search bar CSS */
 .nav-center form input {
 	border-radius: 5px;
 }
 
+/* other item in nav css */
 .nav-other .navbar-item {
     float:right;
     right:0;
 }
 
+/* nav bar brand css */
 .navbar-brand {
 	padding-top: 0;
     padding-left: 1%;
@@ -92,6 +101,7 @@ body,footer {
 	color: #555555;
 }
 
+/* nav bar item css */
 .navbar-item {
   list-style-type: none;
   overflow: hidden;
@@ -109,6 +119,7 @@ body,footer {
 	color: #FBF7F0;
 }
   
+/* footer css */
 .footer{
 	background: #666;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -119,6 +130,7 @@ body,footer {
 	padding: 2% 3%;
 }
 
+/* common footer css */
 .footer .left-Footer,
 .footer .center-footer,
 .footer .footer-right{
@@ -144,13 +156,13 @@ body,footer {
 }
 
 /* Footer links */
-
 .footer .footer-links{
 	color:  #FEFBF3;
 	margin: 20px 0 12px;
 	padding: 0;
 }
 
+/* footer link details css */
 .footer .footer-links a{
 	display:inline-block;
 	line-height: 1.8;
@@ -159,6 +171,7 @@ body,footer {
 	color:  inherit;
 }
 
+/* footer author css */
 .footer .author{
 	color:  #D9E4DD;
 	font-size: 14px;
@@ -166,17 +179,17 @@ body,footer {
 	margin: 0;
 }
 
-
+/* link 1 in footer css */
 .footer .footer-links #link1:before {
 	content: none;
 }
   
 /* Footer Center */
-
 .footer .center-footer{
 	width: 35%;
 }
 
+/* item in center footer css */
 .footer .center-footer i{
 	background-color: #33383b;
 	color: #FBF7F0;
@@ -190,11 +203,13 @@ body,footer {
 	vertical-align: middle;
 }
 
+/* envelop css */
 .footer .center-footer i.fa-envelope{
 	font-size: 17px;
 	line-height: 38px;
 }
 
+/* para in center footer css */
 .footer .center-footer p{
 	display: inline-block;
   	font-weight:400;
@@ -203,6 +218,7 @@ body,footer {
 	color: #FBF7F0;
 }
 
+/* p span css in center footer */
 .footer .center-footer p span{
 	display:block;
 	font-weight: normal;
@@ -210,11 +226,13 @@ body,footer {
 	line-height:2;
 }
 
+/* details in footer css */
 .footer .center-footer p a{
 	color:  #79B4B7;
 	text-decoration: none;;
 }
 
+/* hover for details css */
 .footer .footer-links a:before {
   content: "|";
   font-weight:300;
@@ -225,11 +243,11 @@ body,footer {
 }
 
 /* Footer Right */
-
 .footer .footer-right{
 	width: 20%;
 }
 
+/* footer description css */
 .footer .description{
 	line-height: 20px;
 	color:  #FBF7F0;
@@ -238,6 +256,7 @@ body,footer {
 	margin: 0;
 }
 
+/* footer span css */
 .footer .description span{
 	display: block;
 	font-size: 17px;
@@ -245,6 +264,7 @@ body,footer {
 	margin-bottom: 20px;
 }
 
+/* footer logo css */
 .footer .footer-logo{
 	margin-top: 25px;
 }

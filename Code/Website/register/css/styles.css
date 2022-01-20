@@ -1,6 +1,51 @@
+/* common css */
+.form_details .name,
+.address .city,
+.address .street,
+.address .city {
+    display: flex;
+    padding: 1%;
+}
+
+/* common btn layout css */
+.firstPage .btn,
+.customerInfo .btn,
+.thirdPage .btn {
+    padding-top: 5%;
+    width: 100%;
+}
+
+/* common button css */
+.firstPage .btn button,
+.customerInfo .btn button,
+.thirdPage .btn button {
+    width: 200px;
+    height: 40px;
+    margin-right: 3%;
+    background-color: #C7B198;
+    color: #191919;
+}
+
+/* btn label css */
+.firstPage .btn a,
+.thirdPage .btn a,
+.customerInfo .btn a {
+    color: #181D31;
+}
+
+/* title css */
+.firstPage .title,
+.secondPage .title,
+.thirdPage .title {
+    text-align: center;
+    font-size: 25px;
+}
+
+/* main content css */
 .main-content{
     overflow: hidden;
 }
+
 /* register title css */
 .register-title{
     text-align: center;
@@ -34,20 +79,24 @@
     margin: 1%;
 }
 
+/* first page css */
 .firstPage {
     margin-bottom: 2%;
 }
 
+/* common display none css */
 .secondPage,
 .thirdPage {
     display: none;
 
 }
 
+/* line separator css */
 #line{
     border: 1px solid black;
 }
 
+/* customer info layout css */
 .customerInfo {
     width: 60%;
     margin-left: 20%;
@@ -57,90 +106,65 @@
     margin-bottom: 2%;
 }
 
+/* customer info header */
 .customerInfo .header{
     font-size: 25px;
 }
 
+/* customer info phone number css */
 .customerInfo .phone {
     padding-left: 2%;
     margin-bottom: 4%;
 }
 
+/* customer info input box css */
 .customerInfo input{
-
     border-radius: 5px;
 }
+
+/* product info css */
 .productInfo {
     width: 45%;
 }
 
-.form_details .name,
-.address .city,
-.address .street,
-.address .city {
-    display: flex;
-    padding: 1%;
-}
-
+ /* country css */
 .address .country {
     padding: 1%;
 }
 
+/* drop down css */
 .address .country select {
     height: 30px;
     border-radius: 5px;
 }
 
+/* first name css */
 .form_details .name .first {
     width: 50%;
 }
 
+/* street css */
 .address .street {
     padding-top: 2%;
 }
 
+/* street label css */
 .address .street label{
     padding-right: 2%;
 }
 
+/* street input css */
 .address .street input {
     width: 410px;
 }
 
+/* city name css */
 .city .city_name {
     width: 50%;
 }
 
+/* second page css */
 .secondPage {
     margin-bottom: 2%;
 }
 
-.firstPage .btn,
-.customerInfo .btn,
-.thirdPage .btn {
-    padding-top: 5%;
-    width: 100%;
-}
-
-.firstPage .btn button,
-.customerInfo .btn button,
-.thirdPage .btn button {
-    width: 200px;
-    height: 40px;
-    margin-right: 3%;
-    background-color: #C7B198;
-    color: #191919;
-}
-
-.firstPage .btn a,
-.thirdPage .btn a,
-.customerInfo .btn a {
-    color: #181D31;
-}
-
-.firstPage .title,
-.secondPage .title,
-.thirdPage .title {
-    text-align: center;
-    font-size: 25px;
-}

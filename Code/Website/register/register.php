@@ -81,22 +81,29 @@
     </div>
 </div>
 
+<!-- second page -->
 <div class="secondPage">
-<div class="title">
+    <!-- title of page -->
+    <div class="title">
         2 out 3
     </div>
+    <!-- customer information layout -->
     <div class="customerInfo">
+        <!-- Layout header title -->
         <div class="header">
             Contact Information
         </div>
+        <!-- phone number -->
         <div class="phone">
             <label>Phone Number: </label>
             <input></input>
         </div>
         <div id="line"></div>
+        <!-- shipping address title -->
         <div class="header">
             Shipping Address
         </div>
+        <!-- address -->
         <div class="address">
             <div class="country">   
                 <select id="country" name="country">
@@ -355,16 +362,19 @@
                     <option value="ZW">Zimbabwe</option>
                 </select>
             </div>
+            <!-- street name -->
             <div class="street">
                 <label>Address</label>
                 <input ></input>
             </div>
+            <!-- city -->
             <div class="city">
                 <div class="city_name">
                     <label>City</label>
                     <br>
                     <input ></input>
                 </div>
+                <!-- postal code -->
                 <div class="postalCode">
                     <label>Postal Code</label>
                     <br>
@@ -372,6 +382,7 @@
                 </div>
             </div>
         </div>
+        <!-- button class -->
         <div class="btn">
             <button id="secondProceedBtn">Proceed</button>
             <!-- Login Instead Link -->
@@ -380,10 +391,13 @@
     </div>
 </div>
 
+<!-- third page -->
 <div class="thirdPage">
+    <!-- page title -->
     <div class="title">
         3 out 3
     </div>
+    <!-- form layout -->
     <div class="form-layout" >
         <!-- Password -->
         <div class="form_details">
@@ -400,6 +414,7 @@
                 <input autocomplete="off" type="password" id="confirm_password" onkeyup="confirmPassword()">
             </div>              
         </div>
+        <!-- button class -->
         <div class="btn">
             <button id="secondProceedBtn" href="./index.php">Create Account</button>
             <!-- Login Instead Link -->
