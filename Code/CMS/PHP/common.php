@@ -1,5 +1,6 @@
 <?php
     function navbar() {
+        echo '<body>';
         echo '<nav>';
         echo '<div class="menu-icon">';
         echo '<span class="fas fa-bars"></span>';
@@ -51,7 +52,7 @@
         echo '<div>';
         echo '<i class="fa fa-map-marker"></i>';
         echo '<p><span>Avenue des Palmiers </span> Curepipe,Mauritius</p>';
-        echo '/div>';
+        echo '</div>';
         echo '<div>';
         echo '<i class="fa fa-phone"></i>';
         echo '<p>+230 59484598</p>';
@@ -74,6 +75,7 @@
         echo '<a href="#"><i class="fa fa-github"></i></a>';
         echo '</div> ';
         echo '</footer>';
+        echo '</body>';
 
 
     }
