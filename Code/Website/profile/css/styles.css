@@ -1,0 +1,140 @@
+.myAccount-title{
+    text-align: center;
+    font-size: 28px;
+    padding-top: 1%;
+}
+
+.myAccount-title #line {
+    border-bottom: 1px solid #555555;
+    margin: 0.5% 25%;
+}
+
+.content .persoLayout {
+    display: flex;
+    width: 100%;
+
+}
+
+.personalInformation, 
+.persoLayout .address{
+    border: 1px solid #CDC9C3;
+    margin-top: 2%;
+    color: #D9E4DD;
+}
+
+.personalInformation {
+    width: 50%;
+    margin-left: 15%;
+    margin-right: 2%;
+    padding: 1% 3% 1%;
+    background-color: #555555;
+}
+
+.persoLayout .address {
+    width: 25%;
+    margin-right: 15%;
+    padding: 1% 3% 1%;
+    font-size: 23px;
+    background-color: #555555;
+}
+
+.personalInformation label,
+.persoLayout .address label {
+    color: #FBF7F0;
+    font-size: 21px;
+}
+
+.personalInformation .title,
+.persoLayout .address .title {
+    font-size: 25px;
+    color: #F8F0DF;
+}
+
+.editProfileBtn{
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.editProfileBtn button {
+    padding: 5px;
+    margin-right: 2%;
+}
+
+.editProfileBtn button:hover,
+.password .btn button:hover,
+.personal .btn button:hover,
+.addressEdit .btn button:hover{
+    background-color: #555555;
+    color: #FBF7F0;
+}
+
+.password,
+.addressEdit {
+    text-align: center;
+}
+
+.password .form {
+    border: 1px solid #555555;
+    margin: 1% 25% 2%;
+    background-color: #555555;
+    color: #FBF7F0;
+    padding: 1%;
+}
+
+.password .btn,
+.personal .btn,
+.addressEdit .btn  {
+    width: 100%;
+    font-size: 20px;
+    padding-bottom: 2%;
+}
+
+.password .btn #secondBtn,
+.personal .btn #secondBtn,
+.addressEdit .btn #secondBtn{
+    margin-left: 3%;
+}
+
+.form_details input#new_password{
+    margin-left: 4%;
+} 
+
+.form_details input {
+    margin-bottom: 2%;
+}
+
+.personal {
+    margin: 2% 25% 3%;
+}
+
+.personal .form,
+.addressEdit .form {
+    background-color: #555555;
+    color: #FBF7F0;
+    padding: 2% 10% 2%; 
+    margin-bottom: 3%;
+}
+
+.personal .form_input {
+    padding: 1%;
+}
+
+.personal label,
+.addressEdit label {
+    width: 175px;
+}
+
+.personal input {
+    width: 270px;
+} 
+
+.addressEdit {
+    padding: 2%;
+    margin: 0% 25% 3%;
+}
+
+
+.addressEdit .form input {
+    margin-bottom: 2%;
+}

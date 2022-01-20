@@ -121,10 +121,10 @@ function generateNavBar($pagename){
     echo '<ul class="navbar-item">';
 
         // Array of pages to link
-    $linkNames = array("About Us", "Sign In", "Cart");
-    $linkFolderHomeRoot = array("./aboutus/", "./signin/", "./cart/");
-    $linkFolderName = array( "../aboutus/", "../signin/", "../cart/");
-    $linkFileName = array("aboutus.php", "signin.php", "cart.php");
+    $linkNames = array("Profile", "Sign In", "Cart");
+    $linkFolderHomeRoot = array("./profile/", "./signin/", "./cart/");
+    $linkFolderName = array( "../profile/", "../signin/", "../cart/");
+    $linkFileName = array("profile.php", "signin.php", "cart.php");
 
     // Loop through the navigation items 
     for ($x = 0; $x < count($linkNames); $x++){
@@ -241,7 +241,10 @@ function generateJavaScript($title){
         "Portrait" => "./js/portrait.js", 
         "Oil" => "./js/oil.js", 
         "Cart" => "./js/cart.js", 
-        "About Us" => "./js/aboutus.js",
+        "Profile" => "./js/profile.js",
+        "Personal Information" => "./js/profile.js",
+        "Address" => "./js/profile.js",
+        "Password" => "./js/profile.js",
         "Historical" => "./js/historical.js",
         "Landscape" => "./js/landscape.js",
         "Register" => "./js/register.js",
