@@ -3,45 +3,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page </title>
+    <title>Edit Products </title>
+    <?php include ("PHP/common.php");
+    navbar();
+    ?>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet"type="text/css" href="../CSS/addproducts.css">
+    <link rel="stylesheet"type="text/css" href="./CSS/addproducts.css">
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-   
-    <nav>
-        <div class="menu-icon">
-           <span class="fas fa-bars"></span>
-        </div>
-        <div class="logo">
-        <img src="../IMAGES/Ti Moris.png"alt="Ti Moris"width="100" height="80" >
-           Ti Moris
-        </div>
-        <div class="nav-items">
-           <li><a href="#">Home</a></li>
-           <li><a href="#">Sign up</a></li>
-           <li><a href="#">Add Products</a></li>
-           <li><a href="#">View Products</a></li>
-           <li><a href="#">Delete Products</a></li>
-           <li><a href="#">Edit Products</a></li>
-           <li><a href="#">Customer Orders</a></li>
-           
-        </div>
-        <div class="search-icon">
-           <span class="fas fa-search"></span>
-        </div>
-        <div class="cancel-icon">
-           <span class="fas fa-times"></span>
-        </div>
-     </nav>
-
      <form class="form-horizontal">
         <fieldset>
         
-        <!-- Form Name -->
+        <!--Page Label-->
         <legend> EDIT PRODUCTS</legend>
         
         <!-- Text input-->
@@ -128,9 +104,9 @@
      <div class="footer-left">
         <h3>Ti<span>Moris</span></h3>
         <p class="footer-links">
-        <a href="#">Home</a>
+        <a href="index.php">Home</a>
         .
-        <a href="#">Login</a>
+        <a href="login.php">Login</a>
         ·
         <a href="#">About</a>
         ·
@@ -177,3 +153,4 @@
         </div>  
         </footer>
       </body>
+</html>

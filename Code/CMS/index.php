@@ -7,7 +7,7 @@
     <?php include ("PHP/common.php");
     navbar();
     ?>
-    <link rel="stylesheet"type="text/css" href="../CSS/index.css">
+    <link rel="stylesheet"type="text/css" href="./CSS/index.css">
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -269,9 +269,9 @@
   <div class="footer-left">
   <h3>Ti<span>Moris</span></h3>
   <p class="footer-links">
-  <a href="#">Home</a>
+  <a href="index.php">Home</a>
   .
-  <a href="#">Login</a>
+  <a href="login.php">Login</a>
   ·
   <a href="#">About</a>
   ·
@@ -307,7 +307,7 @@
   
   <p class="footer-company-about">
   <span>About the company</span>
-  Ecommerce website selling local paintings&amp; 
+  Ecommerce website selling local paintings; 
   </p>
   <div class="footer-icons">
   <a href="#"><i class="fa fa-facebook"></i></a>

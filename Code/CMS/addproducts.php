@@ -3,48 +3,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page </title>
+    <title>Add Products </title>
+    <?php include ("PHP/common.php");
+    navbar();
+    ?>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet"type="text/css" href="../CSS/addproducts.css">
+    <link rel="stylesheet"type="text/css" href="./CSS/addproducts.css">
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-   
-    <nav>
-        <div class="menu-icon">
-           <span class="fas fa-bars"></span>
-        </div>
-        <div class="logo">
-        <img src="../IMAGES/Ti Moris.png"alt="Ti Moris"width="100" height="80" >
-           Ti Moris
-        </div>
-        <div class="nav-items">
-           <li><a href="#">Home</a></li>
-           <li><a href="#">Sign up</a></li>
-           <li><a href="#">Add Products</a></li>
-           <li><a href="#">View Products</a></li>
-           <li><a href="#">Delete Products</a></li>
-           <li><a href="#">Edit Products</a></li>
-           <li><a href="#">Customer Orders</a></li>
-           
-        </div>
-        <div class="search-icon">
-           <span class="fas fa-search"></span>
-        </div>
-        <div class="cancel-icon">
-           <span class="fas fa-times"></span>
-        </div>
-     </nav>
-
      <form class="form-horizontal">
         <fieldset>
         
-        <!-- Form Name -->
+       <!--Page Label-->
         <legend> ADD PRODUCTS</legend>
         
-        <!-- Text input-->
+        <!-- Adding ProductID field-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="product_id">PRODUCT ID</label>  
           <div class="col-md-4">
@@ -53,7 +29,7 @@
           </div>
         </div>
         
-        <!-- Text input-->
+       <!-- Adding product name -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="painting_name">PRODUCT NAME</label>  
           <div class="col-md-4">
@@ -63,7 +39,7 @@
         </div>
         
         
-         <!-- Textarea -->
+         <!-- Adding product description -->
          <div class="form-group">
             <label class="col-md-4 control-label" for="painting_des">PRODUCT DESCRIPTION</label>
             <div class="col-md-4">                     
@@ -71,7 +47,7 @@
             </div>
           </div>
 
-        <!-- Select Basic -->
+         <!-- Adding product category -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="painting_category">PRODUCT CATEGORY</label>
           <div class="col-md-4">
@@ -80,7 +56,7 @@
           </div>
         </div>
         
-        <!-- Text input-->
+         <!-- Stock availability-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="inventory">INVENTORY</label>  
           <div class="col-md-4">
@@ -89,7 +65,7 @@
           </div>
         </div>
          
-        <!-- Text input-->
+         <!-- Date product was added to system-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="date">DATE</label>  
           <div class="col-md-4">
@@ -98,13 +74,13 @@
           </div>
         </div>
         
-        <!-- Text input-->
+        <!-- Staff adding product -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="approved_by">APPROVED BY</label>  
           <div class="col-md-4">
           <input id="approved_by" name="approved_by" placeholder="APPROVED BY" class="form-control input-md" required="" type="text">
             
-         <!-- File Button --> 
+        <!-- File Button --> 
         <div class="form-group">
           <label class="col-md-4 control-label" for="imagefile">ADD IMAGE</label>
           <div class="col-md-4">
@@ -112,7 +88,7 @@
           </div>
         </div>
         
-        <!-- Button -->
+        <!--  Add Button -->
         <div class="form-group">
           <div class="col-md-4">
             <button id="addbutton" name="addbutton" class="btn btn-primary">ADD</button>
@@ -123,13 +99,13 @@
         </form>
         
      <footer class="footer1">
-         
+         <!-- linking footer to the other pages -->
      <div class="footer-left">
         <h3>Ti<span>Moris</span></h3>
         <p class="footer-links">
-        <a href="#">Home</a>
+        <a href="index.php">Home</a>
         .
-        <a href="#">Login</a>
+        <a href="login.php">Login</a>
         ·
         <a href="#">About</a>
         ·
@@ -175,4 +151,5 @@
         
         </div>  
         </footer>
-      </body>
+  </body>
+</html>
