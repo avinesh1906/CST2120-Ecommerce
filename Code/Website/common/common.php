@@ -164,18 +164,29 @@ function generateFooter($pagename){
 
                 <h3>Ti<span>Moris</span></h3>
 
-                <p class="footer-links">
-                    <a href="#" id="link1">Home</a>
-                    <a href="#">Pencil</a>
+                <p class="footer-links">';
+                // Array of pages to link
+                $linkNames = array("Home", "Portrait", "Landscape", "Oil", "Abstract", "Historical", "Profile");
+                $linkFolderHomeRoot = array("./", "./portrait/", "./landscape/", "./oil/", "./abstract/", "./historical/", "./profile/");
+                $linkFolderName = array("../", "../portrait/", "../landscape/", "../oil/", "../abstract/", "../historical/", "../profile/");
+                $linkFileName = array("index.php", "portrait.php", "landscape.php", "oil.php", "abstract.php" ,"historical.php", "profile.php");
                 
-                    <a href="#">Watercolor</a>
-                
-                    <a href="#">Graffiti</a>
-                    
-                    <a href="#">Spray</a>
-
-                    <a href="#">About us</a>
-                </p>
+                for ($x = 0; $x < count($linkNames); $x++){
+                    if ($pagename == "Home"){
+                        if ($linkNames[$x] == "Home")
+                            echo '<a href="./index.php" id="link1">Home &nbsp </a>';
+                        else {
+                            echo '<a href="'. $linkFolderHomeRoot[$x] . $linkFileName[$x] . '">' . $linkNames[$x] .' &nbsp </a>';
+                        }
+                    } else {
+                        if ($linkNames[$x] == "Home")
+                            echo '<a href="../index.php" id="link1">Home &nbsp </a>';
+                        else {
+                            echo '<a href="'. $linkFolderName[$x] . $linkFileName[$x] . '">' . $linkNames[$x] .' &nbsp </a>';
+                        }
+                    }
+                }
+                echo '</p>
 
                 <p class="author">
                     Avinesh Culloo and Smreeti Jugnarain © 2022
