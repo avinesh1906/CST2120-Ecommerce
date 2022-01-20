@@ -70,7 +70,7 @@
     </div>
     <a id="details" >Taxes and Shipping calculated at checkout</a>
     <div class="checkoutBtn">
-        <button onclick="location.href='./checkout.php'">Check Out</button>
+        <button onclick="location.href='../checkout/checkout.php'">Check Out</button>
     </div>
 </div>
 <?php

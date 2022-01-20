@@ -1,0 +1,134 @@
+.main-body {
+    display: flex;
+}
+
+#line{
+    border: 1px solid black;
+}
+.customerInfo {
+    width: 55%;
+    padding: 2% 10%;
+    background-color: #F0ECE3;
+    border-right: 1px solid black;
+}
+
+.customerInfo .header{
+    font-size: 25px;
+}
+
+.customerInfo .phone {
+    padding-left: 2%;
+    margin-bottom: 4%;
+}
+
+.customerInfo input{
+
+    border-radius: 5px;
+}
+.productInfo {
+    width: 45%;
+}
+
+.address .name,
+.address .city,
+.address .street,
+.address .city {
+    display: flex;
+    padding: 1%;
+}
+
+.address .country {
+    padding: 1%;
+}
+
+.address .country select {
+    height: 30px;
+    border-radius: 5px;
+}
+
+.address .name .first {
+    width: 50%;
+}
+
+.address .street {
+    padding-top: 2%;
+}
+
+.address .street label{
+    padding-right: 2%;
+}
+
+.address .street input {
+    width: 410px;
+}
+
+.city .city_name {
+    width: 50%;
+}
+
+.customerInfo .btn {
+    padding-top: 5%;
+    width: 100%;
+}
+.customerInfo .btn button {
+    width: 200px;
+    height: 40px;
+    margin-right: 3%;
+    background-color: #C7B198;
+    color: #191919;
+}
+
+.customerInfo .btn a {
+    color: #9D9D9D;
+}
+
+.productInfo {
+    padding: 1% 2% ;
+}
+.productInfo .productList {
+    display: flex;
+    width: 100%;
+    padding-bottom: 2%;
+}
+
+.productInfo .productList .details {
+    width: 50%;
+    padding-left: 3%;
+    font-size: 18px;
+}
+
+.productInfo  .productList .total  {
+    width: 25%;
+    padding-top: 5%;
+    padding-left: 10%;
+    float: right;
+}
+
+.productInfo .subtotal,
+.productInfo .tax,
+.productInfo .shipping,
+.productInfo .total{
+    display: flex;
+    width: 100%;
+    font-size: 18px;
+    padding-top: 1%;
+}
+
+.productInfo .subtotal .label,
+.productInfo .tax .label,
+.productInfo .shipping .label,
+.productInfo .total .label{
+    width: 50%;
+    margin-right: 26%;
+}
+
+
+.productInfo .subtotal .amount,
+.productInfo .tax .amount,
+.productInfo .shipping .amount,
+.productInfo .total .amount{
+    font-size: 23px;
+}
+.productInfo .total {
+    font-size: 25px;
+}
