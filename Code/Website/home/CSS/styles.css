@@ -52,7 +52,8 @@
 }
 
 /* Top product title CSS */
-.top-product .title {
+.top-product .title,
+.recommendation .title {
     text-align: center;
     padding-top: 2%;
 }
@@ -221,4 +222,8 @@
 /* card painting css */
 .painting .card{
     border: solid 3px black;
+}
+
+.recommendation{
+    width: 99%;
 }

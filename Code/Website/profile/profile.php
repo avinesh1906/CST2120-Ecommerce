@@ -72,6 +72,5 @@
     </div></div>
 <?php
     // php function to generate the footer
-    generateJavaScript($pageName);
     generateFooter($pageName);
 ?>

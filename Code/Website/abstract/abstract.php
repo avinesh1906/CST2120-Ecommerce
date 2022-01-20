@@ -136,8 +136,11 @@
                 </ul>
             </div>
         </div>
+        <!-- Abstract arts product list -->
         <div class="content">
+            <!-- Card layout -->
             <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- 1st card -->
                 <div class="col">
                     <div class="card">
                         <!-- image -->
@@ -152,6 +155,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 2nd card -->
                 <div class="col">
                     <div class="card">
                         <!-- image -->
@@ -166,6 +170,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 3rdcard -->
                 <div class="col">
                     <div class="card">
                         <!-- image -->
@@ -180,6 +185,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 4th card -->
                 <div class="col">
                     <div class="card">
                         <!-- image -->
@@ -194,6 +200,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 5th card -->
                 <div class="col">
                     <div class="card">
                         <!-- image -->
@@ -214,6 +221,5 @@
 </div>
 <?php
     // php function to generate the footer
-    generateJavaScript($pageName);
     generateFooter($pageName);
 ?>
