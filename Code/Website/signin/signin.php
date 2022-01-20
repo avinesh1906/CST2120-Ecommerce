@@ -46,8 +46,8 @@
             <section name="login_form">
                 <div class="login_form ">
                     <!-- Username -->
-                    <div class="username">
-                        <input autocomplete="off" type="text" class="form-control" id="Username" onkeyup="usernameValidation()" placeholder="username">
+                    <div class="fullname">
+                        <input autocomplete="off" type="text" class="form-control" id="fullname" onkeyup="usernameValidation()" placeholder="fullname">
                         <span id="usr_details"></span>
                     </div>
                     <!-- Password -->

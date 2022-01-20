@@ -10,14 +10,8 @@ let featuredBtn = document.getElementsByClassName("featuredBtn")[0];
 let latestBtn = document.getElementsByClassName("latestBtn")[0];
 let bestsellerBtn = document.getElementsByClassName("bestsellerBtn")[0];
 
-
-// featured.addEventListener("click", featureFunction);
-// latest.addEventListener("click", latestFunction);
-// bestseller.addEventListener("click", bestsellerFunction);
-console.log(option);
 option.addEventListener('click', function(e) {
     if (e.target.name == "featured" ){
-        console.log("Hehhe");
         featuredBtn.setAttribute('id', 'active');
         latestBtn.removeAttribute('id');
         bestsellerBtn.removeAttribute('id');

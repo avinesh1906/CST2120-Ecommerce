@@ -18,11 +18,11 @@
     <div class="form-layout" >
         <!-- Form Input Label and input -->
         <div class="form-content">
-            <!-- Username -->
+            <!-- Full Name -->
             <div class="form_details">
                 <div class="form_input">
-                    <label for="username" class="form-label"> Username </label>
-                    <input autocomplete="off" type="text" id="Username" onkeyup="usernameValidation()">
+                    <label for="fullname" class="form-label"> Fullname </label>
+                    <input autocomplete="off" type="text" id="fullname" onkeyup="usernameValidation()">
                 </div>
                 <div class="form_error">
                     <span id="usr_details"></span>
@@ -55,6 +55,26 @@
                         <option value="other">Other</option>
                     </select>
                 </div>               
+            </div>
+            <!-- Address -->
+            <div class="form_details">
+                <div class="form_input">
+                    <label for="address" class="form-label"> Address </label>
+                    <input autocomplete="off" type="text" id="address" onkeyup="addressValidation()">
+                </div>
+                <div class="form_error">
+                    <span id="text_details"></span>
+                </div>
+            </div>
+                <!-- Telephone Number -->
+            <div class="form_details">
+                <div class="form_input">
+                    <label for="telephone" class="form-label"> Telephone </label>
+                    <input autocomplete="off" type="tel" id="telephone" onkeyup="telephoneValidation()">
+                </div>
+                <div class="form_error">
+                    <span id="text_details"></span>
+                </div>
             </div>
             <!-- Password -->
             <div class="form_details">

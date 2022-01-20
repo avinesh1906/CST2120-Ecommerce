@@ -121,10 +121,10 @@ function generateNavBar($pagename){
     echo '<ul class="navbar-item">';
 
         // Array of pages to link
-    $linkNames = array("About Us", "Sign In", "Cart");
-    $linkFolderHomeRoot = array("./aboutus/", "./signin/", "./cart/");
-    $linkFolderName = array( "../aboutus/", "../signin/", "../cart/");
-    $linkFileName = array("aboutus.php", "signin.php", "cart.php");
+    $linkNames = array("Profile", "Sign In", "Cart");
+    $linkFolderHomeRoot = array("./profile/", "./signin/", "./cart/");
+    $linkFolderName = array( "../profile/", "../signin/", "../cart/");
+    $linkFileName = array("profile.php", "signin.php", "cart.php");
 
     // Loop through the navigation items 
     for ($x = 0; $x < count($linkNames); $x++){
@@ -164,18 +164,29 @@ function generateFooter($pagename){
 
                 <h3>Ti<span>Moris</span></h3>
 
-                <p class="footer-links">
-                    <a href="#" id="link1">Home</a>
-                    <a href="#">Pencil</a>
+                <p class="footer-links">';
+                // Array of pages to link
+                $linkNames = array("Home", "Portrait", "Landscape", "Oil", "Abstract", "Historical", "Profile");
+                $linkFolderHomeRoot = array("./", "./portrait/", "./landscape/", "./oil/", "./abstract/", "./historical/", "./profile/");
+                $linkFolderName = array("../", "../portrait/", "../landscape/", "../oil/", "../abstract/", "../historical/", "../profile/");
+                $linkFileName = array("index.php", "portrait.php", "landscape.php", "oil.php", "abstract.php" ,"historical.php", "profile.php");
                 
-                    <a href="#">Watercolor</a>
-                
-                    <a href="#">Graffiti</a>
-                    
-                    <a href="#">Spray</a>
-
-                    <a href="#">About us</a>
-                </p>
+                for ($x = 0; $x < count($linkNames); $x++){
+                    if ($pagename == "Home"){
+                        if ($linkNames[$x] == "Home")
+                            echo '<a href="./index.php" id="link1">Home &nbsp </a>';
+                        else {
+                            echo '<a href="'. $linkFolderHomeRoot[$x] . $linkFileName[$x] . '">' . $linkNames[$x] .' &nbsp </a>';
+                        }
+                    } else {
+                        if ($linkNames[$x] == "Home")
+                            echo '<a href="../index.php" id="link1">Home &nbsp </a>';
+                        else {
+                            echo '<a href="'. $linkFolderName[$x] . $linkFileName[$x] . '">' . $linkNames[$x] .' &nbsp </a>';
+                        }
+                    }
+                }
+                echo '</p>
 
                 <p class="author">
                     Avinesh Culloo and Smreeti Jugnarain © 2022
@@ -241,7 +252,10 @@ function generateJavaScript($title){
         "Portrait" => "./js/portrait.js", 
         "Oil" => "./js/oil.js", 
         "Cart" => "./js/cart.js", 
-        "About Us" => "./js/aboutus.js",
+        "Profile" => "./js/profile.js",
+        "Personal Information" => "./js/profile.js",
+        "Address" => "./js/profile.js",
+        "Password" => "./js/profile.js",
         "Historical" => "./js/historical.js",
         "Landscape" => "./js/landscape.js",
         "Register" => "./js/register.js",
