@@ -1,4 +1,5 @@
 <?php
+// Function for navigation bar
     function navbar() {
         echo '<nav>';
         echo '<div class="menu-icon">';
