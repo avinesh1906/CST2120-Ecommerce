@@ -47,7 +47,7 @@
                 <div class="login_form ">
                     <!-- Username -->
                     <div class="fullname">
-                        <input autocomplete="off" type="text" class="form-control" id="email" onkeyup="usernameValidation()" placeholder="email">
+                        <input autocomplete="off" type="text" class="form-control" id="email" onkeyup="emailValidation()" placeholder="email">
                         <span id="usr_details"></span>
                     </div>
                     <!-- Password -->
