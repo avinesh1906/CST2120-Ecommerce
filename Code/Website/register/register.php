@@ -25,13 +25,23 @@
             <!-- Full Name -->
             <div class="form_details">
                 <div class="name">   
+                    <!-- First name -->
                     <div class="first">
                         <label>First Name</label>
-                        <input></input>
+                        <input autocomplete="off" type="text" id="firstname" onkeyup="firstValidation()"></input>
+                        <!-- Error  -->
+                        <div class="form_error">
+                            <span id="first_details"></span>
+                        </div>
                     </div>
+                    <!-- Last name -->
                     <div class="last">
                         <label>Last Name</label>
-                        <input ></input>
+                        <input autocomplete="off" type="text" id="lastname" onkeyup="lastValidation()"></input>
+                        <!-- Error -->
+                        <div class="form_error">
+                            <span id="last_details"></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -39,7 +49,11 @@
             <div class="form_details">
                 <div class="form_input">
                     <label for="email" class="form-label"> Email </label>
-                    <input autocomplete="off" type="email" id="email">
+                    <input autocomplete="off" type="email" id="email" onkeyup="emailValidation()">
+                </div>
+                <!-- Error -->
+                <div class="form_error">
+                    <span id="email_details"></span>
                 </div>
             </div>
             <!-- Date of Birth -->
@@ -59,16 +73,6 @@
                         <option value="other">Other</option>
                     </select>
                 </div>               
-            </div>
-            <!-- Telephone Number -->
-            <div class="form_details">
-                <div class="form_input">
-                    <label for="telephone" class="form-label"> Telephone </label>
-                    <input autocomplete="off" type="tel" id="telephone">
-                </div>
-                <div class="form_error">
-                    <span id="text_details"></span>
-                </div>
             </div>
         </div>
         <!-- Form Footer Container -->
@@ -96,7 +100,10 @@
         <!-- phone number -->
         <div class="phone">
             <label>Phone Number: </label>
-            <input></input>
+            <input autocomplete="off" type="tel" id="telephone" onkeyup="telValidation()">
+            <div class="form_error">
+                <span id="tel_details"></span>
+            </div>
         </div>
         <div id="line"></div>
         <!-- shipping address title -->
@@ -365,14 +372,20 @@
             <!-- street name -->
             <div class="street">
                 <label>Address</label>
-                <input ></input>
+                <input id="address" onkeyup="addressValidation()"></input>
+                <div class="form_error">
+                    <span id="address_details" ></span>
+                </div>
             </div>
             <!-- city -->
             <div class="city">
                 <div class="city_name">
                     <label>City</label>
                     <br>
-                    <input ></input>
+                    <input id="city" onkeyup="cityValidation()"></input>
+                    <div class="form_error">
+                        <span id="city_details"></span>
+                    </div>
                 </div>
                 <!-- postal code -->
                 <div class="postalCode">
@@ -403,15 +416,21 @@
         <div class="form_details">
             <div class="form_input">
                 <label for="password" class="form-label"> Password </label>
-                <input autocomplete="off" type="password" id="password" >
+                <input autocomplete="off" type="password" id="password"  onkeyup="passwordValidation()" >
                 <i id="toggleEye" name="password" class=" fa fa-eye"></i>
             </div>
+            <div class="form_error">
+                <span id="pwd_details"></span>
+            </div>        
         </div>          
         <!-- Confirm Password -->
         <div class="form_details">
             <div class="form_input">
                 <label for="confirm_password" class="form-label"> Confirm Password </label>
                 <input autocomplete="off" type="password" id="confirm_password" onkeyup="confirmPassword()">
+            </div> 
+            <div class="form_error">
+                <span id="confirmPWD_details"></span>
             </div>              
         </div>
         <!-- button class -->
