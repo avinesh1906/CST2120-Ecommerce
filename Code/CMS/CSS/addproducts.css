@@ -92,6 +92,7 @@ nav .search-icon{
   display: none;
 }
 
+/* Nav bar icon cs */
 nav .menu-icon span,
 nav .cancel-icon,
 nav .search-icon{
@@ -106,10 +107,12 @@ nav .search-icon{
   nav{
     padding: 0px;
   }
+  /* nav logo css */
   nav .logo{
     flex: 2;
     text-align: center;
   }
+  /* nav items css */
   nav .nav-items{
     position: fixed;
     z-index: 99;
@@ -123,17 +126,21 @@ nav .search-icon{
     display: inline-block;
     transition: left 0.3s ease;
   }
+  /* nav item active css */
   nav .nav-items.active{
     left: 0px;
   }
+  /* nav items table css*/
   nav .nav-items li{
     margin: 30px 0;
     line-height: 40px;
     
   }
+  /* nav items details css */
   nav .nav-items li a{
     font-size: 21px;
   }
+  /* nav form css */
   nav form{
     position: absolute;
     top: 80px;
@@ -142,11 +149,13 @@ nav .search-icon{
     pointer-events: none;
     transition: top 0.3s ease, opacity 0.1s ease;
   }
+  /* form active css */
   nav form.active{
     top: 95px;
     opacity: 1;
     pointer-events: auto;
   }
+  /* nav form before css */
   nav form:before{
     position: absolute;
     content: "";
@@ -159,6 +168,7 @@ nav .search-icon{
     border-bottom-color:#DACC96 ;
     margin: -20px 0 0;
   }
+  /* nav form after css */
   nav form:after{
     position: absolute;
     content: '';
@@ -172,21 +182,26 @@ nav .search-icon{
     top: 50%;
     transform: translate(-50%, -50%);
   }
+  /* nav menu icon css */
   nav .menu-icon{
     display: block;
   }
+  /* nav icon span css */
   nav .search-icon,
   nav .menu-icon span{
     display: block;
   }
+  /* icon span hide css */
   nav .menu-icon span.hide,
   nav .search-icon.hide{
     display: none;
   }
+  /* nav cancel icon */
   nav .cancel-icon.show{
     display: block;
   }
   }
+  /* content css */
   .content{
     position: absolute;
     top: 50%;
@@ -194,17 +209,22 @@ nav .search-icon{
     text-align: center;
     transform: translate(-50%, -50%);
   }
+  /* content header css */
   .content header{
     font-size: 30px;
     font-weight: 700;
   }
+  /* content text css */
   .content .text{
     font-size: 30px;
     font-weight: 700;
   }
+  /* space css */
   .space{
     margin: 10px 0;
   }
+
+  /* nav logo css */
   nav .logo.space{
     
     padding: 0 10px 0 0;
@@ -216,6 +236,7 @@ nav .search-icon{
       margin: 0 20px;
 
     }
+    /* nav form css */
     nav form{
       right: 30px;
     }
@@ -228,30 +249,34 @@ nav .search-icon{
       font-size: 16px;
     }
   }
+  /* content css */
   .content{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  /* content header css */
   .content header{
     font-size: 30px;
     font-weight: 700;
   }
+  /* content text css */
   .content .text{
     font-size: 30px;
     font-weight: 700;
   }
+  /* content space css */
   .content .space{
     margin: 10px 0;
   }
-
 
 /* styling footer*/
   footer{
     display: flex;
     bottom: 0;
    }
+   /* footer 1 css */
    .footer1{
     background-color: #DACC96;
     box-shadow: 0 1px 1px 0 #DACC96;
@@ -264,6 +289,7 @@ nav .search-icon{
     margin-top: 40px;
    }
     
+   /* footer left, center, right css */
    .footer1 .footer-left,
    .footer1 .footer-center,
    .footer1 .footer-right{
@@ -271,21 +297,24 @@ nav .search-icon{
     vertical-align: top;
    }
     
+   /* Footer left css */
    .footer1 .footer-left{
     width: 50%;
    }
     
+   /* footer h3 css */
    .footer1 h3{
     color:  #ffffff;
     font: normal 36px 'Cookie', cursive;
     margin: 0;
    }
     
+   /* footer h3 span css */
    .footer1 h3 span{
     color:  #24A19C;
    }
     
-    
+    /* footer link css */
    .footer1 .footer-links{
     color:  #ffffff;
     margin: 20px 0 12px;
@@ -293,6 +322,7 @@ nav .search-icon{
     padding: 0;
    }
     
+   /* footer links a css */
    .footer1 .footer-links a{
     display:inline-block;
     line-height: 1.8;
@@ -300,6 +330,7 @@ nav .search-icon{
     color:  inherit;
    }
     
+   /* footer 1 company name css */
    .footer1 .footer-company-name{
     color:  #8f9296;
     font-size: 20px !important;
@@ -308,10 +339,12 @@ nav .search-icon{
    }
     
     
+   /* footer center css */
    .footer1 .footer-center{
     width: 35%;
    }
     
+   /* footer center icon css */
    .footer1 .footer-center i{
     background-color:  #33383b;
     color: #ffffff;
@@ -330,6 +363,7 @@ nav .search-icon{
     line-height: 38px;
    }
 
+   /* footer center para css */
    .footer1 .footer-center p{
     display: inline-block;
     color: #ffffff;
@@ -338,6 +372,7 @@ nav .search-icon{
     margin:0;
    }
     
+   /* footer center p span css */
    .footer1 .footer-center p span{
     display:block;
     font-weight: normal;
@@ -345,16 +380,19 @@ nav .search-icon{
     line-height:2;
    }
     
+   /* footer center para details css */
    .footer1 .footer-center p a{
     color:  #5383d3;
     font-size: 20px !important;
     text-decoration: none;;
    }
     
+   /* footer right css */
    .footer1 .footer-right{
     width: 20%;
    }
     
+   /* footer company about css */
    .footer1 .footer-company-about{
     line-height: 20px;
     color:  #92999f;
@@ -363,6 +401,7 @@ nav .search-icon{
     margin: 0;
    }
     
+   /* footer company about span css */
    .footer1 .footer-company-about span{
     display: block;
     color:  #ffffff;
@@ -371,10 +410,12 @@ nav .search-icon{
     margin-bottom: 20px;
    }
     
+   /* footer icon css */
    .footer1 .footer-icons{
     margin-top: 25px;
    }
     
+   /* footer icon a css */
    .footer1 .footer-icons a{
     display: inline-block;
     width: 35px;
@@ -395,11 +436,13 @@ nav .search-icon{
     
    @media (max-width: 880px) {
     
+    /* footer 1 css */
     .footer1{
     font: bold 14px sans-serif !important;
     
     }
     
+    /* footer left center right css */
     .footer1.footer-left,
     .footer1 .footer-center,
     .footer1 .footer-right{
@@ -409,9 +452,12 @@ nav .search-icon{
     text-align: center;
     }
     
+    /* footer center css */
     .footer1 .footer-center i{
     margin-left: 0;
     }
+
+    /* main css */
     .main {
     line-height: normal;
     font-size: auto;

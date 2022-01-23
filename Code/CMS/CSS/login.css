@@ -43,7 +43,7 @@ body {
     color: #71C9CE;
   }
 
-
+  /* nav form css */
   nav form{
     display: flex;
     height: 60px;
@@ -53,6 +53,7 @@ body {
     border-radius: 2px;
     border: 1px solid #DACC96;
   }
+  /* nav form search data css */
   nav form .search-data{
     width: 100%;
     height: 100%;
@@ -63,6 +64,7 @@ body {
     font-weight: 500;
     background: none;
   }
+  /* nav form btn css */
   nav form button{
     padding: 0 15px;
     color: #fff;
@@ -72,9 +74,11 @@ body {
     border-radius: 2px;
     cursor: pointer;
   }
+  /* btn hover nav css */
   nav form button:hover{
     background: #71C9CE;
   }
+  /* nav icon css */
   nav .menu-icon,
   nav .cancel-icon,
   nav .search-icon{
@@ -86,6 +90,7 @@ body {
     cursor: pointer;
     display: none;
   }
+  /* nav icon span css */
   nav .menu-icon span,
   nav .cancel-icon,
   nav .search-icon{
@@ -97,13 +102,16 @@ body {
     }
   }
   @media (max-width: 1140px){
+    /* nav css */
     nav{
       padding: 0px;
     }
+    /* nav logo css */
     nav .logo{
       flex: 2;
       text-align: center;
     }
+  /* nav items css */
     nav .nav-items{
       position: fixed;
       z-index: 99;
@@ -117,17 +125,21 @@ body {
       display: inline-block;
       transition: left 0.3s ease;
     }
+    /* nav items active css */
     nav .nav-items.active{
       left: 0px;
     }
+    /* nav items li css */
     nav .nav-items li{
       margin: 30px 0;
       line-height: 40px;
       
     }
+    /* nav items details css */
     nav .nav-items li a{
       font-size: 21px;
     }
+    /* nav form css */
     nav form{
       position: absolute;
       top: 80px;
@@ -136,11 +148,13 @@ body {
       pointer-events: none;
       transition: top 0.3s ease, opacity 0.1s ease;
     }
+    /* nav form active css */
     nav form.active{
       top: 95px;
       opacity: 1;
       pointer-events: auto;
     }
+    /* nav form before css */
     nav form:before{
       position: absolute;
       content: "";
@@ -153,6 +167,7 @@ body {
       border-bottom-color:#DACC96 ;
       margin: -20px 0 0;
     }
+    /* nav form after css */
     nav form:after{
       position: absolute;
       content: '';
@@ -166,13 +181,16 @@ body {
       top: 50%;
       transform: translate(-50%, -50%);
     }
+    /* nav menu icon css */
     nav .menu-icon{
       display: block;
     }
+    /* common display block css */
     nav .search-icon,
     nav .menu-icon span{
       display: block;
     }
+    /* span hide nav css */
     nav .menu-icon span.hide,
     nav .search-icon.hide{
       display: none;
@@ -181,6 +199,7 @@ body {
       display: block;
     }
   }
+  /* content css */
   .content{
     position: absolute;
     top: 50%;
@@ -188,17 +207,21 @@ body {
     text-align: center;
     transform: translate(-50%, -50%);
   }
+  /* header content css */
   .content header{
     font-size: 30px;
     font-weight: 700;
   }
+  /* content text css */
   .content .text{
     font-size: 30px;
     font-weight: 700;
   }
+  /* space css */
   .space{
     margin: 10px 0;
   }
+  /* nav logo space css */
   nav .logo.space{
     
     padding: 0 10px 0 0;
@@ -222,12 +245,14 @@ body {
       font-size: 16px;
     }
   }
+  /* content css */
   .content{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  /* content header css */
   .content header{
     font-size: 30px;
     font-weight: 700;

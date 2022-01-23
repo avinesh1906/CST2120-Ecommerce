@@ -1,4 +1,4 @@
-
+/* body css */
   body {
     font-family: 'Nunito', sans-serif;
     color: #384047;
@@ -18,6 +18,7 @@
     background: #24A19C;
     transition: all 0.5s ease;
   }
+  /* side menu active css */
   .sidemenu.active{
     width: 60px;
     position: flex !important;
@@ -28,6 +29,7 @@
     display: flex;
     align-items: center;
   }
+  /* logo detailing i css */
   .sidemenu .logo-detailing i{
     font-size: 28px;
     font-weight: 500;
@@ -35,14 +37,17 @@
     min-width: 60px;
     text-align: center
   }
+  /* logo name css */
   .sidemenu .logo-detailing .logo_name{
     color: #fff;
     font-size: 24px;
     font-weight: 500;
   }
+  /* nav linking css */
   .sidemenu .nav-linking{
     margin-top: 10px;
   }
+  /* nav linking list css */
   .sidemenu .nav-linking li{
     position: flex;
     list-style: none;
@@ -61,26 +66,31 @@
   .sidemenu .nav-linking li a.active{
     background: #24A19C;
   }
+  /* side menu a hover css */
   .sidemenu.nav-linking li a:hover{
     background: #24A19C;
   }
+  /* nav linking list css */
   .sidemenu .nav-linking li i{
     min-width: 60px;
     text-align: center;
     font-size: 18px;
     color: #fff;
   }
+  /* side menu nav linking link name css */
   .sidemenu .nav-linking li a .links_name{
     color: #fff;
     font-size: 15px;
     font-weight: 400;
     white-space: nowrap;
   }
+  /* log out css */
   .sidemenu .nav-linking .log_out{
     position: absolute;
     bottom: 0;
     width: 100%;
   }
+  /* home section css */
   .home-section{
     position: relative;
     background: #f5f5f5;
@@ -89,10 +99,12 @@
     left: 240px;
     transition: all 0.5s ease;
   }
+  /* home section css */
   .sidemenu.active ~ .home-section{
     width: calc(100% - 60px);
     left: 60px;
   }
+  /* home section nav css */
   .home-section nav{
     display: flex;
     justify-content: space-between;
@@ -108,6 +120,7 @@
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     transition: all 0.5s ease;
   }
+  /* sidemenu active home section section nav css */
   .sidemenu.active ~ .home-section nav{
     left: 60px;
     width: calc(100% - 60px);
@@ -131,6 +144,7 @@
     width: 100%;
     margin: 0 20px;
   }
+  /* seach box input css */
   nav .search-box input{
     height: 100%;
     width: 100%;
@@ -156,6 +170,7 @@
     font-size: 22px;
     transition: all 0.4 ease;
   }
+  /* profile details css */
   .home-section nav .profile-details{
     display: flex;
     align-items: center;
@@ -166,12 +181,14 @@
     min-width: 190px;
     padding: 0 15px 0 2px;
   }
+  /* profile details image css */
   nav .profile-details img{
     height: 40px;
     width: 40px;
     border-radius: 6px;
     object-fit: cover;
   }
+  /* admin name css */
   nav .profile-details .admin_name{
     font-size: 15px;
     font-weight: 500;
@@ -179,14 +196,17 @@
     margin: 0 10px;
     white-space: nowrap;
   }
+  /* profile details icon css */
   nav .profile-details i{
     font-size: 25px;
     color: #333;
   }
+  /* content home css */
   .home-section .content_home{
     position: relative;
     padding-top: 104px;
   }
+  /* overview-boxes css */
   .content_home .overview-boxes{
     display: flex;
     align-items: center;
@@ -206,20 +226,24 @@
     border-radius: 12px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   }
+  /* box topic css */
   .overview-boxes .box-topic{
     font-size: 20px;
     font-weight: 500;
   }
+  /* box number css */
   .content_home .box .number{
     display: inline-block;
     font-size: 35px;
     margin-top: -6px;
     font-weight: 500;
   }
+  /* box indicator css */
   .content_home .box .indicator{
     display: flex;
     align-items: center;
   }
+  /* indicator icon css */
   .content_home .box .indicator i{
     height: 20px;
     width: 20px;
@@ -231,12 +255,15 @@
     font-size: 20px;
     margin-right: 5px;
   }
+  /* icon css  */
   .box .indicator i.down{
     background: #e87d88;
   }
+  /* indicator text css */
   .content_home .box .indicator .text{
     font-size: 12px;
   }
+  /* content home cart css */
   .content_home .box .cart{
     display: inline-block;
     font-size: 32px;
@@ -254,18 +281,23 @@
      color: #91C483;
      background: #C0F2D8;
    }
+
+  /* content home box cart 3 css */
   .content_home .box .cart.three{
      color:#FFE162;
      background: #ffe8b3;
    }
+   /* cart 4 css */
    .content_home .box .cart.four{
      color: #FE9898;
      background: #f7d4d7;
    }
+   /* total order css */
   .content_home .total-order{
     font-size: 20px;
     font-weight: 500;
   }
+  /* salestabs css */
   .content_home .salestabs{
     display: flex;
     justify-content: space-between;
@@ -281,35 +313,42 @@
     border-radius: 12px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
+  /* salestabs sales details css */
   .content_home .salestabs .sales-details{
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+  /* salestabs box title css */
   .salestabs .box .title{
     font-size: 24px;
     font-weight: 500;
     /* margin-bottom: 10px; */
   }
+  /* salestabs sales details li topic css */
   .salestabs .sales-details li.topic{
     font-size: 20px;
     font-weight: 500;
   }
+  /* sales tabs sales setails li */
   .salestabs .sales-details li{
     list-style: none;
     margin: 8px 0;
   }
+  /* sales tabs li details css */
   .salestabs .sales-details li a{
     font-size: 18px;
     color: #333;
     font-size: 400;
     text-decoration: none;
   }
+  /* box button css */
   .salestabs .box .button{
     width: 100%;
     display: flex;
     justify-content: flex-end;
   }
+  /* box button details css */
   .salestabs .box .button a{
     color: #fff;
     background: #0A2558;
@@ -320,6 +359,7 @@
     text-decoration: none;
     transition: all 0.3s ease;
   }
+  /* button details hover css */
   .salestabs .box .button a:hover{
     background:  #0d3073;
   }
@@ -340,6 +380,7 @@
     justify-content: space-between;
     margin: 10px 0;
   }
+  /* salestabs image css */
   .salestabs .top-sales li a img{
     height: 40px;
     width: 40px;
@@ -348,11 +389,13 @@
     margin-right: 10px;
     background: #333;
   }
+  /* salestabs li a css */
   .salestabs .top-sales li a{
     display: flex;
     align-items: center;
     text-decoration: none;
   }
+  /* salestabs product css */
   .salestabs .top-sales li .product,
   .price{
     font-size: 17px;
@@ -427,7 +470,7 @@
       display: none;
     }
 }
-  
+  /* nav css */
   nav{
     background: #DACC96;
     display: flex !important;
@@ -437,6 +480,7 @@
     height: 120px;
     padding: 15 100px;
   }
+  /* nav logo css */
   nav .logo{
     top: 0 !important;
     left: 0 !important;
@@ -445,24 +489,29 @@
     font-weight: 600;
     letter-spacing: -2px;
   }
+  /* nav items css */
   nav .nav-items{
     display: flex;
     flex: 1;
     padding: 0 0 0 40px;
   }
+  /* nav items li css */
   nav .nav-items li{
     list-style: none;
     padding: 0 15px;
   }
+  /* nav items li details css */
   nav .nav-items li a{
     color: #fff;
     font-size: 18px;
     font-weight: 500;
     text-decoration: none;
   }
+  /* nav items li details hover css */
   nav .nav-items li a:hover{
     color: #71C9CE;
   }
+  /* nav form css */
   nav form{
     display: flex;
     height: 60px;
@@ -472,6 +521,7 @@
     border-radius: 2px;
     border: 1px solid #DACC96;
   }
+  /* nav form search data css */
   nav form .search-data{
     width: 100%;
     height: 100%;
@@ -482,6 +532,7 @@
     font-weight: 500;
     background: none;
   }
+  /* nav form button css */
   nav form button{
     padding: 0 15px;
     color: #fff;
@@ -491,9 +542,11 @@
     border-radius: 2px;
     cursor: pointer;
   }
+  /* button hover css */
   nav form button:hover{
     background: #71C9CE;
   }
+  /* nav icon css */
   nav .menu-icon,
   nav .cancel-icon,
   nav .search-icon{
@@ -505,6 +558,7 @@
     cursor: pointer;
     display: none;
   }
+  /* nav span css */
   nav .menu-icon span,
   nav .cancel-icon,
   nav .search-icon{
@@ -516,13 +570,16 @@
     }
   }
   @media (max-width: 1140px){
+    /* nav css  */
     nav{
       padding: 0px;
     }
+    /* nav logo css */
     nav .logo{
       flex: 2;
       text-align: center;
     }
+    /* nav item css */
     nav .nav-items{
       position: fixed;
       z-index: 99;
@@ -536,17 +593,21 @@
       display: inline-block;
       transition: left 0.3s ease;
     }
+    /* nav items active css */
     nav .nav-items.active{
       left: 0px;
     }
+    /* nav items list css */
     nav .nav-items li{
       margin: 30px 0;
       line-height: 40px;
       
     }
+    /* nav items li details css */
     nav .nav-items li a{
       font-size: 21px;
     }
+    /* nav form css */
     nav form{
       position: absolute;
       top: 80px;
@@ -555,11 +616,13 @@
       pointer-events: none;
       transition: top 0.3s ease, opacity 0.1s ease;
     }
+    /* nav form active css */
     nav form.active{
       top: 95px;
       opacity: 1;
       pointer-events: auto;
     }
+    /* nav form before css */
     nav form:before{
       position: absolute;
       content: "";
@@ -572,6 +635,7 @@
       border-bottom-color:#DACC96 ;
       margin: -20px 0 0;
     }
+    /* nav form after css */
     nav form:after{
       position: absolute;
       content: '';
@@ -585,21 +649,26 @@
       top: 50%;
       transform: translate(-50%, -50%);
     }
+    /* nav menu icon css */
     nav .menu-icon{
       display: block;
     }
+    /* nav search icon css */
     nav .search-icon,
     nav .menu-icon span{
       display: block;
     }
+    /* menu icon span hide css */
     nav .menu-icon span.hide,
     nav .search-icon.hide{
       display: none;
     }
+    /* cancel icon css */
     nav .cancel-icon.show{
       display: block;
     }
   }
+  /* content css */
   .content{
     position: absolute;
     top: 50%;
@@ -607,10 +676,12 @@
     text-align: center;
     transform: translate(-50%, -50%);
   }
+  /* content header css */
   .content header{
     font-size: 30px;
     font-weight: 700;
   }
+  /* content text css */
   .content .text{
     font-size: 30px;
     font-weight: 700;
@@ -618,6 +689,7 @@
   .space{
     margin: 10px 0;
   }
+  /* nav logo space css */
   nav .logo.space{
     
     padding: 0 10px 0 0;
@@ -641,12 +713,14 @@
       font-size: 16px;
     }
   }
+  /* content css */
   .content{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  /* content header css */
   .content header{
     font-size: 30px;
     font-weight: 700;
@@ -658,174 +732,190 @@
   .content .space{
     margin: 10px 0;
   }
-/*styling the footer */
-  footer{
-    display: flex;
-    bottom: 0;
-   }
-   .footer1{
-    background-color: #DACC96;
-    box-shadow: 0 1px 1px 0 #DACC96;
-    box-sizing: border-box;
-    width: 100%;
-    text-align: left;
-    font: bold 16px sans-serif !important;
-    
-    padding: 30px 30px;
-    margin-top: 40px;
-   }
-    
-   .footer1 .footer-left,
-   .footer1 .footer-center,
-   .footer1 .footer-right{
-    display: inline-block;
-    vertical-align: top;
-   }
-    
-   .footer1 .footer-left{
-    width: 50%;
-   }
-    
-   .footer1 h3{
-    color:  #ffffff;
-    font: normal 36px 'Cookie', cursive;
-    margin: 0;
-   }
-    
-   .footer1 h3 span{
-    color:  #24A19C;
-   }
-    
-    /*adjusting footer links */
-   .footer1 .footer-links{
-    color:  #ffffff;
-    margin: 20px 0 12px;
-    font-size: 20px !important;
-    padding: 0;
-   }
-    
-   .footer1 .footer-links a{
-    display:inline-block;
-    line-height: 1.8;
-    text-decoration: none;
-    color:  inherit;
-   }
-    
-   .footer1 .footer-company-name{
-    color:  #8f9296;
-    font-size: 20px !important;
-    font-weight: normal;
-    margin: 0;
-   }
-    
-    
-   .footer1 .footer-center{
-    width: 35%;
-   }
-    
-   .footer1 .footer-center i{
-    background-color:  #33383b;
-    color: #ffffff;
-    font-size: 25px !important;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 42px;
-    margin: 10px 15px;
-    vertical-align: middle;
-   }
-    
-   .footer1 .footer-center i.fa-envelope{
-    font-size: 20px !important;
-    line-height: 38px;
-   }
+ /* styling footer*/
+ footer{
+  display: flex;
+  bottom: 0;
+ }
+ /* footer1 layout */
+ .footer1{
+  background-color: #DACC96;
+  box-shadow: 0 1px 1px 0 #DACC96;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif !important;
+  
+  padding: 30px 30px;
+  margin-top: 40px;
+ }
+  
+ /* footer1 left, center, right div css */
+ .footer1 .footer-left,
+ .footer1 .footer-center,
+ .footer1 .footer-right{
+  display: inline-block;
+  vertical-align: top;
+ }
 
-   .footer1 .footer-center p{
-    display: inline-block;
-    color: #ffffff;
-    vertical-align: middle;
-    font-size: 20px !important;
-    margin:0;
-   }
-    
-   .footer1 .footer-center p span{
-    display:block;
-    font-weight: normal;
-    font-size: 16px !important;
-    line-height:2;
-   }
-    
-   .footer1 .footer-center p a{
-    color:  #5383d3;
-    font-size: 20px !important;
-    text-decoration: none;;
-   }
-    
-   .footer1 .footer-right{
-    width: 20%;
-   }
-    
-   .footer1 .footer-company-about{
-    line-height: 20px;
-    color:  #92999f;
-    font-size: 16px !important;
-    font-weight: normal;
-    margin: 0;
-   }
-    
-   .footer1 .footer-company-about span{
-    display: block;
-    color:  #ffffff;
-    font-size: 16px !important;
-    font-weight: bold;
-    margin-bottom: 20px;
-   }
-    
-   .footer1 .footer-icons{
-    margin-top: 25px;
-   }
-    
-   .footer1 .footer-icons a{
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    background-color:  #33383b;
-    border-radius: 2px;
-    
-    font-size: 20px;
-    color: #ffffff;
-    text-align: center;
-    line-height: 35px;
-    
-    margin-right: 3px;
-    margin-bottom: 5px;
-   }
-    
-    
-   @media (max-width: 880px) {
-    
-    .footer1{
-    font: bold 14px sans-serif !important;
-    
-    }
-    
-    .footer1.footer-left,
-    .footer1 .footer-center,
-    .footer1 .footer-right{
-    display: block;
-    width: 100%;
-    margin-bottom: 40px;
-    text-align: center;
-    }
-    
-    .footer1 .footer-center i{
-    margin-left: 0;
-    }
-    .main {
-    line-height: normal;
-    font-size: auto;
-    }
-    
-   }
+ /* footer left css */
+ .footer1 .footer-left{
+  width: 50%;
+ }
+  
+ /* footer title css */
+ .footer1 h3{
+  color:  #ffffff;
+  font: normal 36px 'Cookie', cursive;
+  margin: 0;
+ }
+  
+ /* footer title span css */
+ .footer1 h3 span{
+  color:  #24A19C;
+ }
+  
+  /* footer link css */
+ .footer1 .footer-links{
+  color:  #ffffff;
+  margin: 20px 0 12px;
+  font-size: 20px !important;
+  padding: 0;
+ }
+  
+ /* footer link details css */
+ .footer1 .footer-links a{
+  display:inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color:  inherit;
+ }
+  
+ /* footer company name css */
+ .footer1 .footer-company-name{
+  color:  #8f9296;
+  font-size: 20px !important;
+  font-weight: normal;
+  margin: 0;
+ }
+  
+  /* footer center css */
+ .footer1 .footer-center{
+  width: 35%;
+ }
+  
+ /* footer center icon css */
+ .footer1 .footer-center i{
+  background-color:  #33383b;
+  color: #ffffff;
+  font-size: 25px !important;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+ }
+  /* adding footer details*/
+ .footer1 .footer-center i.fa-envelope{
+  font-size: 20px !important;
+  line-height: 38px;
+ }
+
+ /* footer center para css */
+ .footer1 .footer-center p{
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  font-size: 20px !important;
+  margin:0;
+ }
+  
+ /* footer center para span css */
+ .footer1 .footer-center p span{
+  display:block;
+  font-weight: normal;
+  font-size: 16px !important;
+  line-height:2;
+ }
+  
+ /* footer center para details css */
+ .footer1 .footer-center p a{
+  color:  #5383d3;
+  font-size: 20px !important;
+  text-decoration: none;;
+ }
+  
+ /* footer right css */
+ .footer1 .footer-right{
+  width: 20%;
+ }
+  
+ /* footer company about css */
+ .footer1 .footer-company-about{
+  line-height: 20px;
+  color:  #92999f;
+  font-size: 16px !important;
+  font-weight: normal;
+  margin: 0;
+ }
+  
+ /* footer company about span css */
+ .footer1 .footer-company-about span{
+  display: block;
+  color:  #ffffff;
+  font-size: 16px !important;
+  font-weight: bold;
+  margin-bottom: 20px;
+ }
+  
+ /* footer icon css */
+ .footer1 .footer-icons{
+  margin-top: 25px;
+ }
+  
+ /* footer icons details css */
+ .footer1 .footer-icons a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color:  #33383b;
+  border-radius: 2px;
+  
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  
+  margin-right: 3px;
+  margin-bottom: 5px;
+ }
+  
+  
+ @media (max-width: 880px) {
+  
+  .footer1{
+  font: bold 14px sans-serif !important;
+  
+  }
+  
+  .footer1.footer-left,
+  .footer1 .footer-center,
+  .footer1 .footer-right{
+  display: block;
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: center;
+  }
+  
+  .footer1 .footer-center i{
+  margin-left: 0;
+  }
+  .main {
+  line-height: normal;
+  font-size: auto;
+  }
+  
+ }

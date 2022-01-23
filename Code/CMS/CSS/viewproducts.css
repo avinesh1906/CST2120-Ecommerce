@@ -42,6 +42,7 @@ body {
   nav .nav-items li a:hover{
     color: #71C9CE;
   }
+  /* navigation form css */
   nav form{
     display: flex;
     height: 60px;
@@ -51,6 +52,7 @@ body {
     border-radius: 2px;
     border: 1px solid #DACC96;
   }
+  /* nav form search data css */
   nav form .search-data{
     width: 100%;
     height: 100%;
@@ -61,6 +63,7 @@ body {
     font-weight: 500;
     background: none;
   }
+  /* nav form btn css */
   nav form button{
     padding: 0 15px;
     color: #fff;
@@ -70,9 +73,11 @@ body {
     border-radius: 2px;
     cursor: pointer;
   }
+  /* nav form btn hover css */
   nav form button:hover{
     background: #71C9CE;
   }
+  /* nav icon css */
   nav .menu-icon,
   nav .cancel-icon,
   nav .search-icon{
@@ -84,6 +89,7 @@ body {
     cursor: pointer;
     display: none;
   }
+  /* icon span css */
   nav .menu-icon span,
   nav .cancel-icon,
   nav .search-icon{
@@ -95,13 +101,16 @@ body {
     }
   }
   @media (max-width: 1140px){
+    /* nav css */
     nav{
       padding: 0px;
     }
+    /* nav logo css */
     nav .logo{
       flex: 2;
       text-align: center;
     }
+    /* nav items css */
     nav .nav-items{
       position: fixed;
       z-index: 99;
@@ -115,17 +124,21 @@ body {
       display: inline-block;
       transition: left 0.3s ease;
     }
+    /* nav items actice css */
     nav .nav-items.active{
       left: 0px;
     }
+    /* nav items list css */
     nav .nav-items li{
       margin: 30px 0;
       line-height: 40px;
       
     }
+    /* nav items details css */
     nav .nav-items li a{
       font-size: 21px;
     }
+    /* nav form css */
     nav form{
       position: absolute;
       top: 80px;
@@ -134,11 +147,13 @@ body {
       pointer-events: none;
       transition: top 0.3s ease, opacity 0.1s ease;
     }
+    /* active form nav css */
     nav form.active{
       top: 95px;
       opacity: 1;
       pointer-events: auto;
     }
+    /* before form nav css */
     nav form:before{
       position: absolute;
       content: "";
@@ -151,6 +166,7 @@ body {
       border-bottom-color:#DACC96 ;
       margin: -20px 0 0;
     }
+    /* nav after form css */
     nav form:after{
       position: absolute;
       content: '';
@@ -164,21 +180,26 @@ body {
       top: 50%;
       transform: translate(-50%, -50%);
     }
+    /* menu icon css */
     nav .menu-icon{
       display: block;
     }
+    /* icon span css */
     nav .search-icon,
     nav .menu-icon span{
       display: block;
     }
+    /* icon span hide css */
     nav .menu-icon span.hide,
     nav .search-icon.hide{
       display: none;
     }
+    /* cancel icon css */
     nav .cancel-icon.show{
       display: block;
     }
   }
+  /* content css */
   .content{
     position: absolute;
     top: 50%;
@@ -186,17 +207,21 @@ body {
     text-align: center;
     transform: translate(-50%, -50%);
   }
+  /* content header css */
   .content header{
     font-size: 30px;
     font-weight: 700;
   }
+  /* content text css */
   .content .text{
     font-size: 30px;
     font-weight: 700;
   }
+  /* space css */
   .space{
     margin: 10px 0;
   }
+  /* logo space css */
   nav .logo.space{
     
     padding: 0 10px 0 0;
@@ -220,20 +245,24 @@ body {
       font-size: 16px;
     }
   }
+  /* content css */
   .content{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  /* content header css */
   .content header{
     font-size: 30px;
     font-weight: 700;
   }
+  /* content text css */
   .content .text{
     font-size: 30px;
     font-weight: 700;
   }
+  /* content space css */
   .content .space{
     margin: 10px 0;
   }
@@ -252,44 +281,44 @@ body {
       background: none;
       border: 1px solid #282B33;
   }
-
+/* buttona nd select common css */
   button,
   select {
       height: 45px;
       padding: 0 15px;
       cursor: pointer;
   }
-
+/* button css */
   button {
       background: none;
       border: 1px solid black;
       margin: 25px 0;
   }
-
+/* button hover css */
   button:hover {
       background-color: #282B33;
       color: white;
   }
 
-
+/* search area css */
   .search-area {
       float: left;
       width: 60%;
   }
-
+/* setting css */
   .settings {
       display: none;
       float: right;
       width: 40%;
       text-align: right;
   }
-
+/* view css */
   #view {
       display: none;
       width: auto;
       height: 47px;
   }
-
+/* search btn css */
   #searchbutton {
       width: 60px;
       height: 47px;
@@ -312,14 +341,14 @@ body {
       width: 100%;
       font-family: Raleway;
   }
-
+/* product css */
   .product {
       display: inline-block;
       width: calc(24% - 13px);
       margin: 10px 10px 30px 10px;
       vertical-align: top;
   }
-
+/* product image css */
   .product img {
       display: block;
       margin: 0 auto;
@@ -330,17 +359,19 @@ body {
       box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.8);
       border-radius: 2px;
   }
-
+/* product content css */
   .product-content {
       text-align: center;
   }
 
+  /* product title css */
   .product h3 {
       font-size: 20px;
       font-weight: 600;
       margin: 10px 0 0 0;
   }
 
+  /* product title small css */
   .product h3 small {
       display: block;
       font-size: 16px;
@@ -348,7 +379,7 @@ body {
       font-style: italic;
       margin: 7px 0 0 0;
   }
-
+/* product text css */
   .product .product-text {
       margin: 7px 0 0 0;
       color: #777;
@@ -358,8 +389,8 @@ body {
       font-family: sans-serif;
       font-size: 16px;
       font-weight: 700;
-  }
-
+  } 
+/* product genre css */
   .product .genre {
       font-size: 14px;
   }
