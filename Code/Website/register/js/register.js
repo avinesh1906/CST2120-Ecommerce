@@ -45,20 +45,17 @@ function firstValidation() {
     
     // verify if input field is empty
     if (firstname.value.length == 0) {
-        firstProceedBtn.disabled = true;
         details.innerHTML = '*required';
         details.style.color = "#ED3833";
         return false;
     // check if pass the regex 
     } else if (!re.test(firstname.value)) { 
-        firstProceedBtn.disabled = true;
         details.innerHTML = '*Enter a valid first name';
         details.style.color = "#ED3833";
         return false;
     }
 
     // success message
-    firstProceedBtn.disabled = false;
     details.innerHTML = "";
     return true;
     
@@ -74,20 +71,17 @@ function lastValidation() {
     
     // verify if input field is empty
     if (lastname.value.length == 0) {
-        firstProceedBtn.disabled = true;
         details.innerHTML = '*required';
         details.style.color = "#ED3833";
         return false;
     // check if pass the regex 
     } else if (!re.test(lastname.value)) { 
-        firstProceedBtn.disabled = true;
         details.innerHTML = '*Enter a valid last name';
         details.style.color = "#ED3833";
         return false;
     }
     
     // success message
-    firstProceedBtn.disabled = false;
     details.innerHTML = "";
     return true;
 }
@@ -102,13 +96,11 @@ function emailValidation() {
 
     // check if input field is empty
     if (email.value.length == 0) {
-        firstProceedBtn.disabled = true;
         details.innerHTML = "*required";
         details.style.color = "#ED3833";
         return false;
     // check if pass the regex
     } else if (!email.value.match(re)){
-        firstProceedBtn.disabled = true;
         details.innerHTML = "Your email address must be in the <br> format of name@domain.com";
         details.style.color = "#ED3833";
         return false;
@@ -126,7 +118,6 @@ function emailValidation() {
     // }
 
     // succcess message
-    firstProceedBtn.disabled = false;
     details.innerHTML = "";
     return true;
 }
@@ -141,19 +132,16 @@ function telValidation() {
     
     // verify if input field is empty
     if (telephone.value.length == 0) {
-        secondProceedBtn.disabled = true;
         details.innerHTML = '*required';
         details.style.color = "#ED3833";
         return false;
     // check if pass the regex 
     } else if (!telephone.value.match(re)) { 
-        secondProceedBtn.disabled = true;
         details.innerHTML = '*Enter a valid telephone number';
         details.style.color = "#ED3833";
         return false;
     }    
     // success message
-    secondProceedBtn.disabled = false;
     details.innerHTML = "";
     return true;
 }
@@ -166,14 +154,12 @@ function addressValidation(){
 
     // verify if input field is empty
     if (address.value.length == 0) {
-        secondProceedBtn.disabled = true;
         details.innerHTML = '*required';
         details.style.color = "#ED3833";
         return false;
 
     } 
     // success message
-    secondProceedBtn.disabled = false;
     details.innerHTML = "";
     return true;
 }
@@ -186,14 +172,12 @@ function cityValidation(){
 
     // verify if input field is empty
     if (city.value.length == 0) {
-        secondProceedBtn.disabled = true;
         details.innerHTML = '*required';
         details.style.color = "#ED3833";
         return false;
 
     } 
     // success message
-    secondProceedBtn.disabled = false;
     details.innerHTML = "";
     return true;
 }
@@ -212,19 +196,16 @@ function passwordValidation() {
 
     // check if input field is empty
     if (pwd.value.length == 0) {
-        btn.disabled = true;
         details.innerHTML = '*required';
         details.style.color = "#FDD2BF";
         return false;
     // check if pass the regex
     } else if (!re.test(pwd.value)) {
-        btn.disabled = true;
         details.style.color = "#FDD2BF";
         details.innerHTML = "Password should contain at least one symbol, <br> upper and lower case letter <br> and a number of min 6 characters.";
         return false;
     }
     // success message
-    btn.disabled = false;
     details.innerHTML = "Strong Password";
     details.style.color = "#77D970";
     return true;
@@ -238,19 +219,16 @@ function confirmPassword() {
 
     // check if input field is empty
     if (confirm_pwd.value.length == 0) {
-        btn.disabled = true;
         details.innerHTML = '*required';
         details.style.color = "#FDD2BF";
         return false;
     // check whether the password matches
     } else if (confirm_pwd.value != pwd.value) {
-        btn.disabled = true;
         details.style.color = "#FDD2BF";
         details.innerHTML = "Please enter the same password again";
         return false;
     }
     // success message
-    btn.disabled = false;
     details.innerHTML = "Password matches";
     details.style.color = "#77D970";
     return true;
