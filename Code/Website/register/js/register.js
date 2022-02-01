@@ -1,3 +1,7 @@
+
+// Entire script will be in script mode
+"use strict";
+
 // class variables
 let secondPage = document.getElementsByClassName("secondPage")[0];
 let firstPage = document.getElementsByClassName("firstPage")[0];
@@ -6,6 +10,7 @@ let thirdPage = document.getElementsByClassName("thirdPage")[0];
 // button varibales
 let firstProceedBtn = document.getElementById("persoProceed");
 let secondProceedBtn = document.getElementById("secondProceedBtn");
+let createAccountBtn = document.getElementById("createAccountBtn");
 
 // id variables
 let firstname = document.getElementById("firstname");
@@ -16,10 +21,13 @@ let confirm_pwd = document.getElementById("confirm_password");
 let telephone = document.getElementById("telephone");
 let address = document.getElementById("address");
 let city = document.getElementById("city");
+let dob = document.getElementById("dob");
+let gender = document.getElementById("gender");
+let postalCode = document.getElementById("postalCode");
 
 // call function on button click
 firstProceedBtn.onclick = scd;
-secondProceedBtn.onclick = third;
+CreateAccount.onclick = third;
 
 // display and hide class
 function scd() {
@@ -233,4 +241,54 @@ function confirmPassword() {
     details.style.color = "#77D970";
     return true;
     
+}
+
+// function to verify postal code
+function postalCodeValidation(){
+    // variables 
+    let details = document.getElementById("postalCode_details");
+
+    /* Regular Expression for validating postal code*/
+    let re = /^[0-9]{5}(?:-[0-9]{4})?$/;
+    
+    // verify if input field is empty
+    if (!postalCode.value.match(re)) {
+        details.style.color = "#FDD2BF";
+        details.innerHTML = "Please enter a correct postal code";
+        return false;
+
+    } 
+    // success message
+    details.innerHTML = "";
+    return true;
+}
+
+// function to proceed to 2nd page after verification
+function createAccount(){
+    //Create request object 
+    let request = new XMLHttpRequest();
+
+     //Create event handler that specifies what should happen when server responds
+     request.onload = () => {
+        //Check HTTP status code
+        if(request.status === 200){
+            //Get data from server
+            let responseData = request.responseText;
+
+            //Add data to page
+            document.getElementById("ServerResponse").innerHTML = responseData;
+        }
+        else
+            alert("Error communicating with server: " + request.status);
+    };
+    
+    //Set up request with HTTP method and URL 
+    request.open("POST", "registerAjax.php");
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    //Send request
+    request.send("firstname=" + firstname.value   + "&lastname=" + lastname.value + 
+    "&email=" + email.value + "&DOB=" + dob.value + "&gender=" + gender.value +
+    "&telephone=" + telephone.value   + "&address=" + address.value + "&city=" + 
+    city.value + "&postalCode=" + postalCode.value +"&password=" + pwd.value );
+
 }

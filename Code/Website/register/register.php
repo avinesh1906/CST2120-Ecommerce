@@ -78,7 +78,7 @@
         <!-- Form Footer Container -->
         <div class="btn">
             <!-- Submit Button -->
-            <button type="submit" id="persoProceed">Proceed</button>
+            <button onclick="personalProceed()">Proceed</button>
             <!-- Login Instead Link -->
             <a href="../signin/signin.php">Login Instead?</a>
         </div>
@@ -391,13 +391,16 @@
                 <div class="postalCode">
                     <label>Postal Code</label>
                     <br>
-                    <input ></input>
+                    <input id="postalCode" onkeyup="postalCodeValidation()"></input>
+                    <div class="form_error">
+                        <span id="postalCode_details"></span>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- button class -->
         <div class="btn">
-            <button id="secondProceedBtn">Proceed</button>
+            <button id="secondProceedBtn" onclick="personalProceed()">Proceed</button>
             <!-- Login Instead Link -->
             <a href="../signin/signin.php">Login Instead?</a>
         </div>
@@ -435,11 +438,14 @@
         </div>
         <!-- button class -->
         <div class="btn">
-            <button id="secondProceedBtn" href="./index.php">Create Account</button>
+            <button id="createAccountBtn" onclick="createAccount()">Create Account</button>
             <!-- Login Instead Link -->
             <a href="../signin/signin.php">Login Instead?</a>
         </div> 
     </div>
+    <p>
+        <span id="ServerResponse"></span>
+    </p>
 </div>
 <?php
     // php function to generate the footer
