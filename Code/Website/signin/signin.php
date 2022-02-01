@@ -58,7 +58,7 @@
                 </div>
                 <!-- Login submit button -->
                 <div class="login_btn">
-                    <button id="signIn_btn">Sign In </button>   
+                    <button onclick="login()">Sign In </button>   
                 </div>
             <section>
         </div>
