@@ -168,3 +168,8 @@
     margin-bottom: 2%;
 }
 
+/* length of input box  */
+.thirdPage .form_input input#password,
+.thirdPage .form_input input#confirm_password{
+    width: 50%;
+}
