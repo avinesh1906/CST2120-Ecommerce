@@ -4,6 +4,7 @@
 // global variables
 let email = document.getElementById("email");
 let pwd = document.getElementById("Password");
+let btn = document.getElementById("login");
 
 // function to validate username
 function emailValidation() {
@@ -12,6 +13,7 @@ function emailValidation() {
 
     // check if input field is empty
     if (email.value.length == 0) {
+        btn.disabled = true;
         details.innerHTML = '*required';
         details.style.color = "#DA1212";
         btn.disabled = true;
@@ -32,6 +34,7 @@ function passwordValidation() {
 
     // check if input field is empty
     if (pwd.value.length == 0) {
+        btn.disabled = true;
         details.innerHTML = '*required';
         details.style.color = "#DA1212";
         return false;
@@ -81,6 +84,8 @@ function login(){
 
         //Send request
         request.send("email=" + email + "&password=" + pwd);
-       
+        
+        // redirect to home page
+        window.location.href="../index.php";
     }
 }
