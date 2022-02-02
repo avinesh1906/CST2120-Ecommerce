@@ -78,7 +78,7 @@
         <!-- Form Footer Container -->
         <div class="btn">
             <!-- Submit Button -->
-            <button onclick="personalProceed()">Proceed</button>
+            <button onclick="personalProceed()" id="firstProceedBtn">Proceed</button>
             <!-- Login Instead Link -->
             <a href="../signin/signin.php">Login Instead?</a>
         </div>
@@ -400,7 +400,7 @@
         </div>
         <!-- button class -->
         <div class="btn">
-            <button id="secondProceedBtn" onclick="personalProceed()">Proceed</button>
+            <button id="secondProceedBtn">Proceed</button>
             <!-- Login Instead Link -->
             <a href="../signin/signin.php">Login Instead?</a>
         </div>
