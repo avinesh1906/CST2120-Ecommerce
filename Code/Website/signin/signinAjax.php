@@ -24,7 +24,7 @@
     $cursor = $collection->find($findCriteria);
  
     if ($cursor->isDead()) {
-        echo '*username/password incorrect';
+        echo 'No User Found!';
     } else {
         foreach ($cursor as $cust){
             if($cust['password'] == $password){
@@ -34,32 +34,4 @@
             }
         }
     }
-    // if (!count($cursor->toarray())) {
-    //     echo '*username/password incorrect';
-    // } else {
-    //     foreach ($cursor as $cust){
-    //         // if($cust['password'] == $password){
-    //         //     echo 'Login as ' . $cust['firstname'];
-    //         // }
-    //         echo 'Login as ' . $cust['firstname'];
-    //     }
-    // }
-    // } else {
-    //     // foreach ($cursor as $cust){
-    //     //     if($cust['password'] == $password){
-    //     //         echo 'Login as ' . $cust['firstname'];
-    //     //     }
-    //     // }
-    //     echo 'Login as ' . $cust['firstname'];
-    // }
-
-    // if($cursor){//Check query parameters 
-    //     //STORE REGISTRATION DATA IN MONGODB
-    
-    //     //Output message confirming registration
-    //     echo 'Login as' . $;
-    // }
-    // else{//A query string parameter cannot be found
-    //     echo '*username/password incorrect';
-    // }
 
