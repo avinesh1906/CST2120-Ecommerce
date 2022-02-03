@@ -2,23 +2,9 @@
 "use strict";
 
 // global variables
-let btn = document.getElementById("signIn_btn");
-let usr = document.getElementById("email");
+let email = document.getElementById("email");
 let pwd = document.getElementById("Password");
-// let log_btn = document.getElementsByName("Log In");
-
-// call the function validateLoginForm when submit button is clicked
-btn.onclick = validateLoginForm;
-// init();
-
-// // function init
-// function init(){
-//     // check if session storage (loggeduser) is not empty
-//     if (sessionStorage.loggedUser != undefined){
-//         sessionStorage.clear()
-//         log_btn[0].innerText = 'Log In';
-//     }
-// }
+let btn = document.getElementById("login");
 
 // function to validate username
 function emailValidation() {
@@ -26,7 +12,8 @@ function emailValidation() {
     let details = document.getElementById("usr_details");
 
     // check if input field is empty
-    if (usr.value.length == 0) {
+    if (email.value.length == 0) {
+        btn.disabled = true;
         details.innerHTML = '*required';
         details.style.color = "#DA1212";
         btn.disabled = true;
@@ -47,6 +34,7 @@ function passwordValidation() {
 
     // check if input field is empty
     if (pwd.value.length == 0) {
+        btn.disabled = true;
         details.innerHTML = '*required';
         details.style.color = "#DA1212";
         return false;
@@ -57,7 +45,7 @@ function passwordValidation() {
 }
 
 // function to validate login form in general
-function validateLoginForm(){
+function login(){
     // convert JSON into js objects
     let users = JSON.parse(localStorage.users);
     let details = document.getElementById("pwd_details");
@@ -72,20 +60,32 @@ function validateLoginForm(){
         if (!passwordValidation()){
             return false;
         }
-        // loop through the user objects
-        for (let i = 0; i < users.length; i++){
-            //  check if password corresponds to that particular username
-            if (users[i].username == usr.value && users[i].password == pwd.value){
-                btn.disabled = false;
-                sessionStorage.loggedUser = users[i].username;
-                // redirect to home page
-                window.location.href="../index.php";
+        //Create request object 
+        let request = new XMLHttpRequest();
+
+        //Create event handler that specifies what should happen when server responds
+        request.onload = () => {
+            //Check HTTP status code
+            if(request.status === 200){
+                //Get data from server
+                let responseData = request.responseText;
+
+                //Add data to page
+                details.innerHTML = responseData;
+                details.style.color = "#DA1212";
             }
-        }
-        // error messages
-        details.innerHTML = '*username/password incorrect';
-        details.style.color = "#DA1212";
+            else
+                alert("Error communicating with server: " + request.status);
+        };
+
+        //Set up request with HTTP method and URL 
+        request.open("POST", "signinAjax.php");
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        //Send request
+        request.send("email=" + email + "&password=" + pwd);
         
+        // redirect to home page
+        window.location.href="../index.php";
     }
 }
-

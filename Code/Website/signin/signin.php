@@ -47,7 +47,7 @@
                 <div class="login_form ">
                     <!-- Username -->
                     <div class="fullname">
-                        <input autocomplete="off" type="text" class="form-control" id="email" onkeyup="usernameValidation()" placeholder="email">
+                        <input autocomplete="off" type="text" class="form-control" id="email" onkeyup="emailValidation()" placeholder="email">
                         <span id="usr_details"></span>
                     </div>
                     <!-- Password -->
@@ -58,7 +58,7 @@
                 </div>
                 <!-- Login submit button -->
                 <div class="login_btn">
-                    <button id="signIn_btn">Sign In </button>   
+                    <button onclick="login()" id="login">Sign In </button>   
                 </div>
             <section>
         </div>

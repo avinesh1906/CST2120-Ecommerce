@@ -309,7 +309,7 @@
             <!-- 4th card -->
             <div class=" card-scroll">
                 <!-- image -->
-                <img class="card-img-top" src="./common/img/lacote.png" alt="lacote" height="450px" width="95%">
+                <img class="card-img-top" src="https://drive.google.com/uc?export=view&id=1EzoS1RBCilaq1KbTtXbcdeic-6ZwmEj4" alt="lacote" height="450px" width="95%">
                 <!-- content -->
                 <div class="card-body">
                     <h5 class="card-title">Zenfant la cote</h5>
