@@ -11,9 +11,3 @@
     $postalCode = filter_input(INPUT_POST, 'postalCode', FILTER_SANITIZE_NUMBER_INT);
     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
     
-    // STORE REGISTRATION DATA IN MONGODB
-    
-    //Output message confirming registration
-    echo 'Thank you for registering ' . $firstname;
-    
-

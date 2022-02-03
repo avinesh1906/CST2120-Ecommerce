@@ -340,6 +340,9 @@ function createAccount(){
         "&telephone=" + telephone.value   + "&address=" + address.value + "&city=" + 
         city.value + "&postalCode=" + postalCode.value +"&password=" + pwd.value );
 
+        // redirect to home page
+        window.location.href="../index.php";
+
     } else {
         createAccountBtn.disabled = true;
     }
