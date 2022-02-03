@@ -71,8 +71,10 @@ function login(){
                 let responseData = request.responseText;
 
                 //Add data to page
+                document.getElementById("pwd_details").innerHTML = responseData;
                 details.innerHTML = responseData;
                 details.style.color = "#DA1212";
+
             }
             else
                 alert("Error communicating with server: " + request.status);
@@ -83,9 +85,9 @@ function login(){
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
         //Send request
-        request.send("email=" + email + "&password=" + pwd);
+        request.send("email=" + email.value + "&password=" + pwd.value);
         
-        // redirect to home page
-        window.location.href="../index.php";
+        // // redirect to home page
+        // window.location.href="../index.php";
     }
 }
