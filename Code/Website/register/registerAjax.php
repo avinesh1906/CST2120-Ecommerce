@@ -37,22 +37,26 @@
         "password" => $password
     ];
 
-    // //Add the new user to the database
-    // $insertResult = $collection->insertOne($dataArray);
-
-    // // STORE REGISTRATION DATA IN MONGODB
-    // //Echo result back to user
-    // if($insertResult->getInsertedCount()!=1){
-    //     echo '<script>alert("Error adding customer")</script>';
-    // }
-
     if(isset($_POST['func'])){
         $func = $_POST['func'];
         if ($func == "email") {
             checkExistingEmail($email);
+        } else {
+            createUser($dataArray);
         }
     }
  
+    function createUser($dataArray){
+        global $collection;
+        //Add the new user to the database
+        $insertResult = $collection->insertOne($dataArray);
+
+        // STORE REGISTRATION DATA IN MONGODB
+        //Echo result back to user
+        if($insertResult->getInsertedCount()!=1){
+            echo '<script>alert("Error adding customer")</script>';
+        }
+    }
 
     function checkExistingEmail($input){
         global $collection;

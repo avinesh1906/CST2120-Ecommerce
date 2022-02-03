@@ -351,7 +351,7 @@ function createAccount(){
         request.open("POST", "registerAjax.php");
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         //Send request
-        request.send("firstname=" + firstname.value   + "&lastname=" + lastname.value + 
+        request.send("func=" + "create" + "&firstname=" + firstname.value   + "&lastname=" + lastname.value + 
         "&email=" + email.value + "&DOB=" + dob.value + "&gender=" + gender.value +
         "&telephone=" + telephone.value   + "&address=" + address.value + "&city=" + 
         city.value + "&postalCode=" + postalCode.value +"&password=" + pwd.value );
