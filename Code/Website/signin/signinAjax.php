@@ -17,7 +17,7 @@
     
     //Create a PHP array with our search criteria
     $findCriteria = [
-        '$text' => [ '$search' => $email ] 
+        'email' => $email 
     ];
 
     //Find all of the customers that match  this criteria
