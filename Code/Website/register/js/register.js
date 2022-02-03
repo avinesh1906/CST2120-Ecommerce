@@ -125,6 +125,8 @@ function lastValidation() {
 
 //  function to validate email
 function emailValidation() {
+    //Create request object 
+    let request = new XMLHttpRequest();
     //variables
     let details = document.getElementById("email_details");
 
@@ -145,16 +147,30 @@ function emailValidation() {
         return false;
     }
 
-    // //  loop through the JS object
-    // for (let i = 0; i < users.length; i++){
-    //     //  check if username alread exist
-    //     if (users[i].username == firstname.value){
-    //         btn.disabled = true;
-    //         details.innerHTML = '*This email already has an associated account. <br> <a href="../signin/signin.php">Login Instead?</a>';
-    //         details.style.color = "#FDD2BF";
-    //         return false;
-    //     }
-    // }
+    request.open("POST", "registerAjax.php");
+    //Create event handler that specifies what should happen when server responds
+    request.onload = () => {
+        //Check HTTP status code
+        if(request.status === 200){
+            //Get data from server
+            let responseData = request.responseText;
+            // details.innerHTML = "hehe";
+            if (responseData == "true"){
+                firstProceedBtn.disabled = true;
+                details.innerHTML = '*This email already has an associated account. <br> <a href="../signin/signin.php">Login Instead?</a>';
+                details.style.color = "#ED3833";
+                return false;
+            }
+        }
+        else
+            alert("Error communicating with server: " + request.status);
+    };
+    
+    //Set up request with HTTP method and URL 
+    request.open("POST", "registerAjax.php");
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    //Send request
+    request.send("func=" + "email" + "&email=" + email.value);
 
     firstProceedBtn.disabled = false;
     // succcess message
