@@ -476,3 +476,16 @@ body,footer {
     padding : 2%;
 }
 
+
+/* logged class  */
+.loggedMessage {
+    text-align: center;
+    padding: 0.5%;
+    background-color: #E9DAC1;
+    color: #2C3333;
+}
+
+.loggedMessage .logged,
+.loggedMessage .notlogged {
+    display: none;
+}

@@ -10,7 +10,14 @@
     generateHeader($pageName, $folderName);
     generateNavBar($pageName);
 ?>
-
+<div class="loggedMessage">
+    <div class="logged">
+        <a>Logged as Avinesh Culloo</a>
+    </div>
+    <div class="notlogged">
+        <a>Register or Sign in for recommendation and product track</a>
+    </div>
+</div>
 <!-- carousel slides -->
 <div id="carouselControls" class="carousel slide" data-ride="carousel">
     <!-- Carousel layout -->

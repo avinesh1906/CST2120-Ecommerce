@@ -153,6 +153,13 @@ function generateNavBar($pagename){
     echo '<div class="main-body">';
 }
 
+// function to display
+// 1. Msg to log in if not logged in
+// 2. Msg to display logged user if logged in
+// function generateLoggedMsg($pagename){
+    
+// }
+
 //Outputs closing body tag and closing HTML tag
 function generateFooter($pagename){
 
