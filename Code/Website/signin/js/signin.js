@@ -5,12 +5,25 @@
 let email = document.getElementById("email");
 let pwd = document.getElementById("Password");
 let btn = document.getElementById("login");
+let logged = document.getElementsByClassName("logged")[0];
+let notlogged = document.getElementsByClassName("notlogged")[0]; 
+let log_btn = document.getElementsByName("Sign In");
+
+init();
+
+// function init
+function init(){
+    // check if session storage (loggeduser) is not empty
+    if (sessionStorage.loggedUser != undefined){
+        sessionStorage.clear()
+        log_btn[0].innerText = 'Log In';
+    }
+}
 
 // function to validate username
 function emailValidation() {
     // variables 
     let details = document.getElementById("usr_details");
-
     // check if input field is empty
     if (email.value.length == 0) {
         btn.disabled = true;
@@ -69,12 +82,15 @@ function login(){
             if(request.status === 200){
                 //Get data from server
                 let responseData = request.responseText;
-
-                //Add data to page
-                document.getElementById("pwd_details").innerHTML = responseData;
-                details.innerHTML = responseData;
-                details.style.color = "#DA1212";
-
+                if (responseData == 'false'){
+                    //Add data to page
+                    document.getElementById("pwd_details").innerHTML = "*username/password incorrect";
+                    details.style.color = "#DA1212";
+                } else 
+                    sessionStorage.loggedUser = responseData;
+                    // redirect to home page
+                    window.location.href="../index.php";
+                
             }
             else
                 alert("Error communicating with server: " + request.status);

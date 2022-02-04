@@ -1,3 +1,9 @@
+// Entire script will be in script mode
+"use strict";
+
+// call function init when window loads
+init();
+
 // retrieve the input element from class .price-input
 const priceInput = document.querySelectorAll(".price-input input");
 // retrieve the input element from class .range-input
@@ -15,6 +21,25 @@ let pathArray = window.location.pathname.split('/');
 // access the last element of pathname
 let pathname = pathArray[pathArray.length - 1];
 // check if pathname is setting.php or register.php
+
+// function init
+function init() {
+    let current_page = document.getElementsByName("Sign In");
+    let logged = document.getElementsByClassName("logged")[0];
+    let notLogged = document.getElementsByClassName("notLogged")[0];
+
+    if (sessionStorage.loggedUser != undefined){
+        current_page[0].innerText = 'Sign Out';
+        logged.innerText = "Logged as " + sessionStorage.loggedUser;
+        logged.style.display = "block";
+        notLogged.style.display = "none";
+    } else {
+        current_page[0].innerText = 'Sign In';
+        notLogged.style.display = "block";
+        logged.style.display = "none";
+    }    
+}
+
 
 if (pathname == 'register.php' ){
     // event listener to detect click on the eye

@@ -149,15 +149,23 @@ function generateNavBar($pagename){
     echo '</div>';
     echo '</nav>';
 
-    echo '<div class="main-body">';
 }
 
 // function to display
 // 1. Msg to log in if not logged in
 // 2. Msg to display logged user if logged in
-// function generateLoggedMsg($pagename){
-    
-// }
+function generateLoggedMsg($pagename){
+    echo'
+    <div class="loggedMessage">
+        <div class="logged">
+            <a>Logged as Avinesh Culloo</a>
+        </div>
+        <div class="notLogged">
+            <a>Register or Sign in for recommendation and product track</a>
+        </div>
+    </div>';
+    echo '<div class="main-body">';
+}
 
 //Outputs closing body tag and closing HTML tag
 function generateFooter($pagename){

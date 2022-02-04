@@ -24,13 +24,13 @@
     $cursor = $collection->find($findCriteria);
  
     if ($cursor->isDead()) {
-        echo 'No User Found!';
+        echo 'false';
     } else {
         foreach ($cursor as $cust){
             if($cust['password'] == $password){
-                echo 'Login as ' . $cust['firstname'];
+                echo $cust['firstname'] . ' ' . $cust['lastname'] ;
             } else {
-                echo '*username/password incorrect';
+                echo 'false';
             }
         }
     }

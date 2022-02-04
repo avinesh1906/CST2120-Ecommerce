@@ -9,6 +9,7 @@
     // call the php functions 
     generateHeader($pageName, $folderName);
     generateNavBar($pageName);
+    generateLoggedMsg($pageName);
 ?>
 <!-- Sign In -->
 <div class="signIn-title">
