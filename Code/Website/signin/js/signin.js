@@ -86,11 +86,11 @@ function login(){
                     //Add data to page
                     document.getElementById("pwd_details").innerHTML = "*username/password incorrect";
                     details.style.color = "#DA1212";
-                } else 
+                } else {
                     sessionStorage.loggedUser = responseData;
                     // redirect to home page
                     window.location.href="../index.php";
-                
+                }                
             }
             else
                 alert("Error communicating with server: " + request.status);
@@ -103,7 +103,5 @@ function login(){
         //Send request
         request.send("email=" + email.value + "&password=" + pwd.value);
         
-        // // redirect to home page
-        // window.location.href="../index.php";
     }
 }
