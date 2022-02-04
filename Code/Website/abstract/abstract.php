@@ -9,6 +9,7 @@
     // call the php functions 
     generateHeader($pageName, $folderName);
     generateNavBar($pageName);
+    generateLoggedMsg($pageName);
 ?>
 <!-- Title -->
 <div class="product-title">
@@ -220,6 +221,8 @@
     </div>
 </div>
 <?php
+    // php function to generate the footer
+    generateJavaScript($pageName);
     // php function to generate the footer
     generateFooter($pageName);
 ?>

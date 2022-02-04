@@ -9,6 +9,7 @@
     // call the php functions 
     generateHeader($pageName, $folderName);
     generateNavBar($pageName);
+    generateLoggedMsg($pageName);
 ?>
 <!-- customer information class -->
 <div class="customerInfo">

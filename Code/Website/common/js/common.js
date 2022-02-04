@@ -27,7 +27,6 @@ function init() {
     let current_page = document.getElementsByName("Sign In");
     let logged = document.getElementsByClassName("logged")[0];
     let notLogged = document.getElementsByClassName("notLogged")[0];
-
     if (sessionStorage.loggedUser != undefined){
         current_page[0].innerText = 'Sign Out';
         logged.innerText = "Logged as " + sessionStorage.loggedUser;
