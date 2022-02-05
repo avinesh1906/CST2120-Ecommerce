@@ -138,49 +138,7 @@
         </div>
         <div class="content">
             <div class="row row-cols- row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card">
-                        <!-- image -->
-                        <img class="card-img-top" src="./img/Indian.jpg" alt="Indian" height="200px">
-                        <!-- content -->
-                        <div class="card-body">
-                            <h5 class="card-title">Indian Labourers</h5>
-                            <div class="card-details">
-                                <p>Rs 350 </p>
-                                <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <!-- image -->
-                        <img class="card-img-top" src="./img/labourerSugar.jpg" alt="labourer Sugar" height="200px">
-                        <!-- content -->
-                        <div class="card-body">
-                            <h5 class="card-title">Sugarcane Cultivation</h5>
-                            <div class="card-details">
-                                <p>Rs 750 </p>
-                                <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <!-- image -->
-                        <img class="card-img-top" src="./img/slaves.jpg" alt="slaves" height="200px" >
-                        <!-- content -->
-                        <div class="card-body">
-                            <h5 class="card-title">The maroons on the island</h5>
-                            <div class="card-details">
-                                <p>Rs 1750 </p>
-                                <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
-                
+               
             </div>
         </div>
     </div>
