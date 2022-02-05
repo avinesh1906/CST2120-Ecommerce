@@ -141,61 +141,7 @@
         <div class="content">
             <div class="row row-cols- row-cols-md-3 g-4">
                 <div class="col">
-                    <div class="card">
-                        <!-- image -->
-                        <img class="card-img-top" src="../common/img/watercolor_landscape_mauritius.jpg" alt="Watercolor Le Morne" height="200px" >
-                        <!-- content -->
-                        <div class="card-body">
-                            <h5 class="card-title">Le Morne</h5>
-                            <div class="card-details">
-                                <p>Rs 350 </p>
-                                <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <!-- image -->
-                        <img class="card-img-top" src="../common/img/lacote.png" alt="La cote" height="200px" >
-                        <!-- content -->
-                        <div class="card-body">
-                            <h5 class="card-title">La Cote</h5>
-                            <div class="card-details">
-                                <p>Rs 750 </p>
-                                <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <!-- image -->
-                        <img class="card-img-top" src="../common/img/mauritius_greeting.jpg" alt="mauritius greeting" height="200px" >
-                        <!-- content -->
-                        <div class="card-body">
-                            <h5 class="card-title">Mauritius</h5>
-                            <div class="card-details">
-                                <p>Rs 1750 </p>
-                                <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <!-- image -->
-                        <img class="card-img-top" src="../common/img/sunset.jpeg" alt="mbg" height="200px" >
-                        <!-- content -->
-                        <div class="card-body">
-                            <h5 class="card-title">Mahebourg Waterfront</h5>
-                            <div class="card-details">
-                                <p>Rs 1250 </p>
-                                <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
