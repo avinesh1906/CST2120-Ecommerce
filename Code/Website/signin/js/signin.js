@@ -97,7 +97,7 @@ function login(){
         };
 
         //Set up request with HTTP method and URL 
-        request.open("POST", "signinAjax.php");
+        request.open("POST", "getSignin.php");
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
         //Send request
