@@ -9,6 +9,7 @@
     // call the php functions 
     generateHeader($pageName, $folderName);
     generateNavBar($pageName);
+    generateLoggedMsg($pageName)
 ?>
 <div class="myAccount-title">
     My Account
@@ -41,6 +42,7 @@
         <button onclick="location.href='./editPassword.php'"> Change Password</button>
     </div></div>
 <?php
+    generateJavaScript($pageName);
     // php function to generate the footer
     generateFooter($pageName);
 ?>

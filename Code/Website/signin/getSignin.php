@@ -22,16 +22,30 @@
 
     //Find all of the customers that match  this criteria
     $cursor = $collection->find($findCriteria);
- 
-    if ($cursor->isDead()) {
-        echo 'false';
-    } else {
+    
+    // Output each customer as a JSON object with comma in between
+    $jsonStr = '['; //Start of array of customer in JSON
+
+    if (!$cursor->isDead()){
         foreach ($cursor as $cust){
             if($cust['password'] == $password){
-                echo $cust['firstname'] . ' ' . $cust['lastname'] ;
+                //Convert PHP representation of customer into JSON
+                $jsonStr .= json_encode($cust);
+                //Separator between customer
+                $jsonStr .= ',';
             } else {
-                echo 'false';
+                $jsonStr .= ' ';
             }
         }
+            
+        //Remove last comma
+        $jsonStr = substr($jsonStr, 0, strlen($jsonStr) - 1);
     }
+
+    //Close array
+    $jsonStr .= ']';
+
+    //Echo final string
+    echo $jsonStr;
+
 

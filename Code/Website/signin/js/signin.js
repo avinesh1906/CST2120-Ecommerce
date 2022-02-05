@@ -82,12 +82,15 @@ function login(){
             if(request.status === 200){
                 //Get data from server
                 let responseData = request.responseText;
-                if (responseData == 'false'){
+                //Convert JSON to array of customer objects
+                let user = JSON.parse(responseData);
+                if (user.length === 0 ){
                     //Add data to page
                     document.getElementById("pwd_details").innerHTML = "*username/password incorrect";
                     details.style.color = "#DA1212";
                 } else {
-                    sessionStorage.loggedUser = responseData;
+                    sessionStorage.loggedUser = user[0].firstname + " " + user[0].lastname;
+                    sessionStorage.email = user[0].email;
                     // redirect to home page
                     window.location.href="../index.php";
                 }                
