@@ -137,6 +137,7 @@
                 </ul>
             </div>
         </div>
+        <!-- make use of javascript to generate the content -->
         <!-- Abstract arts product list -->
         <div class="content">
             <!-- Card layout -->

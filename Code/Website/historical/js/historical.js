@@ -24,7 +24,7 @@ function generateContent(){
     };
 
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    request.send("categoryName="+"Portrait");
+    request.send("categoryName="+"Historical");
 
 }
 

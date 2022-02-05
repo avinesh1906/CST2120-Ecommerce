@@ -136,9 +136,9 @@
                 </ul>
             </div>
         </div>
+        <!-- make use of javascript to generate the content -->
         <div class="content">
             <div class="row row-cols- row-cols-md-3 g-4">
-               
             </div>
         </div>
     </div>
