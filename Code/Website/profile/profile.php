@@ -21,30 +21,7 @@
             <div class="title">
                 Personal Information
             </div>
-            <!-- Full Name -->
-            <div class="form_details">
-                <label for="fullname" class="form-label"> Fullname: </label>
-                <a id="fullname">Avinesh Culloo </a>
-            </div>
-            <!-- Email -->
-            <div class="form_details">
-                <label for="email" class="form-label"> Email: </label>
-                <a id="email">avineshculloo@gmail.com</a>
-            </div>
-            <!-- Telephone Number -->
-            <div class="form_details">
-                <label for="telephone" class="form-label"> Phone Number: </label>
-                <a id="telephone">+230 5835200</a>
-            </div>
-            <!-- Date Of Birth -->
-            <div class="form_details">
-                <label for="DOB" class="form-label"> Date of Birth: </label>
-                <a id="DOB">19-06-01</a>
-            </div>
-            <!-- Gender-->
-            <div class="form_details">
-                <label for="gender" class="form-label"> Gender: </label>
-                <a id="gender">Male</a>
+            <div class="body">
             </div>
         </div>
         <!-- Address-->
@@ -52,14 +29,7 @@
             <div class="title">
                 Shipping Address
             </div>
-            <div class="details">
-                9, Rue de bon,
-                <br>
-                Mahebourg,
-                <br>
-                Mauritius,
-                <br>
-                51606.  
+            <div class="details"> 
             </div>  
         </div>
 
