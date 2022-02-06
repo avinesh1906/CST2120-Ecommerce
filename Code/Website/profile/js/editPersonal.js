@@ -44,25 +44,37 @@ function displayContent(jsonUser){
     htmlStr += '<!-- Email -->';
     htmlStr += '<div class="form_input">';
     htmlStr += '<label for="email" class="form-label"> Email: </label>';
-    htmlStr += '<input name="email" id="email" value="'+ user[0].email  + '">';
+    htmlStr += '<input name="email" onkeyup="emailValidation()" id="email" value="'+ user[0].email  + '">';
+    htmlStr += '<div class="form_error">';
+    htmlStr += '<span id="email_details"></span>';
+    htmlStr += '</div>';
     htmlStr +='</div>';
 
     htmlStr += '<!-- First Name -->';
     htmlStr +=  '<div class="form_input">';
     htmlStr += '<label for="firstname" class="form-label"> Firstname: </label>';
-    htmlStr += '<input autocomplete="off" value = "'+ user[0].firstname+'" type="text" id="firstname">';
+    htmlStr += '<input autocomplete="off" onkeyup="firstValidation()" value = "'+ user[0].firstname+'" type="text" id="firstname">';
+    htmlStr += '<div class="form_error">';
+    htmlStr += '<span id="first_details"></span>';
+    htmlStr += '</div>';
     htmlStr += '</div>';
 
     htmlStr += '<!-- Last Name -->';
     htmlStr +=  '<div class="form_input">';
     htmlStr += '<label for="lastname" class="form-label"> Lastname: </label>';
-    htmlStr += '<input autocomplete="off" value = "'+ user[0].lastname +'" type="text" id="lastname">';
+    htmlStr += '<input autocomplete="off" onkeyup="lastValidation()" value = "'+ user[0].lastname +'" type="text" id="lastname">';
+    htmlStr += '<div class="form_error">';
+    htmlStr += '<span id="last_details"></span>';
+    htmlStr += '</div>';
     htmlStr += '</div>';
 
     htmlStr +='<!-- Telephone Number -->';
     htmlStr +=' <div class="form_input">';
     htmlStr +='<label for="telephone" class="form-label"> Phone Number: </label>';
-    htmlStr +='<input autocomplete="off" value = "'+ user[0].telephone +'" type="tel" id="telephone">';
+    htmlStr +='<input autocomplete="off" onkeyup="telValidation()" value = "'+ user[0].telephone +'" type="tel" id="telephone">';
+    htmlStr += '<div class="form_error">';
+    htmlStr += '<span id="tel_details"></span>';
+    htmlStr += '</div>';
     htmlStr +='</div>';
 
     htmlStr +='<!-- Date Of Birth -->';
@@ -90,9 +102,6 @@ function displayContent(jsonUser){
 
 function update()
 {
-    //Create request object
-    let request = new XMLHttpRequest();
-
     // id variables
     let firstname = document.getElementById("firstname");
     let lastname = document.getElementById("lastname");
@@ -101,26 +110,180 @@ function update()
     let gender = document.getElementById("gender");
     let dob = document.getElementById("dob");
     let id = document.getElementById("id");
-    
-    //Create event handler that specifies what should happen when server responds
-    request.onload = () => {
-        //Check HTTP status code
-        if(request.status === 200){
-            //Get data from server
-            let responseData = request.responseText;
-            //Add data to page
-            document.getElementById("ServerResponse").innerHTML = responseData;
-        }
-        else
-            alert("Error communicating with server: " + request.status);
-    };
 
-    //Set up request with HTTP method and URL 
-    request.open("POST", "getEditPersonal.php");
-    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    //Send request
-    request.send("firstname=" + firstname.value   + "&lastname=" + lastname.value + 
-    "&email=" + email.value + "&DOB=" + dob.value + "&gender=" + gender.value +
-    "&telephone=" + telephone.value + "&id=" + id.value);
+    if (firstValidation() && lastValidation() && emailValidation()){
+        // enable button
+        saveBtn.disabled = false;
+
+        //Create request object
+        let request = new XMLHttpRequest();
+        //Create event handler that specifies what should happen when server responds
+        request.onload = () => {
+            //Check HTTP status code
+            if(request.status === 200){
+                //Get data from server
+                let responseData = request.responseText;
+                //Add data to page
+                document.getElementById("ServerResponse").innerHTML = responseData;
+            }
+            else
+                alert("Error communicating with server: " + request.status);
+        };
+        //Set up request with HTTP method and URL 
+        request.open("POST", "getEditPersonal.php");
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        //Send request
+        request.send("firstname=" + firstname.value   + "&lastname=" + lastname.value + 
+        "&email=" + email.value + "&DOB=" + dob.value + "&gender=" + gender.value +
+        "&telephone=" + telephone.value + "&id=" + id.value);
+
+        sessionStorage.clear();
+        sessionStorage.loggedUser = firstname.value + " " +  lastname.value;
+        sessionStorage.email = email.value;
+        // redirect to profile page
+        window.location.href="./profile.php";
+    } else {
+        saveBtn.disabled = true;
+    }
     
+}
+
+// function to validate firstname
+function firstValidation() {
+    // variables 
+    let details = document.getElementById("first_details");
+
+    /* Regular Expression for validating firstname*/
+    let re = new RegExp("^[a-z ,.'-]+$");
+    
+    // verify if input field is empty
+    if (firstname.value.length == 0) {
+        saveBtn.disabled = true;
+        details.innerHTML = '*required';
+        details.style.color = "#ED3833";
+        return false;
+    // check if pass the regex 
+    } else if (!re.test(firstname.value)) { 
+        saveBtn.disabled = true;
+        details.innerHTML = '*Enter a valid first name';
+        details.style.color = "#ED3833";
+        return false;
+    }
+
+    saveBtn.disabled = false;
+    // success message
+    details.innerHTML = "";
+    return true;
+    
+}
+
+// function to validate lastname
+function lastValidation() {
+    // variables 
+    let details = document.getElementById("last_details");
+
+    /* Regular Expression for validating lastname*/
+    let re = new RegExp("^[a-z ,.'-]+$");
+    
+    // verify if input field is empty
+    if (lastname.value.length == 0) {
+        saveBtn.disabled = true;
+        details.innerHTML = '*required';
+        details.style.color = "#ED3833";
+        return false;
+    // check if pass the regex 
+    } else if (!re.test(lastname.value)) { 
+        saveBtn.disabled = true;
+        details.innerHTML = '*Enter a valid last name';
+        details.style.color = "#ED3833";
+        return false;
+    }
+    saveBtn.disabled = false;
+    // success message
+    details.innerHTML = "";
+    return true;
+}
+
+//  function to validate email
+function emailValidation() {
+    //Create request object 
+    let request = new XMLHttpRequest();
+    //variables
+    let details = document.getElementById("email_details");
+
+    // Regular expression for validating email
+    let re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    // check if input field is empty
+    if (email.value.length == 0) {
+        saveBtn.disabled = true;
+        details.innerHTML = "*required";
+        details.style.color = "#ED3833";
+        return false;
+    // check if pass the regex
+    } else if (!email.value.match(re)){
+        saveBtn.disabled = true;
+        details.innerHTML = "Your email address must be in the <br> format of name@domain.com";
+        details.style.color = "#ED3833";
+        return false;
+    }
+
+    if (email.value != sessionStorage.email){
+        request.open("POST", "getEditPersonal.php");
+        //Create event handler that specifies what should happen when server responds
+        request.onload = () => {
+            //Check HTTP status code
+            if(request.status === 200){
+                //Get data from server
+                let responseData = request.responseText;
+                if (responseData == "true"){
+                    saveBtn.disabled = true;
+                    details.innerHTML = '*This email already has an associated account. <br> <a href="../signin/signin.php">Login Instead?</a>';
+                    details.style.color = "#ED3833";
+                    return false;
+                }
+            }
+            else
+                alert("Error communicating with server: " + request.status);
+        };
+        
+        //Set up request with HTTP method and URL 
+        request.open("POST", "getEditPersonal.php");
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        //Send request
+        request.send("func=" + "email" + "&email=" + email.value);
+    }
+    
+
+    saveBtn.disabled = false;
+    // succcess message
+    details.innerHTML = "";
+    return true;
+}
+
+// function to validate telephone
+function telValidation() {
+    // variables 
+    let details = document.getElementById("tel_details");
+
+    /* Regular Expression for validating telephone number*/
+    let re = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
+    
+    // verify if input field is empty
+    if (telephone.value.length == 0) {
+        saveBtn.disabled = true;
+        details.innerHTML = '*required';
+        details.style.color = "#ED3833";
+        return false;
+    // check if pass the regex 
+    } else if (!telephone.value.match(re)) {
+        saveBtn.disabled = true; 
+        details.innerHTML = '*Enter a valid telephone number';
+        details.style.color = "#ED3833";
+        return false;
+    }    
+    saveBtn.disabled = false;
+    // success message
+    details.innerHTML = "";
+    return true;
 }

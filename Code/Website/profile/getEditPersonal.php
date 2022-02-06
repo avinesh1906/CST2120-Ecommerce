@@ -43,4 +43,23 @@
     else
         echo 'Customer replacement error.';
 
+    if(isset($_POST['func'])){
+        $func = $_POST['func'];
+        if ($func == "email") {
+            checkExistingEmail($email);
+        }
+    }
 
+    function checkExistingEmail($input){
+        global $collection;
+        //Create a PHP array with our search criteria
+        $findCriteria = [
+            'email' => $input
+        ];
+
+        //Find all of the customers that match  this criteria
+        $cursor = $collection->find($findCriteria);
+        foreach ($cursor as $cust){
+            echo 'true';
+        }    
+    }
