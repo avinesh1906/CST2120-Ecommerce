@@ -74,7 +74,7 @@ function firstValidation() {
     let details = document.getElementById("first_details");
 
     /* Regular Expression for validating firstname*/
-    let re = new RegExp("^[a-z ,.'-]+$");
+    let re = new RegExp("^[a-z A-Z ,.'-]+$");
     
     // verify if input field is empty
     if (firstname.value.length == 0) {
@@ -103,7 +103,7 @@ function lastValidation() {
     let details = document.getElementById("last_details");
 
     /* Regular Expression for validating lastname*/
-    let re = new RegExp("^[a-z ,.'-]+$");
+    let re = new RegExp("^[a-z A-Z ,.'-]+$");
     
     // verify if input field is empty
     if (lastname.value.length == 0) {
