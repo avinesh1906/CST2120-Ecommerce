@@ -43,7 +43,7 @@ function displayContent(jsonProduct){
                 htmlStr += '<img class="card-img-top" src="'+ productArray[i].imageURL +'" alt="'+ productArray[i].name +'" height="300px" ></img>';
                 htmlStr += '<!-- content -->';
                 htmlStr += '<div class="card-body">';
-                    htmlStr += '<h5 class="card-title" id="'+ productArray[i]._id +'">' + productArray[i].name +'</h5>';
+                    htmlStr += '<h5 class="card-title" id="'+ productArray[i]._id.$oid +'">' + productArray[i].name +'</h5>';
                     htmlStr += '<div class="card-details">'; 
                         htmlStr += '<p>Rs'+ productArray[i].price +'</p>';
                         htmlStr += '<button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>';

@@ -21,7 +21,7 @@
 <div class="product-description">
     <!-- Image -->
     <div class="image">
-        <img src="./img/frenchShip.jpg" alt="French Ship" 
+        <img src="../common/img/frenchShip.jpg" alt="French Ship" 
             height="250px">
     </div>
     <!-- Body Content -->
