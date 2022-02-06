@@ -9,7 +9,7 @@
     // call the php functions 
     generateHeader($pageName, $folderName);
     generateNavBar($pageName);
-    generateLoggedMsg($pageName)
+    generateLoggedMsg($pageName);
 ?>
 <div class="myAccount-title">
     My Account
