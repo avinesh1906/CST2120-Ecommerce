@@ -351,14 +351,19 @@ function createAccount(){
         //Set up request with HTTP method and URL 
         request.open("POST", "registerAjax.php");
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        // first letter to upper case
+        let upperFirstname = firstname.value.charAt(0).toUpperCase() + firstname.value.slice(1);
+        let upperLastname = lastname.value.charAt(0).toUpperCase() + lastname.value.slice(1);
+
         //Send request
-        request.send("func=" + "create" + "&firstname=" + firstname.value   + "&lastname=" + lastname.value + 
+        request.send("func=" + "create" + "&firstname=" + upperFirstname + "&lastname=" + upperLastname + 
         "&email=" + email.value + "&DOB=" + dob.value + "&gender=" + gender.value +
         "&telephone=" + telephone.value   + "&address=" + address.value + "&city=" + 
         city.value + "&country=" + country.value + "&postalCode=" + postalCode.value +"&password=" + pwd.value );
 
         // create the session storage
-        sessionStorage.loggedUser = firstname.value + " " + lastname.value;
+        sessionStorage.loggedUser = upperFirstname + " " + upperLastname;
         sessionStorage.email = email.value;
 
         // redirect to home page
