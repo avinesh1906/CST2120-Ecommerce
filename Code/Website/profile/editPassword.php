@@ -22,23 +22,32 @@
         <div class="form_details">
             <label for="current_password" class="form-label"> Current </label>
             <div class="form-input">
-                <input autocomplete="off" type="password" name="current_password" id="current_password" >
+                <input autocomplete="off" onkeyup="oldPassword()" type="password" id="current_password" >
             </div>
+            <div class="form_error">
+                <span id="currentPWD_details"></span>
+            </div>      
         </div>
         <!-- New Password -->
         <div class="form_details">
         <label for="new_password" class="form-label"> New </label>
             <div class="form-input">
-                <input autocomplete="off" type="password" id="new_password">
+                <input autocomplete="off" onkeyup="passwordValidation()" type="password" id="new_password">
                 <i id="toggleEye" name="new_password" class="fa fa-eye"></i>
             </div>
+            <div class="form_error">
+                <span id="newPWD_details"></span>
+            </div>  
         </div>
         <!-- Confirm New Password -->
         <div class="form_details">
             <label for="confirm_password" class="form-label"> Retype New </label>
             <div class="form-input">
-                <input autocomplete="off" type="password" id="confirm_password">
+                <input autocomplete="off" onkeyup="confirmPassword()" type="password" id="confirm_password">
             </div>
+            <div class="form_error">
+                <span id="confirmPWD_details"></span>
+            </div>  
         </div>
         <!-- Form text -->
         <div class="form_details">

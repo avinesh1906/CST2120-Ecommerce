@@ -46,7 +46,6 @@ if (pathname == 'register.php' || pathname == 'editPassword.php') {
 
 //  function for togglePaassword
 function togglePassword() {
-    console.log("clc");
     // variables
     let pwd = document.getElementById(toggle_name.getAttribute("name"));
     let type = pwd.getAttribute("type");
