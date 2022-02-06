@@ -22,7 +22,8 @@
     $city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
     $postalCode = filter_input(INPUT_POST, 'postalCode', FILTER_SANITIZE_NUMBER_INT);
     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-
+    $country = filter_input(INPUT_POST, 'country', FILTER_SANITIZE_STRING);
+    
     //Convert to PHP array
     $dataArray = [
         "firstname" => $firstname,
@@ -34,6 +35,7 @@
         "address" => $address,
         "city" => $city,
         "postalCode" => $postalCode,
+        "country" => $country,
         "password" => $password
     ];
 

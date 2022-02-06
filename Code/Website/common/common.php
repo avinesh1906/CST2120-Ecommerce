@@ -268,7 +268,7 @@ function generateJavaScript($title){
         "Cart" => "./js/cart.js", 
         "Profile" => "./js/profile.js",
         "Personal Information" => "./js/editPersonal.js",
-        "Address" => "./js/profile.js",
+        "Address" => "./js/editAddress.js",
         "Password" => "./js/profile.js",
         "Historical" => "./js/historical.js",
         "Landscape" => "./js/landscape.js",

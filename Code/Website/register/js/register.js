@@ -24,6 +24,7 @@ let city = document.getElementById("city");
 let dob = document.getElementById("dob");
 let gender = document.getElementById("gender");
 let postalCode = document.getElementById("postalCode");
+let country = document.getElementById("country");
 
 // call function on button click
 firstProceedBtn.onclick = scd;
@@ -354,7 +355,7 @@ function createAccount(){
         request.send("func=" + "create" + "&firstname=" + firstname.value   + "&lastname=" + lastname.value + 
         "&email=" + email.value + "&DOB=" + dob.value + "&gender=" + gender.value +
         "&telephone=" + telephone.value   + "&address=" + address.value + "&city=" + 
-        city.value + "&postalCode=" + postalCode.value +"&password=" + pwd.value );
+        city.value + "&country=" + country.value + "&postalCode=" + postalCode.value +"&password=" + pwd.value );
 
         // redirect to home page
         window.location.href="../index.php";
