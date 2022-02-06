@@ -269,7 +269,7 @@ function generateJavaScript($title){
         "Profile" => "./js/profile.js",
         "Personal Information" => "./js/editPersonal.js",
         "Address" => "./js/editAddress.js",
-        "Password" => "./js/profile.js",
+        "Password" => "./js/editPassword.js",
         "Historical" => "./js/historical.js",
         "Landscape" => "./js/landscape.js",
         "Register" => "./js/register.js",

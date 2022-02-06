@@ -60,7 +60,6 @@ function passwordValidation() {
 // function to validate login form in general
 function login(){
     // convert JSON into js objects
-    let users = JSON.parse(localStorage.users);
     let details = document.getElementById("pwd_details");
 
     // call all functions to check if meet all requirements

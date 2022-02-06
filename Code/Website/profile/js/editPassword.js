@@ -1,8 +1,8 @@
 // Entire script will be in script mode
 "use strict";
 
-let saveBtn = document.getElementById("saveBtn");
-saveBtn.onclick = update;
+let changeBtn = document.getElementById("changeBtn");
+changeBtn.onclick = update;
 
 // function call 
 generateContent();
@@ -37,51 +37,24 @@ function generateContent(){
 function displayContent(jsonUser){
     //Convert JSON to array of product objects
     let user = JSON.parse(jsonUser);
-    console.log(user[0]);
 
     // create the html to display personal information
     let htmlStr = '';
-    
-    htmlStr += '<!-- Street Name -->';
-    htmlStr += '<div class="form_input">';
-    htmlStr += '<label for="street" class="form-label"> Street Name </label>';
-    htmlStr += '<input name="email" id="street" value="'+ user[0].address  + '">';
-    htmlStr +='</div>';
-
-    htmlStr += '<!-- Town -->';
-    htmlStr +=  '<div class="form_input">';
-    htmlStr += '<label for="town" class="form-label"> City/Tomn/Village </label>';
-    htmlStr += '<input autocomplete="off" value = "'+ user[0].city+'" type="text" id="town">';
-    htmlStr += '</div>';
-
-    htmlStr += '<!-- Country -->';
-    htmlStr +=  '<div class="form_input">';
-    htmlStr += '<label for="country" class="form-label"> Country </label>';
-    htmlStr += '<input autocomplete="off" value = "'+ user[0].country +'" type="text" id="country">';
-    htmlStr += '</div>';
-
-    htmlStr +='<!-- zip code -->';
-    htmlStr +=' <div class="form_input">';
-    htmlStr +='<label for="zipCode" class="form-label"> Zip code </label>';
-    htmlStr +='<input autocomplete="off" value = "'+ user[0].postalCode +'" type="tel" id="zipCode">';
-    htmlStr +='</div>';
-
     htmlStr += '<input type="hidden" id="id" value="'+ user[0]._id.$oid  + '">';
     
     //  display the html into the class body
-    document.getElementsByClassName("form")[0].innerHTML = htmlStr;
+    document.getElementsByClassName("infotext")[0].outerHTML += htmlStr;
 }
 
 function update()
-{
+{   
     //Create request object
     let request = new XMLHttpRequest();
 
     // id variables
-    let address = document.getElementById("street");
-    let city = document.getElementById("town");
-    let postalCode = document.getElementById("zipCode");
-    let country = document.getElementById("country");
+    let current_password = document.getElementById("current_password");
+    let confirm_password = document.getElementById("confirm_password");
+    let new_password = document.getElementById("new_password");
     let id = document.getElementById("id");
 
     //Create event handler that specifies what should happen when server responds
@@ -98,10 +71,9 @@ function update()
     };
 
     //Set up request with HTTP method and URL 
-    request.open("POST", "getEditAddress.php");
+    request.open("POST", "getEditPassword.php");
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     //Send request
-    request.send("address=" + address.value   + "&city=" + city.value + 
-    "&postalCode=" + postalCode.value + "&country=" + country.value + "&id=" + id.value);
-    
+    request.send("current_password=" + current_password.value   + "&confirm_password=" + confirm_password.value + 
+    "&new_password=" + new_password.value + "&id=" + id.value);    
 }

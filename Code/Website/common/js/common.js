@@ -20,7 +20,6 @@ let toggle_name = document.getElementById("toggleEye");
 let pathArray = window.location.pathname.split('/');
 // access the last element of pathname
 let pathname = pathArray[pathArray.length - 1];
-// check if pathname is setting.php or register.php
 
 // function init
 function init() {
@@ -39,14 +38,15 @@ function init() {
     }    
 }
 
-
-if (pathname == 'register.php' ){
+// check if pathname is register.php
+if (pathname == 'register.php' || pathname == 'editPassword.php') {
     // event listener to detect click on the eye
     toggle_name.addEventListener("click", togglePassword);
 }
 
 //  function for togglePaassword
 function togglePassword() {
+    console.log("clc");
     // variables
     let pwd = document.getElementById(toggle_name.getAttribute("name"));
     let type = pwd.getAttribute("type");
