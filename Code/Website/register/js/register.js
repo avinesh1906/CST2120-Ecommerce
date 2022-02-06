@@ -357,6 +357,10 @@ function createAccount(){
         "&telephone=" + telephone.value   + "&address=" + address.value + "&city=" + 
         city.value + "&country=" + country.value + "&postalCode=" + postalCode.value +"&password=" + pwd.value );
 
+        // create the session storage
+        sessionStorage.loggedUser = firstname.value + " " + lastname.value;
+        sessionStorage.email = email.value;
+
         // redirect to home page
         window.location.href="../index.php";
 
