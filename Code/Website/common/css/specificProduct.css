@@ -1,0 +1,172 @@
+.productContainer{
+    display: flex;
+    padding: 2% 3% 1%;
+    width: 100%;
+}
+
+.productImage{
+    border: solid 5px black;
+    max-width: 65%;
+    margin-right: 3%;
+    min-width: 30%;
+    margin-right: 5%;
+    margin-left: 3%;
+}
+
+.productDetails{
+    max-width: 70%;
+    min-width: 35%;
+    background-color: #CDC9C3;
+    padding: 1%;
+}
+
+.productDetails .companyDetails{
+    font-size: 20px;
+}
+
+.productDetails .productName{
+    font-size: 35px;
+}
+
+.productDetails .productPrice{
+    font-size: 30px;
+    margin-bottom: 2%;
+}
+
+.productDetails .productSize{
+    font-size: 25px;
+    margin-bottom: 2%;
+}
+
+.productDetails .confirmationBtn{
+    font-size: 25px;
+}
+
+.productDetails .confirmationBtn button{
+    font-size: 25px;
+    width: 95%;
+    margin: 3% 2% 2%;
+}
+
+.productDetails .productSize .sizeOption{
+    margin-left: 3%;
+}
+
+.productDetails .productQty {
+    font-size: 25px;
+}
+
+.productDetails .productQty .counter{
+    display: flex;
+    margin-top: 1%;
+    margin-left: 3%;
+}
+
+.productDetails .productQty .counter .qtyNumber{
+    margin: 0% 2%;
+}
+
+.productDetails .productQty .counter .minus button,
+.productDetails .productQty .counter .add button{
+    width: 35px;
+}
+
+.productDetails .confirmationBtn button{
+    background-color: #555555;
+    color: #D9E4DD;
+}
+
+.productDetails .confirmationBtn button:hover{
+    background-color: #D9E4DD;
+    color: #555555;
+}
+
+.productReview .title{
+    display: flex;
+    max-width: 100%;
+    color: #FBF7F0;
+    background-color: #555555;
+    margin: 2% 1% 1%;
+    padding: 0.5% 1%;
+    font-size: 18px;
+}
+
+.productReview .title #addReview{
+    text-align: right;
+    color: #D9E4DD
+}
+
+.productReview .title #addReview:hover,
+.productReview .title #customerReview:hover{
+    color: #79B4B7;
+}
+
+.productReview #customerReview,
+.productReview #addReview {
+    width: 50%;
+    font-size: 25px;
+}
+
+.productReview .reviewBody{
+    margin: 1% 1% 1%;
+    padding: 0.5% 1%;
+    font-size: 20px;
+
+}
+
+.productReview .reviewBody .reviewListTitle{
+    font-size: x-large;
+}
+
+.productReview .reviewBody .reviewListDetails{
+    font-size: 18px;
+    display: flex;
+}
+
+.productReview .reviewBody .reviewListDetails #date{
+    color: #316B83;
+    padding-left: 0.5%;
+}
+
+.productReview .reviewBody .reviewListDesc{
+    font-size: 20px;
+}
+
+.productReview .reviewBody .reviewQty .reviewList,
+.productReview .writeReview{
+    border: 2px solid #CDC9C3;
+    background-color: #D9E4DD;
+    padding: 1%;
+    margin-bottom: 1%;
+}
+
+.productReview .writeReview{
+    display: none;
+}
+
+.productReview .writeReview .reviewTitle{
+    font-size: 25px;
+}
+
+.productReview .writeReview .form_details {
+    margin-bottom: 1%;
+}
+
+.productReview .writeReview input{
+    width: 50%;
+}
+
+.productReview .writeReview input#writereviewBody{
+    height: 50px;
+}
+
+.productReview .writeReview .submitReviewBtn{
+    margin-top: 1%;
+    text-align: right;
+}
+
+.productReview .writeReview .submitReviewBtn button:hover{
+    color: #555555;
+    background-color: #F8F0DF;
+}
+

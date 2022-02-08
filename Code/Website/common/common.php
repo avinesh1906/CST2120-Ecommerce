@@ -46,7 +46,8 @@ function generateHeader($title, $directoryname){
 
             echo '<!-- External common CSS file -->';
             echo '<link href="../common/css/styles.css" type="text/css" rel="stylesheet">';    
-            
+            echo '<link href="../common/css/specificProduct.css" type="text/css" rel="stylesheet">';    
+
             echo '<!-- External '. $directoryname . ' CSS -->';
             echo '<link href="./css/styles.css" type="text/css" rel="stylesheet">';
             echo '<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>';
@@ -275,7 +276,8 @@ function generateJavaScript($title){
         "Register" => "./js/register.js",
         "Sign In" => "./js/signin.js",
         "Abstract" => "./js/abstract.js",
-        "Check Out" => "./js/checkout.js"
+        "Check Out" => "./js/checkout.js",
+        "Specific Product" => "./js/specificProduct.js"
     );
     echo '<script src = "'. $linkNames[$title] .'">'; 
     echo '</script>';
@@ -288,8 +290,11 @@ function generateJavaScript($title){
     } else {
         echo 'src = "../common/js/common.js">';
     }
-
     echo '</script>';
+
+    echo '<script src = "../common/js/specificProduct.js"></script>';
+
+    
     echo '</body>';
     echo '</html>';
 }
