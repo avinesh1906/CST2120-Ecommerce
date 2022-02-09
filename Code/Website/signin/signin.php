@@ -9,6 +9,17 @@
     // call the php functions 
     generateHeader($pageName, $folderName);
     generateNavBar($pageName);
+    //Find out if session exists
+    if( array_key_exists("loggedUser", $_SESSION) ){
+        //Remove all session variables
+        session_unset(); 
+        //Destroy the session 
+        session_destroy(); 
+        echo '<script type="text/javascript"> ';
+        echo 'let log_btn = document.getElementsByName("Sign In");';
+        echo 'log_btn[0].innerText = \'Sign In\';';
+        echo '</script>';
+    } 
     generateLoggedMsg($pageName);
 ?>
 <!-- Sign In -->

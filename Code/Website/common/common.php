@@ -1,5 +1,8 @@
 <?php
 
+//Start session management
+session_start();
+
 // Outputs the header for the page and opening body tag
 // $title: will be the page title to be shown in the head
 // $directoryname: will be the directory containing the css and other related files 
@@ -45,9 +48,10 @@ function generateHeader($title, $directoryname){
             echo '<link href="../../favicon.png" rel="icon">';
 
             echo '<!-- External common CSS file -->';
-            echo '<link href="../common/css/styles.css" type="text/css" rel="stylesheet">';    
-            echo '<link href="../common/css/specificProduct.css" type="text/css" rel="stylesheet">';    
-
+            echo '<link href="../common/css/styles.css" type="text/css" rel="stylesheet">';
+            if($title == "Portrait" || $title == "Landscape" ||$title == "Oil" || $title == "Abstract" || $title == "Historical"){
+                echo '<link href="../common/css/specificProduct.css" type="text/css" rel="stylesheet">';
+            }    
             echo '<!-- External '. $directoryname . ' CSS -->';
             echo '<link href="./css/styles.css" type="text/css" rel="stylesheet">';
             echo '<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>';
@@ -156,15 +160,26 @@ function generateNavBar($pagename){
 // 1. Msg to log in if not logged in
 // 2. Msg to display logged user if logged in
 function generateLoggedMsg($pagename){
-    echo'
-    <div class="loggedMessage">
-        <div class="logged">
-            <a>Logged as Avinesh Culloo</a>
-        </div>
-        <div class="notLogged">
+    echo'<div class="loggedMessage">';
+    //Find out if session exists
+    if( array_key_exists("loggedUser", $_SESSION) ){
+        echo'<div class="logged">';
+        echo 'Logged As '. $_SESSION['loggedUser'];
+        echo '</div>';
+        echo '<script type="text/javascript">
+        let current_page = document.getElementsByName("Sign In");
+        current_page[0].innerText = \'Sign Out\';
+        </script>';
+    } else {
+        echo'<div class="notLogged">
             <a>Register or Sign in for recommendation and product track</a>
-        </div>
-    </div>';
+        </div>';
+        echo '<script type="text/javascript">
+            let current_page = document.getElementsByName("Sign In");
+            current_page[0].innerText = \'Sign In\';
+        </script>';
+    }
+    echo '</div>';
     echo '<div class="main-body">';
 }
 
@@ -291,10 +306,11 @@ function generateJavaScript($title){
         echo 'src = "../common/js/common.js">';
     }
     echo '</script>';
-
-    echo '<script src = "../common/js/specificProduct.js"></script>';
-
     
+    if($title == "Portrait" || $title == "Landscape" ||$title == "Oil" || $title == "Abstract" || $title == "Historical"){
+        echo '<script src = "../common/js/specificProduct.js"></script>';
+    }    
+
     echo '</body>';
     echo '</html>';
 }

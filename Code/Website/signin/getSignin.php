@@ -1,4 +1,7 @@
 <?php
+    //Start session management
+    session_start();
+
     //Include libraries
     require '../vendor/autoload.php';
     
@@ -23,16 +26,21 @@
     //Find all of the customers that match  this criteria
     $cursor = $collection->find($findCriteria);
     
-    // Output each customer as a JSON object with comma in between
-    $jsonStr = '['; //Start of array of customer in JSON
-
     if (!$cursor->isDead()){
+        // Output each customer as a JSON object with comma in between
+        $jsonStr = '['; //Start of array of customer in JSON
+
         foreach ($cursor as $cust){
             if($cust['password'] == $password){
                 //Convert PHP representation of customer into JSON
                 $jsonStr .= json_encode($cust);
                 //Separator between customer
                 $jsonStr .= ',';
+
+                //Start session for this user
+                $_SESSION['loggedUser'] = $cust['firstname']. " ". $cust['lastname'];;
+                $_SESSION['email'] = $email;
+
             } else {
                 $jsonStr .= ' ';
             }
@@ -40,12 +48,16 @@
             
         //Remove last comma
         $jsonStr = substr($jsonStr, 0, strlen($jsonStr) - 1);
+        //Close array
+        $jsonStr .= ']';
+
+
+        // Echo final string
+        echo $jsonStr;
+
+    } else {
+        echo '[]';
     }
 
-    //Close array
-    $jsonStr .= ']';
-
-    //Echo final string
-    echo $jsonStr;
 
 

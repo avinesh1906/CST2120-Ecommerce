@@ -7,18 +7,6 @@ let pwd = document.getElementById("Password");
 let btn = document.getElementById("login");
 let logged = document.getElementsByClassName("logged")[0];
 let notlogged = document.getElementsByClassName("notlogged")[0]; 
-let log_btn = document.getElementsByName("Sign In");
-
-init();
-
-// function init
-function init(){
-    // check if session storage (loggeduser) is not empty
-    if (sessionStorage.loggedUser != undefined){
-        sessionStorage.clear()
-        log_btn[0].innerText = 'Log In';
-    }
-}
 
 // function to validate username
 function emailValidation() {
@@ -88,8 +76,6 @@ function login(){
                     document.getElementById("pwd_details").innerHTML = "*username/password incorrect";
                     details.style.color = "#DA1212";
                 } else {
-                    sessionStorage.loggedUser = user[0].firstname + " " + user[0].lastname;
-                    sessionStorage.email = user[0].email;
                     // redirect to home page
                     window.location.href="../index.php";
                 }                
