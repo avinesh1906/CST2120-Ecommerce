@@ -49,7 +49,7 @@ function generateHeader($title, $directoryname){
 
             echo '<!-- External common CSS file -->';
             echo '<link href="../common/css/styles.css" type="text/css" rel="stylesheet">';
-            if($title == "Portrait" || $title == "Landscape" ||$title == "Oil" || $title == "Abstract" || $title == "Historical"){
+            if($title == "Specific Product"){
                 echo '<link href="../common/css/specificProduct.css" type="text/css" rel="stylesheet">';
             }    
             echo '<!-- External '. $directoryname . ' CSS -->';
