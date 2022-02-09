@@ -51,7 +51,7 @@ function displayProduct(){
         htmlStr += '    </div>';
     }
     htmlStr += '    <div class="confirmationBtn">';
-    htmlStr += '        <button id="basket">Add to Basket</button>';
+    htmlStr += '        <button id="basket" onclick="addBasket()">Add to Basket</button>';
     htmlStr += '        <br>';
     htmlStr += '        <button id="buyIt">Buy It Now</button>';
     htmlStr += '    </div>';
@@ -303,3 +303,35 @@ function displayReview(reviewList){
     //  display the html into the class card
     document.getElementsByClassName("reviewQty")[0].innerHTML = htmlStr;
 }
+
+function addBasket()
+{
+    let productArray = JSON.parse(sessionStorage.Product);
+    let prodID = productArray[0]._id.$oid;
+    let choice;
+    let qty = qtyNumber.innerText;
+    let size = document.getElementsByName('product_Size');
+    for (let i = 0; i < size.length; i++){
+        if(size[i].checked){
+            choice = size[i].value;
+        }
+    }
+    //Create request object
+    let request = new XMLHttpRequest();
+    
+    //Set up request and send it
+    request.open("POST", "addCart.php");
+             
+    //Create event handler that specifies what should happen when server responds
+    request.onload = () => {
+        //Check HTTP status code
+        if (request.status === 200) {
+            displayCartAlert(request.responseText);
+        } else
+            alert("Error communicating with server: " + request.status);
+    };
+             
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.send("prodID=" + prodID + "&session_ID=" + session_ID + "&qty=" + qty + "&size=" + choice);
+}
+

@@ -12,7 +12,7 @@
     $productCollection = $db->Products;
     $categoryCollection = $db->Category;
 
-    // //Get category name strings - need to filter input to reduce chances of SQL injection etc.
+    //Get category name strings - need to filter input to reduce chances of SQL injection etc.
     $categoryName= filter_input(INPUT_POST, 'categoryName', FILTER_SANITIZE_STRING);
 
     //Create a PHP array for portrait criteria
