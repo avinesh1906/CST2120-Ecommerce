@@ -12,12 +12,13 @@ function displayProduct(){
 
     // create the html to display
     let htmlStr = '';
+    
+    let imgStr = '';
+    imgStr += '<img class="card-img-top" src="'+ productArray[0].imageURL+'" alt="'+ productArray[0].name +'" height="500px"></img>';
+    //  display the html into the class card
+    document.getElementsByClassName("productImage")[0].innerHTML = imgStr;
 
     for (let i = 0; i < productArray.length; ++i) {
-        htmlStr += '<div class="productImage">';
-        htmlStr += '    <img class="card-img-top" src="'+ productArray[0].imageURL+'" alt="'+ productArray[i].name +'" height="500px"></img>';
-        htmlStr += '</div>';
-        htmlStr += '<div class="productDetails">';
         htmlStr += '    <div class="companyDetails">TiMoris</div>';
         htmlStr += '    <div class="productName">'+ productArray[0].name+'</div>';
         htmlStr += '    <div class="productPrice">Rs '+ productArray[0].price+'</div>';
@@ -50,14 +51,9 @@ function displayProduct(){
         htmlStr += '        </div>';
         htmlStr += '    </div>';
     }
-    htmlStr += '    <div class="confirmationBtn">';
-    htmlStr += '        <button id="basket" onclick="addBasket()">Add to Basket</button>';
-    htmlStr += '        <br>';
-    htmlStr += '        <button id="buyIt">Buy It Now</button>';
-    htmlStr += '    </div>';
-    htmlStr += '</div>';
+
     //  display the html into the class card
-    document.getElementsByClassName("productContainer")[0].innerHTML = htmlStr;
+    document.getElementsByClassName("prodDesc")[0].innerHTML = htmlStr;
 
 }
 
@@ -74,9 +70,18 @@ function viewReview(){
 
 
 function decrease(){
+    let addtoBasketBtn = document.getElementById("basket");
+
     if (parseInt(qtyNumber.innerText) > 0){
         qtyNumber.innerText -= 1;
+        addtoBasketBtn.disabled = false;
+    } 
+    if (parseInt(qtyNumber.innerText) == 0){
+        addtoBasketBtn.disabled = true;
+    } else {
+        addtoBasketBtn.disabled = false;
     }
+
 
 }
 
@@ -84,6 +89,8 @@ function increase(){
     //Convert JSON to array of product objects
     let productArray = JSON.parse(sessionStorage.Product);
     let size = document.getElementsByName('product_Size');
+    let addtoBasketBtn = document.getElementById("basket");
+    
     let choice;
     let max;
     for (let i = 0; i < size.length; i++){
@@ -100,12 +107,15 @@ function increase(){
     }
     if (parseInt(qtyNumber.innerText) < max ){
         qtyNumber.innerText = parseInt(qtyNumber.innerText) + 1;
-    }
-    
+        addtoBasketBtn.disabled = false;
+    }    
 }
 
 function resetQty(){
+    let addtoBasketBtn = document.getElementById("basket");
     qtyNumber.innerText = 0;
+    addtoBasketBtn.disabled = true;
+
 }
 
 function submitReview(){
@@ -304,7 +314,7 @@ function displayReview(reviewList){
     document.getElementsByClassName("reviewQty")[0].innerHTML = htmlStr;
 }
 
-function addBasket()
+function addBasket(session_id)
 {
     let productArray = JSON.parse(sessionStorage.Product);
     let prodID = productArray[0]._id.$oid;
@@ -326,12 +336,13 @@ function addBasket()
     request.onload = () => {
         //Check HTTP status code
         if (request.status === 200) {
-            displayCartAlert(request.responseText);
+            // 
+            console.log(request.responseText);
         } else
             alert("Error communicating with server: " + request.status);
     };
              
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    request.send("prodID=" + prodID + "&session_ID=" + session_ID + "&qty=" + qty + "&size=" + choice);
+    request.send("prodID=" + prodID + "&session_ID=" + session_id + "&qty=" + qty + "&size=" + choice);
 }
 

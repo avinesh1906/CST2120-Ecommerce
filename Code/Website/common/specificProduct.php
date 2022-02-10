@@ -10,10 +10,23 @@
     generateHeader($pageName, $folderName);
     generateNavBar($pageName);
     generateLoggedMsg($pageName);
+
 ?>
 <div class="specificProductContainer">
     <div class="productContainer">
+        <div class="productImage">
 
+        </div>
+        <div class="productDetails">
+            <div class="prodDesc">
+            
+            </div>
+            <div class="confirmationBtn">
+                <button id="basket" onclick="addBasket('<?php echo session_id(); ?>')">Add to Basket</button>
+                <br>
+                <button id="buyIt">Buy It Now</button>
+            </div>
+        </div>
     </div>  
     <div class="productReview">
         <div class="title">
@@ -83,8 +96,6 @@
 
         
     </div>
-
-
 </div>
 <?php
     // php function to generate the footer
