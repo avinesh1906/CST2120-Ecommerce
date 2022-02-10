@@ -3,6 +3,7 @@
 
 displayProduct();    
 generateReview();
+resetQty();
 
 // function to load content of the category into page
 function displayProduct(){
@@ -14,7 +15,7 @@ function displayProduct(){
     let htmlStr = '';
     
     let imgStr = '';
-    imgStr += '<img class="card-img-top" src="'+ productArray[0].imageURL+'" alt="'+ productArray[0].name +'" height="500px"></img>';
+    imgStr += '<img class="card-img-top" src="'+ productArray[0].imageURL+'" alt="'+ productArray[0].name +'" height="400px"></img>';
     //  display the html into the class card
     document.getElementsByClassName("productImage")[0].innerHTML = imgStr;
 
@@ -81,8 +82,6 @@ function decrease(){
     } else {
         addtoBasketBtn.disabled = false;
     }
-
-
 }
 
 function increase(){
@@ -113,9 +112,31 @@ function increase(){
 
 function resetQty(){
     let addtoBasketBtn = document.getElementById("basket");
+    let productArray = JSON.parse(sessionStorage.Product);
+    let size = document.getElementsByName('product_Size');
     qtyNumber.innerText = 0;
     addtoBasketBtn.disabled = true;
 
+    let choice;
+    for (let i = 0; i < size.length; i++){
+        if(size[i].checked){
+            choice = size[i].value;
+        }
+    }
+    if(choice == "A2" && productArray[0].inventory.A2 == 0){
+        addtoBasketBtn.innerText = "Out of stock";
+        addtoBasketBtn.style.backgroundColor  = "#ED3833"; 
+    } else if (choice =="A3"  && productArray[0].inventory.A3 == 0){
+        addtoBasketBtn.innerText = "Out of stock";
+        addtoBasketBtn.style.backgroundColor  = "#ED3833"; 
+    } else if(choice == "A4" && productArray[0].inventory.A4 == 0) {
+        addtoBasketBtn.innerText = "Out of stock";
+        addtoBasketBtn.style.backgroundColor  = "#ED3833"; 
+    } else {
+        addtoBasketBtn.innerText = "Add to cart";
+        addtoBasketBtn.style.backgroundColor  = "#555555"; 
+        addtoBasketBtn.style.color  = "#D9E4DD";
+    }
 }
 
 function submitReview(){

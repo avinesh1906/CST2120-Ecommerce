@@ -26,8 +26,6 @@
             </div>
             <div class="confirmationBtn">
                 <button id="basket" onclick="addBasket('<?php echo session_id(); ?>')">Add to Basket</button>
-                <br>
-                <button id="buyIt">Buy It Now</button>
             </div>
         </div>
     </div>  
