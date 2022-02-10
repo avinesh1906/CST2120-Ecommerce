@@ -170,3 +170,7 @@
     background-color: #F8F0DF;
 }
 
+#alert {
+    text-align: center;
+    display: none;
+}

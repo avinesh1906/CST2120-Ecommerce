@@ -352,9 +352,11 @@ function displayBasketAlert(input){
     let productArray = JSON.parse(sessionStorage.Product);
     let prodID = productArray[0]._id.$oid;
     let qty = qtyNumber.innerText;
+    let alert = document.getElementById("alert");
 
     if (input != 'false') {
-        console.log("added");    
+        alert.style.display = "block";
+        setTimeout(hideElement, 2000) //milliseconds until timeout//
         //Create request object
         let request = new XMLHttpRequest();
     
@@ -375,4 +377,8 @@ function displayBasketAlert(input){
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         request.send("func=" + "updateQty"+ "&prodID="+prodID + "&size="+input + "&qty="+qty);
     } 
+
+    function hideElement() {
+        alert.style.display = 'none'
+    }
 }

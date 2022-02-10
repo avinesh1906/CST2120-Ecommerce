@@ -12,6 +12,9 @@
     generateLoggedMsg($pageName);
 
 ?>
+<div class="alert alert-success" id= "alert" role="alert">
+    Added to cart!
+</div>
 <div class="specificProductContainer">
     <div class="productContainer">
         <div class="productImage">
