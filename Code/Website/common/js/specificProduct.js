@@ -26,12 +26,12 @@ function displayProduct(){
         htmlStr += '    <div class="productSize">';
         htmlStr += '        <div class="sizeTitle">Size</div>';
         htmlStr += '        <div class="sizeOption">';
-        htmlStr += '            <input type="radio" name="product_Size"';
-        htmlStr += '            value="A2" onclick="resetQty()" checked> A2';
-        htmlStr += '            <input type="radio" name="product_Size"';
-        htmlStr += '            value="A3" onclick="resetQty()"> A3';
-        htmlStr += '            <input type="radio" name="product_Size"';
-        htmlStr += '            value="A4" onclick="resetQty()"> A4   ';     
+        htmlStr += '            <input type="radio" id= "A2" name="product_Size"';
+        htmlStr += '            value="A2" onclick="resetQty()" checked> <label for="A2"> A2 </label>';
+        htmlStr += '            <input type="radio" id= "A3" name="product_Size"';
+        htmlStr += '            value="A3" onclick="resetQty()"> <label for="A3"> A3 </label>';
+        htmlStr += '            <input type="radio" id= "A4" name="product_Size"';
+        htmlStr += '            value="A4" onclick="resetQty()"> <label for="A4"> A4 </label>   ';     
         htmlStr += '        </div>';
         htmlStr += '    </div>';
         htmlStr += '    <div class="productQty">';
@@ -391,6 +391,8 @@ function displayBasketAlert(input){
                 //Add data from server to page
                 sessionStorage.Product = request.responseText;
                 displayProduct();
+                resetQty();
+
             } else
                 alert("Error communicating with server: " + request.status);
         };

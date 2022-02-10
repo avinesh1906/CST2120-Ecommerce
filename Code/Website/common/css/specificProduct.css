@@ -50,6 +50,7 @@
 
 .productDetails .productSize .sizeOption{
     margin-left: 3%;
+    user-select:none;
 }
 
 .productDetails .productQty {
