@@ -43,7 +43,7 @@ function displayProduct(){
         htmlStr += '                <button>-</button> ';
         htmlStr += '            </div>';
         htmlStr += '            <!-- qty number -->';
-        htmlStr += '            <div class="qtyNumber" id="qtyNumber"> '+ productArray[0].inventory[0]+' </div>';
+        htmlStr += '            <div class="qtyNumber" id="qtyNumber"> '+ productArray[0].inventory.A2+' </div>';
         htmlStr += '            <!-- increase -->';
         htmlStr += '            <div class="add" onclick="increase()"> ';
         htmlStr += '                <button>+</button> ';
@@ -99,11 +99,11 @@ function increase(){
         }
     }
     if(choice == "A2"){
-        max = productArray[0].inventory[0];
+        max = productArray[0].inventory.A2;
     } else if (choice =="A3"){
-        max = productArray[0].inventory[1];
+        max = productArray[0].inventory.A3;
     } else {
-        max = productArray[0].inventory[2];
+        max = productArray[0].inventory.A4;
     }
     if (parseInt(qtyNumber.innerText) < max ){
         qtyNumber.innerText = parseInt(qtyNumber.innerText) + 1;
@@ -328,21 +328,51 @@ function addBasket(session_id)
     }
     //Create request object
     let request = new XMLHttpRequest();
-    
-    //Set up request and send it
-    request.open("POST", "addCart.php");
              
     //Create event handler that specifies what should happen when server responds
     request.onload = () => {
         //Check HTTP status code
         if (request.status === 200) {
-            // 
-            console.log(request.responseText);
+            // return msg
+            displayBasketAlert(request.responseText);
         } else
             alert("Error communicating with server: " + request.status);
     };
-             
+          
+    //Set up request and send it
+    request.open("POST", "addCart.php");
+
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    request.send("prodID=" + prodID + "&session_ID=" + session_id + "&qty=" + qty + "&size=" + choice);
+    request.send("func=" + "addCart" +"&prodID=" + prodID + "&session_ID=" + session_id + "&qty=" + qty + "&size=" + choice);
 }
 
+
+function displayBasketAlert(input){
+    //Convert JSON to array of product objects
+    let productArray = JSON.parse(sessionStorage.Product);
+    let prodID = productArray[0]._id.$oid;
+    let qty = qtyNumber.innerText;
+
+    if (input != 'false') {
+        console.log("added");    
+        //Create request object
+        let request = new XMLHttpRequest();
+    
+        //Set up request and send it
+        request.open("POST", "addCart.php");
+        
+        //Create event handler that specifies what should happen when server responds
+        request.onload = () => {
+            //Check HTTP status code
+            if (request.status === 200) {
+                //Add data from server to page
+                sessionStorage.Product = request.responseText;
+                displayProduct();
+            } else
+                alert("Error communicating with server: " + request.status);
+        };
+        
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.send("func=" + "updateQty"+ "&prodID="+prodID + "&size="+input + "&qty="+qty);
+    } 
+}
