@@ -21,8 +21,7 @@
 }
 
 /* common text align center */
-.cartItems .qty .counter .number,
-.cartItems .qty .counter button
+.cartItems .qty .counter .number
 {
     text-align: center;
 }
@@ -124,22 +123,15 @@
 /* item qty css */
 .cartItems .item .qty {
     width: 25%;
-    margin-top: 5%;
-    margin-left: 3%;
+    margin-left: 20%;
+    margin-top: 3%;
+    text-align: center;
 }
 
-/* item counter css */
-.cartItems .qty .counter {
-    border: 1px solid black;
-    height: 35px;
-    width: 100px;
-}
 
-/* counter button css */
-.cartItems .qty .counter button{
-    height: 33px;
-    border: none;
-    margin-top: 1%;
+.cartItems .qty .number {
+    margin-right: 3%;
+    font-size: 45px;
 }
 
 /* cart item price css */
@@ -149,6 +141,7 @@
 
 /* delete btn css */
 .cartItems .qty .deleteBtn {
+    margin-top: 8%;
     padding-left: 3%;
 }
 
@@ -190,4 +183,12 @@
 .cartFooter #details {
     font-size: 16px;
     color: #852747;
+}
+
+#noItem {
+    text-align: center;
+    font-size: xx-large;
+    margin: 5%;
+    color: #852747;
+    display: none;
 }

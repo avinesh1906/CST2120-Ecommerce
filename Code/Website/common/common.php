@@ -296,7 +296,7 @@ function generateJavaScript($title){
     );
     echo '<script src = "'. $linkNames[$title] .'">'; 
     echo '</script>';
-
+    
     echo '<script ';
     if ($title == "Home") {
         echo 'src = "./common/js/common.js">';
@@ -307,7 +307,7 @@ function generateJavaScript($title){
     }
     echo '</script>';
     
-    if($title == "Portrait" || $title == "Landscape" ||$title == "Oil" || $title == "Abstract" || $title == "Historical"){
+    if($title == "Specific Product"){
         echo '<script src = "../common/js/specificProduct.js"></script>';
     }    
 
