@@ -135,7 +135,3 @@ function deleteItem($input)
         alert.style.display = 'none'
     }
 }
-
-function displayDeleteAlert(){
-
-}

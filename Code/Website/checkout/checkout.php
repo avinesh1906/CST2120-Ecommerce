@@ -20,7 +20,7 @@
     <!-- phone number -->
     <div class="phone">
         <label>Phone Number: </label>
-        <input placeholder="Mobile Phone Number" value="+230 58352200"></input>
+        <input></input>
     </div>
     <div id="line"></div>
     <!-- Shipping address  -->
@@ -292,30 +292,30 @@
             <div class="first">
                 <label>First Name</label>
                 <br>
-                <input value="Avinesh"></input>
+                <input></input>
             </div>
             <div class="last">
                 <label>Last Name</label>
                 <br>
-                <input value="Culloo"></input>
+                <input ></input>
             </div>
         </div>
         <!-- street -->
         <div class="street">
             <label>Address</label>
-            <input value="9, Rue de bon "></input>
+            <input ></input>
         </div>
         <!-- city and postal code -->
         <div class="city">
             <div class="city_name">
                 <label>City</label>
                 <br>
-                <input value="Mahebourg"></input>
+                <input ></input>
             </div>
             <div class="postalCode">
                 <label>Postal Code</label>
                 <br>
-                <input value="51606"></input>
+                <input></input>
             </div>
         </div>
     </div>
@@ -383,7 +383,15 @@
             Rs 2180
         </div>
     </div>
-</div>
+</div> 
+<?php
+    if( array_key_exists("loggedUser", $_SESSION) ){
+        $txt = '<div id="sessionID" style="display:none">'. $_SESSION['email'] .'</div>';
+        echo $txt;
+    } else {
+        echo '<div id="sessionID" style="display:none"></div>';
+    }
+?>
 <?php
     // php function to generate the footer
     generateJavaScript($pageName);
