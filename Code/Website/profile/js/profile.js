@@ -9,8 +9,7 @@ function generateContent(){
 
     //Create request object
     let request = new XMLHttpRequest();
-    
-    let email = sessionStorage.email;
+    let email =  document.getElementById("sessionEmail").innerText;
 
     //Set up request and send it
     request.open("POST", "getProfile.php");

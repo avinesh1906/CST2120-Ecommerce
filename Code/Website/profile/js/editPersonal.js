@@ -13,7 +13,7 @@ function generateContent(){
     //Create request object
     let request = new XMLHttpRequest();
     
-    let email = sessionStorage.email;
+    let email =  document.getElementById("sessionEmail").innerText;
 
     //Set up request and send it
     request.open("POST", "getProfile.php");
@@ -154,7 +154,7 @@ function firstValidation() {
     let details = document.getElementById("first_details");
 
     /* Regular Expression for validating firstname*/
-    let re = new RegExp("^[a-z ,.'-]+$");
+    let re = new RegExp("^[A-Z a-z ,.'-]+$");
     
     // verify if input field is empty
     if (firstname.value.length == 0) {
@@ -183,7 +183,7 @@ function lastValidation() {
     let details = document.getElementById("last_details");
 
     /* Regular Expression for validating lastname*/
-    let re = new RegExp("^[a-z ,.'-]+$");
+    let re = new RegExp("^[A-Z a-z ,.'-]+$");
     
     // verify if input field is empty
     if (lastname.value.length == 0) {

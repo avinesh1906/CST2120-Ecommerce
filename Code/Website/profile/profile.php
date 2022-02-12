@@ -40,7 +40,9 @@
         <button onclick="location.href='./editPersonal.php'"> Edit Personal Information</button>
         <button onclick="location.href='./editAddress.php'"> Change Address</button>
         <button onclick="location.href='./editPassword.php'"> Change Password</button>
-    </div></div>
+    </div>
+    <div id="sessionEmail" style="display:none"><?php echo $_SESSION['email'] ?></div>
+</div>
 <?php
     generateJavaScript($pageName);
     // php function to generate the footer

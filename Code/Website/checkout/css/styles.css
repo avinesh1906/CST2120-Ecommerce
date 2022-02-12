@@ -1,5 +1,5 @@
 /* Common display flex */
-.main-body,
+.beforePurchase,
 .address .name,
 .address .city,
 .address .street,
@@ -32,6 +32,15 @@
     padding-top: 1%;
 }
 
+.productInfo .productList{
+    padding-top: 1%;
+}
+
+.productInfo .productList .itemtotal {
+    font-size: 22px;
+    padding-left: 10%;
+}
+
 .productInfo .subtotal .label,
 .productInfo .tax .label,
 .productInfo .shipping .label,
@@ -44,7 +53,7 @@
 .productInfo .tax .amount,
 .productInfo .shipping .amount,
 .productInfo .total .amount{
-    font-size: 23px;
+    font-size: 20px;
 }
 
 /* Total css */
@@ -161,4 +170,40 @@
     padding-top: 5%;
     padding-left: 10%;
     float: right;
+}
+
+.afterPurchase {
+    padding: 5%;
+    display: none;
+}
+
+.afterPurchase .title {
+    font-size: 50px;
+    text-align: center;
+}
+
+.afterPurchase .body {
+    font-size: 40px;
+    text-align: center;
+}
+
+.afterPurchase .footer {
+    font-size: 30px;
+    text-align: center;
+    background-color: #FBF7F0;
+}
+
+.afterPurchase .footer a {
+    color: #9D9D9D;
+}
+
+.afterPurchase .footer a:link{
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.afterPurchase .footer a:hover{
+    color: #C7B198;
+    background-color: transparent;
+    text-decoration: underline;
 }

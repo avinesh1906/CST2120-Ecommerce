@@ -65,6 +65,7 @@
 
     </div>
 </div> 
+<div id="sessionEmail" style="display:none"><?php echo $_SESSION['email'] ?></div>
 <?php
     generateJavaScript($pageName);
     // php function to generate the footer

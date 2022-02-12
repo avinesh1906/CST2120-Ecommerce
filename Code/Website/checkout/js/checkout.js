@@ -1,13 +1,23 @@
 // Entire script will be in script mode
 "use strict";
 
-let sessionEmail = document.getElementById("sessionID").innerText;
+let sessionEmail = document.getElementById("sessionEmail").innerText;
+let sessionID = document.getElementById("sessionID").innerText;
+let phone = document.getElementById("phone");
+let firstname = document.getElementById("firstname");
+let lastname = document.getElementById("lastname");
+let address = document.getElementById("address");
+let city = document.getElementById("city");
+let postalCode = document.getElementById("postalCode");
+let country = document.getElementById("country");
+let email = null;
+let confirmBtn = document.getElementById("confirmBtn");
 
-if (sessionID.length != 0){
+if (sessionEmail.length != 0){
     extractCustomer(sessionEmail);
-} else {
-    console.log("not logged");
-}
+} 
+
+extractOrder();
 
 function extractCustomer(email)
 {
@@ -22,16 +32,16 @@ function extractCustomer(email)
         //Check HTTP status code
         if (request.status === 200) {
             //Add data from server to page
-            displayContent(request.responseText);
+            displayAddress(request.responseText);
         } else
             alert("Error communicating with server: " + request.status);
     };
     
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    request.send("email="+email);
+    request.send("func="+ "getAddress" + "&email="+email);
 }
 
-function displayContent(customerJSON)
+function displayAddress(customerJSON)
 {
     //Convert JSON to array of product objects
     let user = JSON.parse(customerJSON);
@@ -46,7 +56,10 @@ function displayContent(customerJSON)
     htmlStr += '<!-- phone number -->';
     htmlStr += '<div class="phone">';
     htmlStr += '    <label>Phone Number: </label>';
-    htmlStr += '    <input placeholder="Mobile Phone Number" value="'+ user[0].telephone  + '"></input>';
+    htmlStr += '    <input id="phone" onkeyup="telValidation()" value="'+ user[0].telephone  + '"></input>';
+    htmlStr += '<div class="form_error">';
+    htmlStr += '<span id="tel_details"></span>';
+    htmlStr += '</div>';
     htmlStr += '</div>';
     htmlStr += '<div id="line"></div>';
     htmlStr += '<!-- Shipping address  -->';
@@ -57,45 +70,378 @@ function displayContent(customerJSON)
     htmlStr += '<div class="address">';
     htmlStr += '    <!-- country -->';
     htmlStr += '    <div class="country">   ';
-    htmlStr += ' '+ user[0].country  + '';
+    htmlStr += '<label> Country </label>';
+    htmlStr += ' <input onkeyup="countryValidation()" value = "'+ user[0].country  + '" id="country" size="50">';
+    htmlStr += '<div class="form_error">';
+    htmlStr += '<span id="country_details"></span>';
+    htmlStr += '</div>';
     htmlStr += '    </div>';
     htmlStr += '    <!-- name -->';
     htmlStr += '    <div class="name">   ';
     htmlStr += '        <div class="first">';
-    htmlStr += '            <label>First Name</label>';
+    htmlStr += '            <label >First Name</label>';
     htmlStr += '            <br>';
-    htmlStr += '            <input value="'+ user[0].firstname  + '"></input>';
+    htmlStr += '            <input id="firstname" onkeyup="firstValidation()" value="'+ user[0].firstname  + '"></input>';
+    htmlStr += '<div class="form_error">';
+    htmlStr += '<span id="first_details"></span>';
+    htmlStr += '</div>';
     htmlStr += '        </div>';
     htmlStr += '        <div class="last">';
     htmlStr += '            <label>Last Name</label>';
     htmlStr += '            <br>';
-    htmlStr += '            <input value="'+ user[0].lastname  + '"></input>';
+    htmlStr += '            <input id="lastname" onkeyup="lastValidation()" value="'+ user[0].lastname  + '"></input>';
+    htmlStr += '<div class="form_error">';
+    htmlStr += '<span id="last_details"></span>';
+    htmlStr += '</div>';
     htmlStr += '        </div>';
     htmlStr += '    </div>';
     htmlStr += '    <!-- street -->';
     htmlStr += '    <div class="street">';
     htmlStr += '        <label>Address</label>';
-    htmlStr += '        <input value="'+ user[0].address  + '"></input>';
+    htmlStr += '        <input id="address" onkeyup="addressValidation()" value="'+ user[0].address  + '"></input>';
+    htmlStr += '<div class="form_error">';
+    htmlStr += '<span id="address_details"></span>';
+    htmlStr += '</div>';
     htmlStr += '    </div>';
     htmlStr += '    <!-- city and postal code -->';
     htmlStr += '    <div class="city">';
     htmlStr += '        <div class="city_name">';
     htmlStr += '            <label>City</label>';
     htmlStr += '            <br>';
-    htmlStr += '            <input value="'+ user[0].city  + '"></input>';
+    htmlStr += '            <input id="city" onkeyup="cityValidation()" value="'+ user[0].city  + '"></input>';
+    htmlStr += '<div class="form_error">';
+    htmlStr += '<span id="city_details"></span>';
+    htmlStr += '</div>';
     htmlStr += '        </div>';
     htmlStr += '        <div class="postalCode">';
     htmlStr += '            <label>Postal Code</label>';
     htmlStr += '            <br>';
-    htmlStr += '            <input value="'+ user[0].postalCode  + '"></input>';
+    htmlStr += '            <input id="postalCode" onkeyup="postalCodeValidation()" value="'+ user[0].postalCode  + '"></input>';
+    htmlStr += '<div class="form_error">';
+    htmlStr += '<span id="postalCode_details"></span>';
+    htmlStr += '</div>';
     htmlStr += '        </div>';
     htmlStr += '    </div>';
     htmlStr += '</div>';
     htmlStr += '<!-- confirm btn or return to cart -->';
     htmlStr += '<div class="btn">';
-    htmlStr += '    <button>Confirm</button>';
+    htmlStr += '    <button id="confirmBtn" onclick="purchase()">Confirm</button>';
     htmlStr += '    <a href="../cart/cart.php">Return to cart</a>';
     htmlStr += '</div>';
 
     document.getElementsByClassName("customerInfo")[0].innerHTML = htmlStr;
+}
+
+function extractOrder()
+{
+    //Create request object
+    let request = new XMLHttpRequest();
+    
+    //Set up request and send it
+    request.open("POST", "getCheckout.php");
+    
+    //Create event handler that specifies what should happen when server responds
+    request.onload = () => {
+        //Check HTTP status code
+        if (request.status === 200) {
+            //Add data from server to page
+            displayOrder(request.responseText);
+        } else
+            alert("Error communicating with server: " + request.status);
+    };
+    
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.send("func="+ "getOrder" + "&session_ID="+sessionID);
+}
+
+function displayOrder(orderJSON)
+{
+    //Convert JSON to array of order objects
+    let OrderArray = JSON.parse(orderJSON);
+    
+    // create the html to display personal information 
+    let htmlStr = '';
+
+    for (let i = 0; i < OrderArray.length; ++i) {
+        htmlStr += '<!-- priduct list -->';
+        htmlStr += '<div class="productList">';
+        htmlStr += '    <!-- image -->';
+        htmlStr += '    <div class="img">';
+        htmlStr += '        <img src="'+ OrderArray[i].imageURL+'" alt="'+ OrderArray[i].name+'" width="100px" height="100px">';
+        htmlStr += '    </div>';
+        htmlStr += '    <!-- product details -->';
+        htmlStr += '    <div class="details">';
+        htmlStr += '        '+ OrderArray[i].name+' '+ OrderArray[i].category+' Painting';
+        htmlStr += '        <br>';
+        htmlStr += '        '+ OrderArray[i].qty+' '+ OrderArray[i].category+'';
+        htmlStr += '        <br>';
+
+        if (OrderArray[i].size == "A2"){
+            htmlStr+='                    420 x 594 mm ';
+        } else if (OrderArray[i].size == "A3"){
+            htmlStr+='                    297 x 420 mm ';
+        } else {
+            htmlStr+='                    210 x 297 mm ';
+        }
+        htmlStr += '    </div>';
+        htmlStr += '    <div class="itemtotal">';
+        htmlStr += '        <a>Rs '+ (OrderArray[i].qty * OrderArray[i].price) +'</a>';
+        htmlStr += '    </div>';
+        htmlStr += '</div>';
+        htmlStr += '<div id="line"></div>';
+    }
+    //  display the html into the class productInfo
+    document.getElementsByClassName("productInfo")[0].innerHTML = htmlStr;
+    
+    let priceStr = '';
+    
+    priceStr += '<!-- subtotal -->';
+    priceStr += '<div class="subtotal">';
+    priceStr += '    <div class="label">';
+    priceStr += '        Subtotal';
+    priceStr += '    </div>';
+    priceStr += '    <div class="amount">';
+    let subTotal = 0; 
+    for (let i = 0; i < OrderArray.length; ++i) {
+        subTotal += (OrderArray[i].qty* OrderArray[i].price);
+    }
+
+    priceStr += '        Rs '+ subTotal +'';
+    priceStr += '    </div>';
+    priceStr += '</div>';
+    priceStr += '<!-- tax -->';
+    priceStr += '<div class="tax">';
+    priceStr += '    <div class="label">';
+    priceStr += '        Tax (5% of Rs '+ subTotal +')';
+    priceStr += '    </div>';
+    priceStr += '    <div class="amount">';
+    priceStr += '        Rs '+ (0.05 *subTotal) +'';
+    priceStr += '    </div>';
+    priceStr += '</div>';
+    priceStr += '<!-- shipping -->';
+    priceStr += '<div class="shipping">';
+    priceStr += '    <div class="label">';
+    priceStr += '        Shipping';
+    priceStr += '    </div>';
+    priceStr += '    <div class="amount">';
+    priceStr += '        Rs 350';
+    priceStr += '    </div>';
+    priceStr += '</div>';
+    priceStr += '<div id="line"></div>';
+    priceStr += '<!-- total -->';
+    priceStr += '<div class="total">';
+    priceStr += '    <div class="label">';
+    priceStr += '        Total';
+    priceStr += '    </div>';
+    priceStr += '    <div class="amount">';
+    priceStr += '        Rs '+ (subTotal + (0.05 *subTotal) + 350) +'';
+    priceStr += '    </div>';
+    priceStr += '</div>';
+
+    //  display the html into the class productInfo
+    document.getElementsByClassName("productInfo")[0].innerHTML += priceStr;
+
+}
+
+function purchase()
+{
+    let beforePurchase = document.getElementsByClassName("beforePurchase")[0];
+    let afterPurchase = document.getElementById("afterPurchase");
+
+    if (sessionEmail.length != 0){
+        email = sessionEmail;
+    } 
+
+    if (telValidation() && countryValidation() && firstValidation() && lastValidation() && addressValidation() 
+    && cityValidation() && postalCodeValidation()){
+        // enable button
+        confirmBtn.disabled = false;
+        //Create request object
+        let request = new XMLHttpRequest();
+        
+        //Set up request and send it
+        request.open("POST", "getCheckout.php");
+        
+        //Create event handler that specifies what should happen when server responds
+        request.onload = () => {
+            //Check HTTP status code
+            if (request.status === 200) {
+                // display the after purchase confirmation window
+                beforePurchase.style.display = "none";
+                afterPurchase.style.display ="block";
+            } else
+                alert("Error communicating with server: " + request.status);
+        };
+        
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.send("func="+ "storeOrder" + "&session_ID="+sessionID + "&telephone="+phone.value 
+        + "&firstname="+firstname.value  + "&lastname="+lastname.value + "&address="+address.value  
+        + "&city="+city.value  + "&postalCode="+postalCode.value + "&country="+country.value  + "&email="+email);
+
+    } else {
+        confirmBtn.disabled = true;
+    }
+
+}
+
+// function to validate address
+function addressValidation(){
+    // variables 
+    let details = document.getElementById("address_details");
+
+
+    // verify if input field is empty
+    if (address.value.length == 0) {
+        confirmBtn.disabled = true;
+        details.innerHTML = '*required';
+        details.style.color = "#ED3833";
+        return false;
+
+    } 
+    confirmBtn.disabled = false;
+    // success message
+    details.innerHTML = "";
+    return true;
+}
+
+// function to validate city
+function cityValidation(){
+    // variables 
+    let details = document.getElementById("city_details");
+
+    // verify if input field is empty
+    if (city.value.length == 0) {
+        confirmBtn.disabled = true;
+        details.innerHTML = '*required';
+        details.style.color = "#ED3833";
+        return false;
+
+    } 
+    confirmBtn.disabled = false;
+    // success message
+    details.innerHTML = "";
+    return true;
+}
+
+// function to verify postal code
+function postalCodeValidation(){
+    // variables 
+    let details = document.getElementById("postalCode_details");
+
+    /* Regular Expression for validating postal code*/
+    let re = /^[0-9]{5}(?:-[0-9]{4})?$/;
+    
+    // verify if input field is empty
+    if (!postalCode.value.match(re)) {
+        confirmBtn.disabled = true;
+        details.style.color = "#ED3833";
+        details.innerHTML = "Please enter a correct postal code";
+        return false;
+
+    } 
+    confirmBtn.disabled = false;
+    // success message
+    details.innerHTML = "";
+    return true;
+}
+
+function countryValidation(){
+    // variables 
+    let details = document.getElementById("country_details");
+
+    // verify if input field is empty
+    if (country.value.length == 0) {
+        confirmBtn.disabled = true;
+        details.innerHTML = '*required';
+        details.style.color = "#ED3833";
+        return false;
+
+    } 
+    confirmBtn.disabled = false;
+    // success message
+    details.innerHTML = "";
+    return true;
+}
+
+// function to validate firstname
+function firstValidation() {
+    // variables 
+    let details = document.getElementById("first_details");
+
+    /* Regular Expression for validating firstname*/
+    let re = new RegExp("^[A-Z a-z ,.'-]+$");
+    
+    // verify if input field is empty
+    if (firstname.value.length == 0) {
+        confirmBtn.disabled = true;
+        details.innerHTML = '*required';
+        details.style.color = "#ED3833";
+        return false;
+    // check if pass the regex 
+    } else if (!re.test(firstname.value)) { 
+        confirmBtn.disabled = true;
+        details.innerHTML = '*Enter a valid first name';
+        details.style.color = "#ED3833";
+        return false;
+    }
+
+    confirmBtn.disabled = false;
+    // success message
+    details.innerHTML = "";
+    return true;
+    
+}
+
+// function to validate lastname
+function lastValidation() {
+    // variables 
+    let details = document.getElementById("last_details");
+
+    /* Regular Expression for validating lastname*/
+    let re = new RegExp("^[A-Z a-z ,.'-]+$");
+    
+    // verify if input field is empty
+    if (lastname.value.length == 0) {
+        confirmBtn.disabled = true;
+        details.innerHTML = '*required';
+        details.style.color = "#ED3833";
+        return false;
+    // check if pass the regex 
+    } else if (!re.test(lastname.value)) { 
+        confirmBtn.disabled = true;
+        details.innerHTML = '*Enter a valid last name';
+        details.style.color = "#ED3833";
+        return false;
+    }
+    confirmBtn.disabled = false;
+    // success message
+    details.innerHTML = "";
+    return true;
+}
+
+// function to validate telephone
+function telValidation() {
+    // variables 
+    let details = document.getElementById("tel_details");
+
+    /* Regular Expression for validating telephone number*/
+    let re = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
+    
+    // verify if input field is empty
+    if (phone.value.length == 0) {
+        confirmBtn.disabled = true;
+        details.innerHTML = '*required';
+        details.style.color = "#ED3833";
+        return false;
+    // check if pass the regex 
+    } else if (!phone.value.match(re)) {
+        confirmBtn.disabled = true; 
+        details.innerHTML = '*Enter a valid telephone number';
+        details.style.color = "#ED3833";
+        return false;
+    }    
+    confirmBtn.disabled = false;
+    // success message
+    details.innerHTML = "";
+    return true;
 }
