@@ -1,4 +1,8 @@
 <?php
+
+    //Start session management
+    session_start();
+
     //Include libraries
     require '../vendor/autoload.php';
     
@@ -50,6 +54,9 @@
  
     function createUser($dataArray){
         global $collection;
+        global $firstname;
+        global $lastname;
+        global $email;
         //Add the new user to the database
         $insertResult = $collection->insertOne($dataArray);
 
@@ -57,6 +64,10 @@
         //Echo result back to user
         if($insertResult->getInsertedCount()!=1){
             echo '<script>alert("Error adding customer")</script>';
+        } else{
+            //Start session for this user
+            $_SESSION['loggedUser'] = $firstname. " ". $lastname;
+            $_SESSION['email'] = $email;
         }
     }
 

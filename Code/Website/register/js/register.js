@@ -338,11 +338,8 @@ function createAccount(){
         request.onload = () => {
             //Check HTTP status code
             if(request.status === 200){
-                //Get data from server
-                let responseData = request.responseText;
-
-                //Add data to page
-                document.getElementById("ServerResponse").innerHTML = responseData;
+                // redirect to home page
+                window.location.href="../index.php";
             }
             else
                 alert("Error communicating with server: " + request.status);
@@ -361,13 +358,6 @@ function createAccount(){
         "&email=" + email.value + "&DOB=" + dob.value + "&gender=" + gender.value +
         "&telephone=" + telephone.value   + "&address=" + address.value + "&city=" + 
         city.value + "&country=" + country.value + "&postalCode=" + postalCode.value +"&password=" + pwd.value );
-
-        // create the session storage
-        sessionStorage.loggedUser = upperFirstname + " " + upperLastname;
-        sessionStorage.email = email.value;
-
-        // redirect to home page
-        window.location.href="../index.php";
 
     } else {
         createAccountBtn.disabled = true;
