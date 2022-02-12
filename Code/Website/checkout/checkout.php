@@ -360,13 +360,7 @@
         }
     ?>
 </div>
-<div class="afterPurchase" id="afterPurchase">
-    <?php
-    session_unset(); 
-    //Destroy the session 
-    session_destroy(); 
-    ?>
-    
+<div class="afterPurchase" id="afterPurchase">   
     <div class="title">
         THANK YOU 
     </div>
