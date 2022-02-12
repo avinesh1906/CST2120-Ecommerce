@@ -39,7 +39,7 @@ function extractDetails()
 
 // function to load content of the cart into page
 function displayProduct(itemDetails){
-
+    console.log(itemDetails);
     //Convert JSON to array of product objects
     let cartArray = JSON.parse(itemDetails);
 

@@ -2,15 +2,6 @@
 "use strict";
 
 let sessionEmail = document.getElementById("sessionEmail").innerText;
-let sessionID = document.getElementById("sessionID").innerText;
-let phone = document.getElementById("phone");
-let firstname = document.getElementById("firstname");
-let lastname = document.getElementById("lastname");
-let address = document.getElementById("address");
-let city = document.getElementById("city");
-let postalCode = document.getElementById("postalCode");
-let country = document.getElementById("country");
-let email = null;
 let confirmBtn = document.getElementById("confirmBtn");
 
 if (sessionEmail.length != 0){
@@ -134,6 +125,7 @@ function displayAddress(customerJSON)
 
 function extractOrder()
 {
+    let sessionID = document.getElementById("sessionID").innerText;
     //Create request object
     let request = new XMLHttpRequest();
     
@@ -245,8 +237,17 @@ function displayOrder(orderJSON)
 
 function purchase()
 {
+    let sessionID = document.getElementById("sessionID").innerText;
     let beforePurchase = document.getElementsByClassName("beforePurchase")[0];
     let afterPurchase = document.getElementById("afterPurchase");
+    let phone = document.getElementById("phone");
+    let firstname = document.getElementById("firstname");
+    let lastname = document.getElementById("lastname");
+    let address = document.getElementById("address");
+    let city = document.getElementById("city");
+    let postalCode = document.getElementById("postalCode");
+    let country = document.getElementById("country");
+    let email = null;
 
     if (sessionEmail.length != 0){
         email = sessionEmail;
@@ -288,7 +289,7 @@ function purchase()
 function addressValidation(){
     // variables 
     let details = document.getElementById("address_details");
-
+    let address = document.getElementById("address");
 
     // verify if input field is empty
     if (address.value.length == 0) {
@@ -308,7 +309,8 @@ function addressValidation(){
 function cityValidation(){
     // variables 
     let details = document.getElementById("city_details");
-
+    let city = document.getElementById("city");
+    
     // verify if input field is empty
     if (city.value.length == 0) {
         confirmBtn.disabled = true;
@@ -327,6 +329,7 @@ function cityValidation(){
 function postalCodeValidation(){
     // variables 
     let details = document.getElementById("postalCode_details");
+    let postalCode = document.getElementById("postalCode");
 
     /* Regular Expression for validating postal code*/
     let re = /^[0-9]{5}(?:-[0-9]{4})?$/;
@@ -348,7 +351,8 @@ function postalCodeValidation(){
 function countryValidation(){
     // variables 
     let details = document.getElementById("country_details");
-
+    let country = document.getElementById("country");
+    
     // verify if input field is empty
     if (country.value.length == 0) {
         confirmBtn.disabled = true;
@@ -367,6 +371,7 @@ function countryValidation(){
 function firstValidation() {
     // variables 
     let details = document.getElementById("first_details");
+    let firstname = document.getElementById("firstname");
 
     /* Regular Expression for validating firstname*/
     let re = new RegExp("^[A-Z a-z ,.'-]+$");
@@ -396,6 +401,7 @@ function firstValidation() {
 function lastValidation() {
     // variables 
     let details = document.getElementById("last_details");
+    let lastname = document.getElementById("lastname");
 
     /* Regular Expression for validating lastname*/
     let re = new RegExp("^[A-Z a-z ,.'-]+$");
@@ -423,6 +429,7 @@ function lastValidation() {
 function telValidation() {
     // variables 
     let details = document.getElementById("tel_details");
+    let phone = document.getElementById("phone");
 
     /* Regular Expression for validating telephone number*/
     let re = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;

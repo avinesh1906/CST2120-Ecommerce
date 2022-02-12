@@ -64,7 +64,6 @@ function getDetails()
 
                 //Close array
                 $jsonStr .= ']';
-
                 //Echo final string
                 echo $jsonStr;
             }
