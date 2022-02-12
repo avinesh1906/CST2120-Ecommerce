@@ -126,16 +126,46 @@ function extractCategory($input)
 
 function deleteItem(){
     global $cartItemCollection;
+    global $productCollection;
 
     //Get session id strings - need to filter input to reduce chances of SQL injection etc.
     $session_ID= filter_input(INPUT_POST, 'session_ID', FILTER_SANITIZE_STRING);
     $arrayIndex = filter_input(INPUT_POST, 'arrayIndex', FILTER_SANITIZE_STRING);
-
+    
     //Create a PHP array for session criteria
     $findCartCriteria = [
         "session_ID" => $session_ID
     ];
 
+    //Find all of the category that match this criteria
+    $cartItemCursor = $cartItemCollection->find($findCartCriteria);
+
+    //Work through the products
+    if ($cartItemCursor->isDead()) {
+        echo 'false';
+    } else {
+        foreach ($cartItemCursor as $cart){
+            $prod_ID = json_encode($cart['product_Arr'][$arrayIndex]['prodID']);
+            $size = json_encode($cart['product_Arr'][$arrayIndex]['size']);
+            $qty = json_encode($cart['product_Arr'][$arrayIndex]['qty']);
+        }
+
+        //Create a PHP array for session criteria
+        $updateProductCriteria = [
+            "_id" => new MongoDB\BSON\ObjectID(json_decode($prod_ID))
+        ];
+
+        // inventory
+        $inv = 'inventory.' . json_decode($size);
+
+        $productData = array(
+            '$inc' => array($inv => + json_decode($qty))
+        );
+
+        //Replace product data for this ID
+        $updateRes = $productCollection->updateOne($updateProductCriteria, $productData);
+    }
+    
     $dataArray = array(
         '$unset' => array("product_Arr.$arrayIndex" => 1)
     );
@@ -144,14 +174,9 @@ function deleteItem(){
         '$pull' => array("product_Arr" => null)
     );
     
-
     //Find and delete the chosen index from cart items
     $cartItemCollection->updateOne($findCartCriteria, $dataArray);
     $updateRes =$cartItemCollection->updateOne($findCartCriteria, $nullArray);
     
-    //Echo result back to user
-    if($updateRes->getModifiedCount() == 1)
-        echo 'true';
-    else
-        echo 'false';
+
 }

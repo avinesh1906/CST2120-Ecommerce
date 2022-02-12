@@ -120,6 +120,7 @@ function deleteItem($input)
     request.onload = () => {
         //Check HTTP status code
         if (request.status === 200) {
+            console.log(request.responseText);
             extractDetails();
         } else
             alert("Error communicating with server: " + request.status);
