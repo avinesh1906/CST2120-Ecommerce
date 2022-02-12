@@ -9,17 +9,30 @@
     // call the php functions 
     generateHeader($pageName, $folderName);
     generateNavBar($pageName);
+    
+    //Remove all session variables
+    session_unset(); 
+
+    // If it's desired to kill the session, also delete the session cookie.
+    // Note: This will destroy the session, and not just the session data!
+    if (ini_get("session.use_cookies")) {
+        $params = session_get_cookie_params();
+        setcookie(session_name(), '', time() - 42000,
+            $params["path"], $params["domain"],
+            $params["secure"], $params["httponly"]
+        );
+    }
+    //Destroy the session 
+    session_destroy(); 
+
     //Find out if session exists
-    if( array_key_exists("loggedUser", $_SESSION) ){
-        //Remove all session variables
-        session_unset(); 
-        //Destroy the session 
-        session_destroy(); 
+    if( array_key_exists("loggedUser", $_SESSION) ){       
         echo '<script type="text/javascript"> ';
         echo 'let log_btn = document.getElementsByName("Sign In");';
         echo 'log_btn[0].innerText = \'Sign In\';';
         echo '</script>';
     } 
+
     generateLoggedMsg($pageName);
 ?>
 <!-- Sign In -->
