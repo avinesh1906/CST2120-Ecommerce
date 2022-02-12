@@ -192,3 +192,8 @@
     color: #852747;
     display: none;
 }
+
+.alert {
+    text-align: center;
+    display: none;
+}

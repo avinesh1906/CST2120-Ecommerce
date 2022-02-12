@@ -109,6 +109,7 @@ function displayProduct(itemDetails){
 function deleteItem($input)
 {
     let session_ID = document.getElementById("sessionID").innerText;
+    let alert = document.getElementById("alert");
 
     //Create request object
     let request = new XMLHttpRequest();
@@ -120,7 +121,8 @@ function deleteItem($input)
     request.onload = () => {
         //Check HTTP status code
         if (request.status === 200) {
-            console.log(request.responseText);
+            alert.style.display = "block";
+            setTimeout(hideElement, 2000) //milliseconds until timeout//
             extractDetails();
         } else
             alert("Error communicating with server: " + request.status);
@@ -128,4 +130,12 @@ function deleteItem($input)
              
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     request.send("func=" + "deleteItem" + "&session_ID=" + session_ID + "&arrayIndex=" + $input);
+
+    function hideElement() {
+        alert.style.display = 'none'
+    }
+}
+
+function displayDeleteAlert(){
+
 }

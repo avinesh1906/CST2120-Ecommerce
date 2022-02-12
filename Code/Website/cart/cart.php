@@ -11,6 +11,9 @@
     generateNavBar($pageName);
     generateLoggedMsg($pageName);
 ?>
+<div class="alert alert-danger" id= "alert" role="alert">
+    Cart Item deleted!
+</div>
 <!-- Cart Header -->
 <div class="cartHeader">
     <!-- Title -->
