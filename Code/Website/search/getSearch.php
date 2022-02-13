@@ -21,8 +21,14 @@
     //Create a PHP array for session criteria
     $findCartCriteria = array('$text' => array('$search' => $searchTxt));
     
-    //Find all of the product that match this criteria
-    $productCursor = $productCollection->find($findCartCriteria);
+    if ($searchTxt == "null"){
+        //Find all of the product that match this criteria
+        $productCursor = $productCollection->find();
+    } else {
+        //Find all of the product that match this criteria
+        $productCursor = $productCollection->find($findCartCriteria);
+    }
+
 
     //Work through the products
     if ($productCursor->isDead()) {

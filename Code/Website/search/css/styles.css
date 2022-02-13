@@ -10,3 +10,11 @@
 .card .col-md-4 img {
     padding: 3%;
 }
+
+/* no match css */
+#noMatch {
+    text-align: center;
+    font-size: 50px;
+    padding: 10%;
+    color: #FF5677;
+}
