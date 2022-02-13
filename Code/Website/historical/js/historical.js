@@ -37,7 +37,7 @@ function displayContent(jsonProduct){
     // create the html to display
     let htmlStr = '';
     for (let i = 0; i < productArray.length; ++i) {
-        htmlStr += '<div class="col">';
+        htmlStr += '<div class="col" onclick="redirectProduct(\''+productArray[i]._id.$oid+'\')">';
             htmlStr += '<div class="card">';
                 htmlStr += '<!-- image -->';
                 htmlStr += '<img class="card-img-top" src="'+ productArray[i].imageURL +'" alt="'+ productArray[i].name +'" height="300px" ></img>';
@@ -55,4 +55,28 @@ function displayContent(jsonProduct){
 
     //  display the html into the class card
     document.getElementsByClassName("row")[0].innerHTML = htmlStr;
+}
+
+function redirectProduct(prodID)
+{   
+    //Create request object
+    let request = new XMLHttpRequest();
+
+    //Set up request and send it
+    request.open("POST", "../common/getSpecificProduct.php");
+    
+    //Create event handler that specifies what should happen when server responds
+    request.onload = () => {
+        //Check HTTP status code
+        if (request.status === 200) {
+            //Add data from server to page
+            sessionStorage.Product = request.responseText;
+            // // redirect to home page
+            window.location.href="../common/specificProduct.php";
+        } else
+            alert("Error communicating with server: " + request.status);
+    };
+    
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.send("func=" + "getId"+ "&id="+prodID);
 }
