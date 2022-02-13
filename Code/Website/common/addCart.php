@@ -58,7 +58,7 @@
             if($insertResult->getInsertedCount()!=1){
                 echo 'false';
             } else {
-                echo 'true';
+                echo $size;
             }
         } else {
             //Criteria for finding document to replace

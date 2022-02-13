@@ -354,6 +354,7 @@ function addBasket(session_id)
     request.onload = () => {
         //Check HTTP status code
         if (request.status === 200) {
+            console.log(request.responseText);
             // return msg
             displayBasketAlert(request.responseText);
         } else
