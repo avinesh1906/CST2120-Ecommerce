@@ -27,6 +27,8 @@
         }
         //Destroy the session 
         session_destroy();
+    } else {
+        session_regenerate_id();
     }
     ?>
     
