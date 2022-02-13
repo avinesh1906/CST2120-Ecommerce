@@ -484,3 +484,16 @@ body,footer {
     background-color: #E9DAC1;
     color: #2C3333;
 }
+
+/* card body css */
+.card-body p{
+    color: #666;
+}
+.card-details {
+    color: #79B4B7;
+}
+
+.card:hover {
+    background-color: #79B4B7;
+    color:#2C3333;
+}
