@@ -44,9 +44,9 @@ function displayContent(jsonProduct){
                 htmlStr += '<!-- content -->';
                 htmlStr += '<div class="card-body">';
                     htmlStr += '<h5 class="card-title" id="'+ productArray[i]._id.$oid +'">' + productArray[i].name +'</h5>';
+                    htmlStr += '<p class="card-text">'+ productArray[i].description +'</p>';
                     htmlStr += '<div class="card-details">'; 
                         htmlStr += '<p>Rs'+ productArray[i].price +'</p>';
-                        htmlStr += '<button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>';
                     htmlStr += '</div>';
                 htmlStr += '</div>';
             htmlStr += '</div>';
