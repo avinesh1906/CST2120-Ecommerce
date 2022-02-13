@@ -114,10 +114,10 @@ function generateNavBar($pagename){
 
     echo '
         <div class="nav-center">
-        <form>
-            <input type="text" placeholder="Search" name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
+        <div>
+            <input type="text" placeholder="Search" id="search" name="search">
+            <button id="searchBtn"><i class="fa fa-search"></i></button>
+        </div>
         </div>
     ';
 
@@ -293,7 +293,8 @@ function generateJavaScript($title){
         "Abstract" => "./js/abstract.js",
         "Check Out" => "./js/checkout.js",
         "Specific Product" => "./js/specificProduct.js",
-        "My Orders" => "./js/myOrders.js"
+        "My Orders" => "./js/myOrders.js",
+        "Search" => "./js/search.js"
     );
     echo '<script src = "'. $linkNames[$title] .'">'; 
     echo '</script>';

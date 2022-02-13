@@ -1,0 +1,12 @@
+.eachProduct {
+    padding: 2%;
+    align-items: center;
+}
+
+.card {
+    margin-left: 1%;
+}
+
+.card .col-md-4 img {
+    padding: 3%;
+}

@@ -19,7 +19,15 @@ let pathArray = window.location.pathname.split('/');
 // access the last element of pathname
 let pathname = pathArray[pathArray.length - 1];
 
-
+// search input + redirection
+document.getElementById("searchBtn").onclick = function () {
+    sessionStorage.Search = document.getElementById("search").value;
+    if (pathname == 'index.php'){
+        location.href = "./search/search.php";
+    } else {
+        location.href = "../search/search.php";
+    }
+};
 
 // check if pathname is register.php
 if (pathname == 'register.php' || pathname == 'editPassword.php') {
