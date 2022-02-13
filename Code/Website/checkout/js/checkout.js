@@ -238,8 +238,6 @@ function displayOrder(orderJSON)
 function purchase()
 {
     let sessionID = document.getElementById("sessionID").innerText;
-    let beforePurchase = document.getElementsByClassName("beforePurchase")[0];
-    let afterPurchase = document.getElementById("afterPurchase");
     let phone = document.getElementById("phone");
     let firstname = document.getElementById("firstname");
     let lastname = document.getElementById("lastname");

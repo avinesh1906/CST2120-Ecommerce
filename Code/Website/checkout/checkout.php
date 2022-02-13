@@ -360,27 +360,6 @@
         }
     ?>
 </div>
-<div class="afterPurchase" id="afterPurchase">
-    <?php
-
-    if(! array_key_exists("loggedUser", $_SESSION) ){
-        session_unset(); 
- 
-        //Destroy the session 
-        session_destroy();
-    }
-    ?>
-    
-    <div class="title">
-        THANK YOU 
-    </div>
-    <div class="body">
-        for shopping with TiMoris    
-    </div>
-    <div class="footer">
-        <a href="../index.php">Return to Home</a>
-    </div>
-</div>
 <?php
     // php function to generate the footer
     generateJavaScript($pageName);
