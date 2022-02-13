@@ -13,25 +13,118 @@
 </head>
 <body>
 
+
+
+
    <form action="login.php" method="post">
+
    
       <h1>Login</h1>
        <!-- creating the login form -->
       <fieldset>
+
+      <script type= "text/javascript">
+
+//getting each element of the form that needs to be validated
+function checkForm(){
+    let name = document.getElementById("name").value;;
+    let password = document.getElementById("password").value;
+    function validateForm(){
+    let IsValid = true;
+
+
+ 
+  
+//username validation ensuring that user fills in his username and does not create one starting with a digit 
+    if (name == "") {
+    alert("Username cannot be blank");
+    IsValid = false;
+    }else if(!(isNaN(name.slice(0, 1)))){
+    alert("Username cannot start with a digit");
+    IsValid = false;
+//checks if the username a new user is entering is already taken
+    } else if (Boolean(localStorage.getItem("users_data"))){
+    if (GetExistingData("name").includes(name)){
+        alert("Username already taken. Please type another username.");
+        IsValid = false;
+    }
+};
+
+
+//makes sure that the password entered by the user is strong enough
+    let password_regex = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+    let regex1 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+
+    if (password == "") {
+    alert("Password cannot be blank");
+    IsValid = false;
+    } else if(!(password.match(regex1))){
+    alert("Weak password. Password must contain at least one numeric digit,one symbol, one uppercase and one lowercase letter!");
+    IsValid = false;
+    }
+
+    return IsValid;
+}
+
+//creating a general function to get an item in a record
+function GetExistingData(field_name){
+    // Write program
+    let existing_dict = JSON.parse(localStorage.getItem("users_data")),
+        existing_data = [],
+        keys=Object.keys(existing_dict),
+        storage_length = keys.length;
+
+    for (let index=0; index<storage_length;index++){
+        value = existing_dict[keys[index]][field_name];
+        existing_data.push(value)
+    };
+    return existing_data;
+}
+
+function storeinlocal(){
+ // Creating a dictionary of the values
+    let my_dict = {"name":name,"password":password};
+    let current_dt = new Date().toLocaleString().replace(',',' ');
+    let new_dict = {};
+
+    new_dict[current_dt] = my_dict;
+
+    if (!(JSON.parse(localStorage.getItem("users_data")))){
+        //converting records and date key to strings
+        localStorage.setItem("users_data", JSON.stringify(new_dict));
+    }
+    else{
+        let existing_dict = JSON.parse(localStorage.getItem("users_data"));
+        existing_dict[current_dt] = my_dict
+        localStorage.setItem("users_data", JSON.stringify(existing_dict));
+    };
+    
+    localStorage.setItem("current_user", name)
+    alert("Form submitted successfully! Storing in local storage")
+}
+
+if (validateForm()==true){
+    storeinlocal();
+    // Write code to redirect user to login page
+    window.location.href = "login.php";
+}else{
+    alert("Error! Form not successfully submitted")
+}
+}
+</script> 
+
+
          <legend><span class="number">1.</span>Enter your information</legend>
          <label for="name">Full Name:</label><br>
-         <input type="text" id="name" name="full_name">
-         
-         <br><label for="mail">Email Address:</label><br>
-         <input type="email" id="mail" name="user_email">
+         <input type="text" id="name" name="name">
          
          <br><label for="password">Password:</label><br>
-         <input type="password" id="password" name="user_password">
+         <input type="password" id="password" name="password">
       
       </fieldset>
       
+      <button type="button" onclick = "checkForm()">Login</button>
       
-      <button type="submit">Login</button>
    </form>
 
    <footer class="footer1">
