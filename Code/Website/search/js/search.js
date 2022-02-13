@@ -35,7 +35,6 @@ function generateContent(){
 
 function displayContent(jsonProduct)
 {
-    console.log(jsonProduct);
     if (jsonProduct == 'false'){
         document.getElementById("noMatch").style.display = "block";
         document.getElementById("searchContainer").style.display = "none";

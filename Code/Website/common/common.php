@@ -296,7 +296,12 @@ function generateJavaScript($title){
         "My Orders" => "./js/myOrders.js",
         "Search" => "./js/search.js"
     );
-    echo '<script src = "'. $linkNames[$title] .'">'; 
+    if ($title == "Home") {
+        echo '<script type="module" src = "'. $linkNames[$title] .'">'; 
+    } else {
+        echo '<script src = "'. $linkNames[$title] .'">'; 
+    }
+    
     echo '</script>';
     
     echo '<script ';

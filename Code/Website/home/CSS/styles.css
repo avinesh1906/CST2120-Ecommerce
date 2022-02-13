@@ -227,3 +227,8 @@
 .recommendation{
     width: 99%;
 }
+
+.card-scroll:hover {
+    background-color: #79B4B7;
+    color:#2C3333;
+}
