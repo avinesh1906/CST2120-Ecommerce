@@ -46,7 +46,6 @@ function getCustomerID()
             $customer_id =  $customer['_id'];
         }
         extractOrder($customer_id);
-
     }
 
 }
