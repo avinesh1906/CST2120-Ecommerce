@@ -360,7 +360,17 @@
         }
     ?>
 </div>
-<div class="afterPurchase" id="afterPurchase">   
+<div class="afterPurchase" id="afterPurchase">
+    <?php
+
+    if(! array_key_exists("loggedUser", $_SESSION) ){
+        session_unset(); 
+ 
+        //Destroy the session 
+        session_destroy();
+    }
+    ?>
+    
     <div class="title">
         THANK YOU 
     </div>

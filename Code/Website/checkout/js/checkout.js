@@ -267,9 +267,8 @@ function purchase()
         request.onload = () => {
             //Check HTTP status code
             if (request.status === 200) {
-                // display the after purchase confirmation window
-                beforePurchase.style.display = "none";
-                afterPurchase.style.display ="block";
+                // redirect to confirmation page
+                window.location.href ='./confirmation.php';
             } else
                 alert("Error communicating with server: " + request.status);
         };
