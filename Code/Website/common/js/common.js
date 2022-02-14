@@ -22,11 +22,16 @@ let pathname = pathArray[pathArray.length - 1];
 // search input + redirection
 document.getElementById("searchBtn").onclick = function () {
     sessionStorage.Search = document.getElementById("search").value;
-    if (!pathname == 'index.php'){
-        location.href = "../search/search.php";
-    } else {
+    if(pathname == 'index.php'){
         location.href = "./search/search.php";
     }
+    if(pathname == 'search.php'){
+        window.location.reload();
+    }
+    if (pathname == "nope"){
+        location.href = "./search/search.php";
+    }
+    location.href = "../search/search.php";
 };
 
 // check if pathname is register.php
