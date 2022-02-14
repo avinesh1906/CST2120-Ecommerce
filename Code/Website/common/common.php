@@ -318,6 +318,11 @@ function generateJavaScript($title){
         echo '<script src = "../common/js/specificProduct.js"></script>';
     }    
 
+    if ($title == "Portrait" || $title == "Landscape" || $title == "Oil" 
+    || $title == "Abstract" || $title == "Historical") {
+        echo '<script src = "../common/js/sortBy.js"></script>'; 
+    }
+
     echo '</body>';
     echo '</html>';
 }
