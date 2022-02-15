@@ -1,4 +1,3 @@
-
 // Entire script will be in script mode
 "use strict";
 
@@ -148,7 +147,7 @@ function emailValidation() {
         return false;
     }
 
-    request.open("POST", "registerAjax.php");
+    request.open("POST", "getRegister.php");
     //Create event handler that specifies what should happen when server responds
     request.onload = () => {
         //Check HTTP status code
@@ -168,7 +167,7 @@ function emailValidation() {
     };
     
     //Set up request with HTTP method and URL 
-    request.open("POST", "registerAjax.php");
+    request.open("POST", "getRegister.php");
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     //Send request
     request.send("func=" + "email" + "&email=" + email.value);
@@ -328,6 +327,7 @@ function confirmPassword() {
 // function to proceed to 2nd page after verification
 function createAccount(){
 
+    // verify conditions
     if (passwordValidation() && confirmPassword()){
         // enable button
         createAccountBtn.disabled = false;
@@ -346,7 +346,7 @@ function createAccount(){
         };
         
         //Set up request with HTTP method and URL 
-        request.open("POST", "registerAjax.php");
+        request.open("POST", "getRegister.php");
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
         // first letter to upper case
@@ -360,6 +360,7 @@ function createAccount(){
         city.value + "&country=" + country.value + "&postalCode=" + postalCode.value +"&password=" + pwd.value );
 
     } else {
+        // disable create account btn
         createAccountBtn.disabled = true;
     }
 
