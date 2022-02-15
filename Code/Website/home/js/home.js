@@ -6,6 +6,10 @@ import {Recommender} from '../../common/js/recommender.js';
 //Create recommender object - it loads its state from local storage
 let recommender = new Recommender();
 
+generateFeaturedContent();
+generateLatestContent();
+generateBestsellerContent();
+
 showRecommendation();
 
 let option = document.getElementById("top-product-item");
@@ -87,7 +91,7 @@ function generateContent(searchTxt){
 }
 
 // function to generate the content of the portrait body
-function generateContent(searchTxt){
+function generateFeaturedContent(){
     //Create request object
     let request = new XMLHttpRequest();
 
@@ -99,13 +103,89 @@ function generateContent(searchTxt){
         //Check HTTP status code
         if (request.status === 200) {
             //Add data from server to page
-            displayRecommendationContent(request.responseText);
+            displayTopProduct(request.responseText, "featured");
         } else
             alert("Error communicating with server: " + request.status);
     };
 
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    request.send("searchTxt="+searchTxt);
+    request.send("searchTxt="+"Featured");
+
+}
+
+// function to generate the content of the portrait body
+function generateLatestContent(){
+    //Create request object
+    let request = new XMLHttpRequest();
+
+    //Set up request and send it
+    request.open("POST", "./search/getSearch.php");
+
+    //Create event handler that specifies what should happen when server responds
+    request.onload = () => {
+        //Check HTTP status code
+        if (request.status === 200) {
+            //Add data from server to page
+            displayTopProduct(request.responseText, "latest");
+        } else
+            alert("Error communicating with server: " + request.status);
+    };
+
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.send("searchTxt="+"Latest");
+
+}
+
+// function to generate the content of the portrait body
+function generateBestsellerContent(){
+    //Create request object
+    let request = new XMLHttpRequest();
+
+    //Set up request and send it
+    request.open("POST", "./search/getSearch.php");
+
+    //Create event handler that specifies what should happen when server responds
+    request.onload = () => {
+        //Check HTTP status code
+        if (request.status === 200) {
+            //Add data from server to page
+            displayTopProduct(request.responseText, "bestseller");
+        } else
+            alert("Error communicating with server: " + request.status);
+    };
+
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.send("searchTxt="+"Bestseller");
+}
+
+function displayTopProduct(jsonProduct, className)
+{
+    // Convert JSON to array of product objects
+    let productArray = JSON.parse(jsonProduct);
+    
+    // create the html to display
+    let htmlStr = '';
+
+    htmlStr += '<!-- Card deck layout -->';
+    htmlStr += '<div class="card-deck row">';
+
+    for (let i = 0; i < productArray.length; ++i) {
+        htmlStr += ' <div class="card-scroll" onclick="redirectHomeProduct(\''+productArray[i].id.$oid+'\')">';
+        htmlStr += ' <!-- image -->';
+        htmlStr += ' <img class="card-img-top" src="'+ productArray[i].imageURL.substring(1) +'" alt="'+ productArray[i].name +'" height="450px" width="95%">';
+        htmlStr += ' <!-- content -->';
+        htmlStr += ' <div class="card-body">';
+        htmlStr += '     <h5 class="card-title" id="'+ productArray[i].id.$oid +'">' + productArray[i].name +'</h5>';
+        htmlStr += '     <p class="card-text">'+ productArray[i].description +'</p>';
+        htmlStr += '     <div class="card-details">';
+        htmlStr += '         <p>Rs '+ productArray[i].price +' </p>';
+        htmlStr += '     </div>';
+        htmlStr += ' </div>';
+        htmlStr += ' </div>';
+    }
+    htmlStr += ' </div>';
+
+    document.getElementsByClassName(className)[0].innerHTML = htmlStr;
 
 }
 
