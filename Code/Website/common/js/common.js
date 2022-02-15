@@ -19,7 +19,21 @@ let pathArray = window.location.pathname.split('/');
 // access the last element of pathname
 let pathname = pathArray[pathArray.length - 1];
 
-
+// search input + redirection
+document.getElementById("searchBtn").onclick = function () {
+    sessionStorage.Search = document.getElementById("search").value;
+    console.log(pathname);
+    if(pathname == 'index.php'){
+        location.href = "./search/search.php";
+    } else if(pathname == 'search.php'){
+        window.location.reload();
+    }else if (pathname.length == 0){
+        location.href = "./search/search.php";
+    } else {
+        location.href = "../search/search.php";
+    }
+    
+};
 
 // check if pathname is register.php
 if (pathname == 'register.php' || pathname == 'editPassword.php') {
@@ -92,3 +106,27 @@ rangeInput.forEach(input =>{
         }
     });
 });
+
+function redirectHomeProduct(prodID)
+{   
+    //Create request object
+    let request = new XMLHttpRequest();
+
+    //Set up request and send it
+    request.open("POST", "./common/getSpecificProduct.php");
+    
+    //Create event handler that specifies what should happen when server responds
+    request.onload = () => {
+        //Check HTTP status code
+        if (request.status === 200) {
+            //Add data from server to page
+            sessionStorage.Product = request.responseText;
+            // // redirect to home page
+            window.location.href="./common/specificProduct.php";
+        } else
+            alert("Error communicating with server: " + request.status);
+    };
+    
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.send("func=" + "getId"+ "&id="+prodID);
+}

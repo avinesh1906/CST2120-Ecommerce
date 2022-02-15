@@ -414,7 +414,7 @@
         <h2> Recommendation </h2>
     </div>
     <div class="img">
-        <div class="card-deck row">
+        <div class="card-deck row" id="homeRecommendation">
                 <!-- 1st card -->
                 <div class="card-scroll">
                     <!-- image -->
