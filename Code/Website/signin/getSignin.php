@@ -51,11 +51,11 @@
         //Close array
         $jsonStr .= ']';
 
-
         // Echo final string
         echo $jsonStr;
 
     } else {
+        // echo empty array
         echo '[]';
     }
 
