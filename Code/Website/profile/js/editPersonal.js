@@ -40,7 +40,7 @@ function displayContent(jsonUser){
 
     // create the html to display personal information
     let htmlStr = '';
-    
+    // email 
     htmlStr += '<!-- Email -->';
     htmlStr += '<div class="form_input">';
     htmlStr += '<label for="email" class="form-label"> Email: </label>';
@@ -49,7 +49,7 @@ function displayContent(jsonUser){
     htmlStr += '<span id="email_details"></span>';
     htmlStr += '</div>';
     htmlStr +='</div>';
-
+    // firstname
     htmlStr += '<!-- First Name -->';
     htmlStr +=  '<div class="form_input">';
     htmlStr += '<label for="firstname" class="form-label"> Firstname: </label>';
@@ -58,7 +58,7 @@ function displayContent(jsonUser){
     htmlStr += '<span id="first_details"></span>';
     htmlStr += '</div>';
     htmlStr += '</div>';
-
+    // last name
     htmlStr += '<!-- Last Name -->';
     htmlStr +=  '<div class="form_input">';
     htmlStr += '<label for="lastname" class="form-label"> Lastname: </label>';
@@ -67,7 +67,7 @@ function displayContent(jsonUser){
     htmlStr += '<span id="last_details"></span>';
     htmlStr += '</div>';
     htmlStr += '</div>';
-
+    // telephone number
     htmlStr +='<!-- Telephone Number -->';
     htmlStr +=' <div class="form_input">';
     htmlStr +='<label for="telephone" class="form-label"> Phone Number: </label>';
@@ -76,13 +76,13 @@ function displayContent(jsonUser){
     htmlStr += '<span id="tel_details"></span>';
     htmlStr += '</div>';
     htmlStr +='</div>';
-
+    // date of birth
     htmlStr +='<!-- Date Of Birth -->';
     htmlStr +='<div class="form_input">';
     htmlStr +='<label for="dob" class="form-label"> Date of Birth: </label>';
     htmlStr +='<input autocomplete="off" type="date" id="dob" value="'+ user[0].DOB +'" max="<?php echo date(\'Y\').\'-\'.date(\'m\').\'-\'.date(\'d\'); ?>">';
     htmlStr +='</div>';
-
+    // gender
     htmlStr +='<!-- Gender-->';
     htmlStr +='<div class="form_input">';
     htmlStr +='    <label for="gender" class="form-label"> Gender: </label>';
@@ -92,7 +92,7 @@ function displayContent(jsonUser){
     htmlStr += '<option value="other">Other</option>';
     htmlStr += '</select>';
     htmlStr +='</div>';
-
+    // user id
     htmlStr += '<input type="hidden" id="id" value="'+ user[0]._id.$oid  + '">';
     
     //  display the html into the class body
@@ -100,6 +100,7 @@ function displayContent(jsonUser){
 
 }
 
+// function for update
 function update()
 {
     // id variables
@@ -111,6 +112,7 @@ function update()
     let dob = document.getElementById("dob");
     let id = document.getElementById("id");
 
+    // check conditions
     if (firstValidation() && lastValidation() && emailValidation()){
         // enable button
         saveBtn.disabled = false;
@@ -137,15 +139,14 @@ function update()
         "&email=" + email.value + "&DOB=" + dob.value + "&gender=" + gender.value +
         "&telephone=" + telephone.value + "&id=" + id.value);
 
+        // clear session storage
         sessionStorage.clear();
-        sessionStorage.loggedUser = firstname.value + " " +  lastname.value;
-        sessionStorage.email = email.value;
         // redirect to profile page
         window.location.href="./profile.php";
     } else {
+        // disable savebtn
         saveBtn.disabled = true;
     }
-    
 }
 
 // function to validate firstname
@@ -252,9 +253,8 @@ function emailValidation() {
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         //Send request
         request.send("func=" + "email" + "&email=" + email.value);
-    }
-    
-
+    }   
+    // enable saveBtn
     saveBtn.disabled = false;
     // succcess message
     details.innerHTML = "";

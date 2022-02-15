@@ -13,6 +13,7 @@
 
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
     
+    // call function depending on input func
     if(isset($_POST['func'])){
         $func = $_POST['func'];
         if ($func == "password") {
@@ -21,6 +22,7 @@
             update();
         }
     }
+    // function verify password
     function checkPassword($input){
         global $collection;
         
@@ -36,6 +38,7 @@
         }    
     }
 
+    // function update password
     function update(){
         global $collection;
         //Extract the customer details 

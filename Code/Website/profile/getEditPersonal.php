@@ -43,6 +43,7 @@
     else
         echo 'Customer replacement error.';
 
+    // check for exisiting email
     if(isset($_POST['func'])){
         $func = $_POST['func'];
         if ($func == "email") {
@@ -50,6 +51,7 @@
         }
     }
 
+    // check for existing email
     function checkExistingEmail($input){
         global $collection;
         //Create a PHP array with our search criteria

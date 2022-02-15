@@ -40,7 +40,7 @@ function displayContent(jsonUser){
 
     // create the html to display personal information
     let htmlStr = '';
-    
+    // street name
     htmlStr += '<!-- Street Name -->';
     htmlStr += '<div class="form_input">';
     htmlStr += '<label for="street" class="form-label"> Street Name </label>';
@@ -49,7 +49,7 @@ function displayContent(jsonUser){
     htmlStr += '<span id="address_details"></span>';
     htmlStr += '</div>';
     htmlStr +='</div>';
-
+    // town
     htmlStr += '<!-- Town -->';
     htmlStr +=  '<div class="form_input">';
     htmlStr += '<label for="town" class="form-label"> City/Tomn/Village </label>';
@@ -58,7 +58,7 @@ function displayContent(jsonUser){
     htmlStr += '<span id="city_details"></span>';
     htmlStr += '</div>';
     htmlStr += '</div>';
-
+    // country
     htmlStr += '<!-- Country -->';
     htmlStr +=  '<div class="form_input">';
     htmlStr += '<label for="country" class="form-label"> Country </label>';
@@ -67,7 +67,7 @@ function displayContent(jsonUser){
     htmlStr += '<span id="country_details"></span>';
     htmlStr += '</div>';
     htmlStr += '</div>';
-
+    // zip code
     htmlStr +='<!-- zip code -->';
     htmlStr +=' <div class="form_input">';
     htmlStr +='<label for="zipCode" class="form-label"> Zip code </label>';
@@ -76,13 +76,14 @@ function displayContent(jsonUser){
     htmlStr += '<span id="postalCode_details"></span>';
     htmlStr += '</div>';
     htmlStr +='</div>';
-
+    // user id
     htmlStr += '<input type="hidden" id="id" value="'+ user[0]._id.$oid  + '">';
     
     //  display the html into the class body
     document.getElementsByClassName("form")[0].innerHTML = htmlStr;
 }
 
+// function to update
 function update()
 {
     // id variables
@@ -92,6 +93,7 @@ function update()
     let country = document.getElementById("country");
     let id = document.getElementById("id");
 
+    // verify conditions
     if (countryValidation() && addressValidation() && cityValidation() && postalCodeValidation()){
         // enable button
         saveBtn.disabled = false;
@@ -123,6 +125,7 @@ function update()
         window.location.href="./profile.php";
         
     } else {
+        // disable save btn
         saveBtn.disabled = true;
     }
 }
@@ -190,21 +193,23 @@ function postalCodeValidation(){
     return true;
 }
 
+// function for country validation
 function countryValidation(){
-        // variables 
-        let country = document.getElementById("country");
-        let details = document.getElementById("country_details");
+    // variables 
+    let country = document.getElementById("country");
+    let details = document.getElementById("country_details");
 
-        // verify if input field is empty
-        if (country.value.length == 0) {
-            saveBtn.disabled = true;
-            details.innerHTML = '*required';
-            details.style.color = "#ED3833";
-            return false;
-    
-        } 
-        saveBtn.disabled = false;
-        // success message
-        details.innerHTML = "";
-        return true;
+    // verify if input field is empty
+    if (country.value.length == 0) {
+        saveBtn.disabled = true;
+        details.innerHTML = '*required';
+        details.style.color = "#ED3833";
+        return false;
+    } 
+
+    // disable save btn
+    saveBtn.disabled = false;
+    // success message
+    details.innerHTML = "";
+    return true;
 }

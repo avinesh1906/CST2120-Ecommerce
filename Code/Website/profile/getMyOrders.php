@@ -119,10 +119,7 @@ function getDetails($session_ID)
                 return $jsonStr;
             }
         }
-
-
     }
-
 }
 
 function generateProductDetails($prodID)

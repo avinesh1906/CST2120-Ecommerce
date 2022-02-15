@@ -62,12 +62,14 @@ function displayContent(jsonUser){
     document.getElementsByClassName("infotext")[0].outerHTML += htmlStr;
 }
 
+// function for update pwd
 function update()
 {   
     // id variables
     let new_password = document.getElementById("new_password");
     let id = document.getElementById("id");
 
+    // verify conditions
     if (passwordValidation() && confirmPassword()){
         //Create request object
         let request = new XMLHttpRequest();
@@ -98,6 +100,7 @@ function update()
         window.location.href="./profile.php";
 
     } else {
+        // disabled changeBtn
         changeBtn.disabled = true;
     }
 }

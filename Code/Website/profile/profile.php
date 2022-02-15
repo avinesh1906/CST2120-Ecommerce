@@ -11,11 +11,13 @@
     generateNavBar($pageName);
     generateLoggedMsg($pageName);
 ?>
+<!-- my account div -->
 <div class="myAccount-title">
     My Account
     <!-- Title bottom border line -->
     <div id="line"></div>
 </div>
+<!-- content div -->
 <div class="content">
     <div class="persoLayout">
         <div class="personalInformation">

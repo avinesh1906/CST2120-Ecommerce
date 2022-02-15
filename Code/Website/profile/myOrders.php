@@ -11,7 +11,9 @@
     generateNavBar($pageName);
     generateLoggedMsg($pageName);
 ?>
+<!-- Order div -->
 <div class="order">
+    <!-- title -->
     <div class="title">
         My Orders
     </div>
@@ -27,7 +29,9 @@
         
     </div>
 </div>
+<!-- session emai div -->
 <div id="sessionEmail" style="display:none"><?php echo $_SESSION['email']; ?></div>
+<!-- No Order Yet div -->
 <div id="noItem"> No Orders Yet!</div>
 
 <?php
