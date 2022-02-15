@@ -172,35 +172,42 @@
     float: right;
 }
 
+/* after purchase css */
 .afterPurchase {
     padding: 5%;
 }
 
+/* after purchase title css */
 .afterPurchase .title {
     font-size: 50px;
     text-align: center;
 }
 
+/* after purchase body css */
 .afterPurchase .body {
     font-size: 40px;
     text-align: center;
 }
 
+/* after purchase footer css */
 .afterPurchase .footer {
     font-size: 30px;
     text-align: center;
     background-color: #FBF7F0;
 }
 
+/* after purchase footer content */
 .afterPurchase .footer a {
     color: #9D9D9D;
 }
 
+/* after purchase footer link css */
 .afterPurchase .footer a:link{
     background-color: transparent;
     text-decoration: none;
 }
 
+/* after purchase a hover css */
 .afterPurchase .footer a:hover{
     color: #C7B198;
     background-color: transparent;

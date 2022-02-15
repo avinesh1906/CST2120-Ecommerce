@@ -4,12 +4,16 @@
 let sessionEmail = document.getElementById("sessionEmail").innerText;
 let confirmBtn = document.getElementById("confirmBtn");
 
+// check whether there is any logged email
 if (sessionEmail.length != 0){
+    // function call
     extractCustomer(sessionEmail);
 } 
 
+// function call
 extractOrder();
 
+// extract customer details
 function extractCustomer(email)
 {
     //Create request object
@@ -32,6 +36,7 @@ function extractCustomer(email)
     request.send("func="+ "getAddress" + "&email="+email);
 }
 
+// function to display address on the website
 function displayAddress(customerJSON)
 {
     //Convert JSON to array of product objects
@@ -123,8 +128,10 @@ function displayAddress(customerJSON)
     document.getElementsByClassName("customerInfo")[0].innerHTML = htmlStr;
 }
 
+// function to extract order
 function extractOrder()
 {
+    // variables
     let sessionID = document.getElementById("sessionID").innerText;
     //Create request object
     let request = new XMLHttpRequest();
@@ -146,6 +153,7 @@ function extractOrder()
     request.send("func="+ "getOrder" + "&session_ID="+sessionID);
 }
 
+// function to display order
 function displayOrder(orderJSON)
 {
     //Convert JSON to array of order objects
@@ -154,6 +162,7 @@ function displayOrder(orderJSON)
     // create the html to display personal information 
     let htmlStr = '';
 
+    // loop thorough order array 
     for (let i = 0; i < OrderArray.length; ++i) {
         htmlStr += '<!-- priduct list -->';
         htmlStr += '<div class="productList">';
@@ -185,6 +194,7 @@ function displayOrder(orderJSON)
     //  display the html into the class productInfo
     document.getElementsByClassName("productInfo")[0].innerHTML = htmlStr;
     
+    // create the price sring
     let priceStr = '';
     
     priceStr += '<!-- subtotal -->';
@@ -193,11 +203,13 @@ function displayOrder(orderJSON)
     priceStr += '        Subtotal';
     priceStr += '    </div>';
     priceStr += '    <div class="amount">';
+    // calculate sub total
     let subTotal = 0; 
     for (let i = 0; i < OrderArray.length; ++i) {
         subTotal += (OrderArray[i].qty* OrderArray[i].price);
     }
 
+    // display other price details
     priceStr += '        Rs '+ subTotal +'';
     priceStr += '    </div>';
     priceStr += '</div>';
@@ -235,8 +247,10 @@ function displayOrder(orderJSON)
 
 }
 
+// function to add purchase details
 function purchase()
 {
+    // variables
     let sessionID = document.getElementById("sessionID").innerText;
     let phone = document.getElementById("phone");
     let firstname = document.getElementById("firstname");
@@ -247,10 +261,12 @@ function purchase()
     let country = document.getElementById("country");
     let email = null;
 
+    // check if session email is empty
     if (sessionEmail.length != 0){
         email = sessionEmail;
     } 
 
+    // verification if met all conditions before adding to db
     if (telValidation() && countryValidation() && firstValidation() && lastValidation() && addressValidation() 
     && cityValidation() && postalCodeValidation()){
         // enable button
