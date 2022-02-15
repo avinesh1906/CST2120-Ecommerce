@@ -11,10 +11,12 @@
     generateNavBar($pageName);
     generateLoggedMsg($pageName);
 ?>
+<!-- search container div -->
 <div class="container" id="searchContainer">
     <div class="eachProduct row row-cols- row-cols-md-2 ">
     </div>
 </div>
+<!-- no match div -->
 <div id="noMatch">
     No Matching Search!
 </div>
