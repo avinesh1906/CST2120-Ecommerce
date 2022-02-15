@@ -185,6 +185,7 @@
     color: #852747;
 }
 
+/* no item in cart css */
 #noItem {
     text-align: center;
     font-size: xx-large;
@@ -193,6 +194,7 @@
     display: none;
 }
 
+/* alert css */
 .alert {
     text-align: center;
     display: none;

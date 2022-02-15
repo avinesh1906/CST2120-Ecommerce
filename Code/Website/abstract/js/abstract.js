@@ -4,7 +4,7 @@
 // function call 
 generateContent();
 
-// function to generate the content of the portrait body
+// function to generate the content of the abstract body
 function generateContent(){
 
     //Create request object
@@ -53,10 +53,11 @@ function displayContent(jsonProduct){
         htmlStr += '</div>';
     }
 
-    //  display the html into the class card
+    //  display the html into the class row
     document.getElementsByClassName("row")[0].innerHTML = htmlStr;
 }
 
+// function to redirect Product to specificPage of that prodID
 function redirectProduct(prodID)
 {   
     //Create request object
@@ -69,9 +70,9 @@ function redirectProduct(prodID)
     request.onload = () => {
         //Check HTTP status code
         if (request.status === 200) {
-            //Add data from server to page
+            //Add return data to session storage 
             sessionStorage.Product = request.responseText;
-            // // redirect to home page
+            // redirect to specific product page
             window.location.href="../common/specificProduct.php";
         } else
             alert("Error communicating with server: " + request.status);
