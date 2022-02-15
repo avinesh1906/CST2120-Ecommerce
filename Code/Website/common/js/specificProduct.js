@@ -1,6 +1,7 @@
 // Entire script will be in script mode
 "use strict";
 
+// call functions in order
 displayProduct();    
 generateReview();
 resetQty();
@@ -19,6 +20,7 @@ function displayProduct(){
     //  display the html into the class card
     document.getElementsByClassName("productImage")[0].innerHTML = imgStr;
 
+    // loop through product array
     for (let i = 0; i < productArray.length; ++i) {
         htmlStr += '    <div class="companyDetails">TiMoris</div>';
         htmlStr += '    <div class="productName">'+ productArray[0].name+'</div>';
@@ -53,50 +55,68 @@ function displayProduct(){
         htmlStr += '    </div>';
     }
 
-    //  display the html into the class card
+    //  display the html into the class prodDesc
     document.getElementsByClassName("prodDesc")[0].innerHTML = htmlStr;
 
 }
 
+// function for write review
 function writeReview()
 {
+    // hide and show appropriate div
     document.getElementById("reviewQty").style.display = "none";
     document.getElementById("writeReview").style.display = "block";
 }
 
+// function for view review
 function viewReview(){
+    // hide and show appropriate div
     document.getElementById("reviewQty").style.display = "block";
     document.getElementById("writeReview").style.display = "none";
 }
 
-
+// function to decrease qty
 function decrease(){
+    // extract the addtobasket btn 
     let addtoBasketBtn = document.getElementById("basket");
 
+    // check if qty greater than zero
     if (parseInt(qtyNumber.innerText) > 0){
+        // decrease by 1
         qtyNumber.innerText -= 1;
+        // disable btn
         addtoBasketBtn.disabled = false;
     } 
+    // check if qty number is equal to zero
     if (parseInt(qtyNumber.innerText) == 0){
+        // disable btn
         addtoBasketBtn.disabled = true;
     } else {
+        // enable btn
         addtoBasketBtn.disabled = false;
     }
 }
 
+// function to increase qty
 function increase(){
     //Convert JSON to array of product objects
     let productArray = JSON.parse(sessionStorage.Product);
+
+    // variables
     let size = document.getElementsByName('product_Size');
     let addtoBasketBtn = document.getElementById("basket");
-    
     let choice;
     let max;
+
+    // loop through size radio
     for (let i = 0; i < size.length; i++){
+        // check if size is checked
         if(size[i].checked){
             choice = size[i].value;
         }
     }
+    // check what choice is
+    // create the max qty
     if(choice == "A2"){
         max = productArray[0].inventory.A2;
     } else if (choice =="A3"){
@@ -104,25 +124,34 @@ function increase(){
     } else {
         max = productArray[0].inventory.A4;
     }
+    // verify if qtyNumber is less than max
     if (parseInt(qtyNumber.innerText) < max ){
         qtyNumber.innerText = parseInt(qtyNumber.innerText) + 1;
         addtoBasketBtn.disabled = false;
     }    
 }
 
+// function to reset qty
 function resetQty(){
+    // addtoBasketBtn css
     let addtoBasketBtn = document.getElementById("basket");
+    //Convert JSON to array of product objects
     let productArray = JSON.parse(sessionStorage.Product);
+
+    // declaration and initialisation of variables
     let size = document.getElementsByName('product_Size');
     qtyNumber.innerText = 0;
     addtoBasketBtn.disabled = true;
-
     let choice;
+
+    // check which size radio is checked
     for (let i = 0; i < size.length; i++){
         if(size[i].checked){
             choice = size[i].value;
         }
     }
+    // determine the choice and inventory of the size
+    // add out of stock + change color if needed
     if(choice == "A2" && productArray[0].inventory.A2 == 0){
         addtoBasketBtn.innerText = "Out of stock";
         addtoBasketBtn.style.backgroundColor  = "#ED3833"; 
@@ -139,10 +168,14 @@ function resetQty(){
     }
 }
 
+// submit review function
 function submitReview(){
+    // review btn variable
     let reviewBtn = document.getElementById("submitReview");
 
+    // verify if met conditions
     if (nameValidation() && emailValidation() && titleValidation() && bodyValidation()){
+        // extract form details
         let name = document.getElementById("name");
         let email = document.getElementById("email");
         let title = document.getElementById("writereviewTitle");
@@ -170,6 +203,7 @@ function submitReview(){
         request.send("func=" + "addReview"+"&prodID="+prodID + "&name=" + name.value 
         +"&email=" + email.value +"&title=" + title.value +"&description=" + description.value);
     } else {
+        // disable review btn 
         reviewBtn.disabled = true;
     }
 
@@ -287,8 +321,10 @@ function bodyValidation() {
     
 }
 
+// function to generate review
 function generateReview()
 {
+    // variables
     let productArray = JSON.parse(sessionStorage.Product);
     let prodID = productArray[0]._id.$oid;
  
@@ -302,6 +338,7 @@ function generateReview()
     request.onload = () => {
         //Check HTTP status code
         if (request.status === 200) {
+            // display review along with param as server response
             displayReview(request.responseText);
         } else
             alert("Error communicating with server: " + request.status);
@@ -311,11 +348,14 @@ function generateReview()
     request.send("func=" + "viewReview"+"&id="+prodID);
 }
 
+// function to display review
 function displayReview(reviewList){
     // create the html to display
     let htmlStr = '';
 
+    // check if review list is false
     if (reviewList == 'false'){
+        // display no review css
         htmlStr += '<div class="reviewList">';
         htmlStr += '<div class="reviewListTitle">No review</div>';
         htmlStr += '</div>';
@@ -323,6 +363,7 @@ function displayReview(reviewList){
         //Convert JSON to array of product objects
         let reviewArray = JSON.parse(reviewList);
 
+        // loop through review array
         for (let i = 0; i < reviewArray.length; ++i) {
             htmlStr += '<div class="reviewList">';
             htmlStr += '<div class="reviewListTitle">'+ reviewArray[i].title+'</div>';
@@ -335,13 +376,17 @@ function displayReview(reviewList){
     document.getElementsByClassName("reviewQty")[0].innerHTML = htmlStr;
 }
 
+// addBasket function along with session_id
 function addBasket(session_id)
 {
+    // variables
     let productArray = JSON.parse(sessionStorage.Product);
     let prodID = productArray[0]._id.$oid;
     let choice;
     let qty = qtyNumber.innerText;
     let size = document.getElementsByName('product_Size');
+
+    // detemined checked size radio btn
     for (let i = 0; i < size.length; i++){
         if(size[i].checked){
             choice = size[i].value;
@@ -367,15 +412,18 @@ function addBasket(session_id)
     request.send("func=" + "addCart" +"&prodID=" + prodID + "&session_ID=" + session_id + "&qty=" + qty + "&size=" + choice);
 }
 
-
+// function to displayBasketAlert
 function displayBasketAlert(input){
     //Convert JSON to array of product objects
     let productArray = JSON.parse(sessionStorage.Product);
+    // variables
     let prodID = productArray[0]._id.$oid;
     let qty = qtyNumber.innerText;
     let alert = document.getElementById("alert");
 
+    // check if input is not false
     if (input != 'false') {
+        // display alert
         alert.style.display = "block";
         setTimeout(hideElement, 2000) //milliseconds until timeout//
         //Create request object
@@ -401,6 +449,7 @@ function displayBasketAlert(input){
         request.send("func=" + "updateQty"+ "&prodID="+prodID + "&size="+input + "&qty="+qty);
     } 
 
+    // function to hide alert element
     function hideElement() {
         alert.style.display = 'none'
     }

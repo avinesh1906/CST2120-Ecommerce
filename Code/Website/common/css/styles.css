@@ -353,10 +353,11 @@ body,footer {
 .card-body p{
     color: #666;
 }
+/* card details css */
 .card-details {
     color: #79B4B7;
 }
-
+/* card hover css */
 .card:hover {
     background-color: #79B4B7;
     color:#2C3333;

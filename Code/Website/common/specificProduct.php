@@ -12,28 +12,38 @@
     generateLoggedMsg($pageName);
 
 ?>
+<!-- alert div -->
 <div class="alert alert-success" id= "alert" role="alert">
     Added to cart!
 </div>
+<!-- specific Product Container -->
 <div class="specificProductContainer">
+    <!-- product Container -->
     <div class="productContainer">
+        <!-- image div -->
         <div class="productImage">
 
         </div>
+        <!-- product details -->
         <div class="productDetails">
+            <!-- description  -->
             <div class="prodDesc">
             
             </div>
+            <!-- confirmation btn -->
             <div class="confirmationBtn">
                 <button id="basket" onclick="addBasket('<?php echo session_id(); ?>')">Add to Basket</button>
             </div>
         </div>
     </div>  
+    <!-- product review class -->
     <div class="productReview">
+        <!-- title bar -->
         <div class="title">
             <div id="customerReview" onclick="viewReview()">Customer Reviews</div>
             <div id="addReview" onclick="writeReview()">Add Review</div>
         </div>
+        <!-- review body css -->
         <div class="reviewBody">
             <div class="reviewQty" id="reviewQty">
             </div>
@@ -94,8 +104,6 @@
                 </div>
             </div>
         </div>
-
-        
     </div>
 </div>
 <?php

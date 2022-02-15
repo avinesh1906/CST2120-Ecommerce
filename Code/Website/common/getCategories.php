@@ -23,13 +23,14 @@
     //Find the category that match this criteria
     $categoryCursor = $categoryCollection->find($findCategoryCriteria);
 
+    // determine the category id
     foreach ($categoryCursor as $cate){
-        $portraitID =  $cate['_id'];    
+        $cateID =  $cate['_id'];    
     }
 
     //Create a PHP array to search only portrait category from Products
     $findProductCriteria = [
-        "category_ID" => new MongoDB\BSON\ObjectId($portraitID)
+        "category_ID" => new MongoDB\BSON\ObjectId($cateID)
     ];
 
     //Find all of the category that match this criteria

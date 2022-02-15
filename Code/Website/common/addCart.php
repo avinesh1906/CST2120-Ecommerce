@@ -13,16 +13,17 @@
     $productCollection = $db->Products;
     $stdCollection = $db->students;
 
+    // function all depending on input func
     if(isset($_POST['func'])){
         $func = $_POST['func'];
         if ($func == "addCart") {
             addCart();
         } else {
             updateQty();
-           
         }
     }
 
+    // function add to cart
     function addCart(){
         global $cartCollection;
         //Get strings - need to filter input to reduce chances of SQL injection etc.
@@ -66,6 +67,7 @@
                 "session_ID" => $session_ID
             ];
 
+            // data array to replace
             $dataArray = array(
                 '$set' => array(
                     'updated_at' => date("l jS \of F Y h:i:s A")
@@ -79,6 +81,7 @@
             //Replace customer data for this ID
             $updateRes = $cartCollection->updateOne($replaceCriteria, $dataArray);
                 
+            // check modified count
             if($updateRes->getModifiedCount() == 1)
                 echo $size;
             else
@@ -87,7 +90,7 @@
 
     }
 
-
+    // function for update qty
     function updateQty(){
 
         global $productCollection;
@@ -103,6 +106,7 @@
         // inventory
         $inv = 'inventory.' . $size;
 
+        // product array to update
         $productData = array(
             '$inc' => array($inv => -$qty)
         );
