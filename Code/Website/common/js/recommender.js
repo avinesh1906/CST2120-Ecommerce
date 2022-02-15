@@ -6,7 +6,7 @@ export class Recommender {
     keywords = {};
 
     //Keywords older than this window will be deleted
-    timeWindow = 162800;
+    timeWindow = 100000;
 
     constructor(){
         this.load();

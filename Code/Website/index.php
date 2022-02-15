@@ -338,7 +338,6 @@
         <div class="description-body">
         Discover Mauritius Through Original Paintings
         </div>
-        <button>Shop Now</button>
     </div>
     <!-- Card -->
     <div class="painting">

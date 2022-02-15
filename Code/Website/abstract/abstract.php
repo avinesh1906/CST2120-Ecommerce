@@ -21,7 +21,7 @@
 <div class="product-description">
     <!-- Image -->
     <div class="image">
-        <img src="./img/umbrella.jpeg" alt="Umbrella" 
+        <img src="../common/img/umbrella.jpeg" alt="Umbrella" 
             height="250px">
     </div>
     <!-- Body Content -->

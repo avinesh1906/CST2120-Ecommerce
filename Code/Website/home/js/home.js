@@ -76,7 +76,7 @@ function generateContent(searchTxt){
         //Check HTTP status code
         if (request.status === 200) {
             //Add data from server to page
-            displayContent(request.responseText);
+            displayRecommendationContent(request.responseText);
         } else
             alert("Error communicating with server: " + request.status);
     };
@@ -86,12 +86,33 @@ function generateContent(searchTxt){
 
 }
 
+// function to generate the content of the portrait body
+function generateContent(searchTxt){
+    //Create request object
+    let request = new XMLHttpRequest();
 
-function displayContent(jsonProduct)
+    //Set up request and send it
+    request.open("POST", "./search/getSearch.php");
+
+    //Create event handler that specifies what should happen when server responds
+    request.onload = () => {
+        //Check HTTP status code
+        if (request.status === 200) {
+            //Add data from server to page
+            displayRecommendationContent(request.responseText);
+        } else
+            alert("Error communicating with server: " + request.status);
+    };
+
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.send("searchTxt="+searchTxt);
+
+}
+
+function displayRecommendationContent(jsonProduct)
 {
     if (jsonProduct == 'false'){
-        console.log("nope");
-        document.getElementById("homeRecommendation").style.display = "none";
+        document.getElementById("recommendation").style.display = "none";
     } else {
         // Convert JSON to array of product objects
         let productArray = JSON.parse(jsonProduct);
@@ -101,7 +122,7 @@ function displayContent(jsonProduct)
         for (let i = 0; i < productArray.length; ++i) {
             htmlStr += '<div class="card-scroll" onclick="redirectHomeProduct(\''+productArray[i].id.$oid+'\')">';
             htmlStr += '<!-- image -->';
-            htmlStr += '<img class="card-img-top" src="'+ productArray[i].imageURL +'" alt="'+ productArray[i].name +'" height="350px" width="85%">';
+            htmlStr += '<img class="card-img-top" src="'+ productArray[i].imageURL.substring(1) +'" alt="'+ productArray[i].name +'" height="350px" width="85%">';
             htmlStr += '<!-- content -->';
             htmlStr += '<div class="card-body">';
             htmlStr += '    <h5 class="card-title" id="'+ productArray[i].id.$oid +'" >' + productArray[i].name +' </h5>';
