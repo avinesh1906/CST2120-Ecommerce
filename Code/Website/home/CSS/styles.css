@@ -224,10 +224,12 @@
     border: solid 3px black;
 }
 
+/* recommendation css */
 .recommendation{
     width: 99%;
 }
 
+/* card scroll hover css */
 .card-scroll:hover {
     background-color: #79B4B7;
     color:#2C3333;

@@ -158,6 +158,7 @@ function generateBestsellerContent(){
     request.send("searchTxt="+"Bestseller");
 }
 
+// function to display top product
 function displayTopProduct(jsonProduct, className)
 {
     // Convert JSON to array of product objects
@@ -169,6 +170,7 @@ function displayTopProduct(jsonProduct, className)
     htmlStr += '<!-- Card deck layout -->';
     htmlStr += '<div class="card-deck row">';
 
+    // loop through product array
     for (let i = 0; i < productArray.length; ++i) {
         htmlStr += ' <div class="card-scroll" onclick="redirectHomeProduct(\''+productArray[i].id.$oid+'\')">';
         htmlStr += ' <!-- image -->';
@@ -185,13 +187,16 @@ function displayTopProduct(jsonProduct, className)
     }
     htmlStr += ' </div>';
 
+    // display the html str to the appropriate class
     document.getElementsByClassName(className)[0].innerHTML = htmlStr;
-
 }
 
+// function to display recommendation content
 function displayRecommendationContent(jsonProduct)
 {
+    // check if jsonProduct is false
     if (jsonProduct == 'false'){
+        // hide recommendation
         document.getElementById("recommendation").style.display = "none";
     } else {
         // Convert JSON to array of product objects
