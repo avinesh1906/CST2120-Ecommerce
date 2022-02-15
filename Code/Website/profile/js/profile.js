@@ -32,7 +32,6 @@ function generateContent(){
         //Check HTTP status code
         if (request.status === 200) {
             //Add data from server to page
-            console.log(request.responseText);
             displayContent(request.responseText);
         } else
             alert("Error communicating with server: " + request.status);

@@ -12,17 +12,6 @@ let user_password =" ";
 //Create request object
 let request = new XMLHttpRequest();
 
-//Create event handler that specifies what should happen when server responds
-request.onload = () => {
-    //Check HTTP status code
-    if(request.status === 200){
-        //Get data from server
-        user_password = request.responseText;
-    }
-    else
-        alert("Error communicating with server: " + request.status);
-};
-
 // function to generate the content of the portrait body
 function generateContent(){
 
@@ -57,7 +46,7 @@ function displayContent(jsonUser){
     // create the html to display personal information
     let htmlStr = '';
     htmlStr += '<input type="hidden" id="id" value="'+ user[0]._id.$oid  + '">';
-    
+    user_password = user[0].password;
     //  display the html into the class body
     document.getElementsByClassName("infotext")[0].outerHTML += htmlStr;
 }
@@ -110,7 +99,7 @@ function oldPassword() {
     // variables 
     let details = document.getElementById("currentPWD_details");
     let current_pwd = document.getElementById("current_password");
-    let email = sessionStorage.email;
+    let email = document.getElementById("sessionEmail").value;
 
     //Set up request with HTTP method and URL 
     request.open("POST", "getEditPassword.php");

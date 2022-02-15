@@ -11,7 +11,7 @@
     //Select collections 
     $collection = $db->Customer;
 
-    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     
     // call function depending on input func
     if(isset($_POST['func'])){
