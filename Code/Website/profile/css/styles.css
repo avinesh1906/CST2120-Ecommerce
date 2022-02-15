@@ -296,3 +296,33 @@
     padding-top: 10%;
     font-size: 50px;
 }
+
+/* no logged user msg css*/
+.noLoggedUser {
+    padding-top: 3%;
+    text-align: center;
+    display: none;
+}
+
+/* no logged header css */
+.noLoggedUser #header {
+    font-size: 35px;
+}
+
+/* no logged body css */
+.noLoggedUser #body {
+    font-size: 30px;
+}
+
+/* redirect link css */
+.noLoggedUser .redirectLink a{
+    color: #54BAB9;
+    text-decoration: none;
+    padding: 0.5%;
+}
+
+/* redirect link hover css */
+.noLoggedUser .redirectLink a:hover{
+    color: #22577E;
+    text-decoration: underline;
+}

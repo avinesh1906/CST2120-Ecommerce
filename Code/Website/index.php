@@ -221,74 +221,9 @@
     <div class="title">
         <h2> Recommendation </h2>
     </div>
+    <!-- image class -->
     <div class="img">
         <div class="card-deck row" id="homeRecommendation">
-                <!-- 1st card -->
-                <div class="card-scroll">
-                    <!-- image -->
-                    <img class="card-img-top" src="./common/img/desi.jpg" alt="wolf" height="350px" width="85%">
-                    <!-- content -->
-                    <div class="card-body">
-                        <h5 class="card-title">Desi </h5>
-                        <p class="card-text">
-                            Out of sight but on your mind.
-                        </p>
-                        <div class="card-details">
-                            <p>Rs 800 </p>
-                            <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- 2nd card -->
-                <div class="card-scroll">
-                    <!-- image -->
-                    <img class="card-img-top" src="./common/img/marilyn.jpeg" alt="Marilyn" height="350px" width="95%">
-                    <!-- content -->
-                    <div class="card-body">
-                        <h5 class="card-title">Marilyn Monroe</h5>
-                        <p class="card-text">
-                            If I'd observed all the rules, I'd never have got anywhere
-                        </p>
-                        <div class="card-details">
-                            <p>Rs 1250 </p>
-                            <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
-                        </div>    
-                    </div>
-                </div>
-                <!-- 3rd card -->
-                <div class=" card-scroll">
-                    <!-- image -->
-                    <img class="card-img-top" src="./common/img/sunset.jpeg" alt="Sunset" height="350px" width="95%">
-                    <!-- content -->
-                    <div class="card-body">
-                        <h5 class="card-title">Soleil p alle dormi</h5>
-                        <p class="card-text">
-                            Sunset are proof that endings can often be beautiful too.
-
-                        </p>
-                        <div class="card-details">
-                            <p>Rs 850 </p>
-                            <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- 4th card -->
-                <div class=" card-scroll">
-                    <!-- image -->
-                    <img class="card-img-top" src="./common/img/women.jpeg" alt="Smile" height="350px" width="95%">
-                    <!-- content -->
-                    <div class="card-body">
-                        <h5 class="card-title">The mysterious smile</h5>
-                        <p class="card-text">
-                            For the nature of women is closely allied to art.
-                        </p>
-                        <div class="card-details">
-                            <p>Rs 850 </p>
-                            <button style="font-size:20px"> <i class="fa fa-shopping-basket"></i> Basket </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

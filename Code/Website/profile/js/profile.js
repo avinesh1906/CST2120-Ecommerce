@@ -1,8 +1,21 @@
 // Entire script will be in script mode
 "use strict";
 
-// function call 
-generateContent();
+// email id variable
+let profileEmail =  document.getElementById("sessionEmail").innerText;
+let noLoggedUser = document.getElementsByClassName("noLoggedUser")[0];
+let content = document.getElementsByClassName("content")[0];
+
+if (profileEmail == 0){
+    noLoggedUser.style.display = "block";
+    content.style.display = "none";
+} else {
+    noLoggedUser.style.display = "none";
+    content.style.display = "block";
+    // function call 
+    generateContent();
+}
+
 
 // function to generate the content of the portrait body
 function generateContent(){
@@ -19,6 +32,7 @@ function generateContent(){
         //Check HTTP status code
         if (request.status === 200) {
             //Add data from server to page
+            console.log(request.responseText);
             displayContent(request.responseText);
         } else
             alert("Error communicating with server: " + request.status);
