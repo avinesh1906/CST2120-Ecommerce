@@ -7,6 +7,47 @@
     <?php include ("PHP/common.php");
     navbar();
     ?>
+
+    <?php
+    require __DIR__ . '/vendor/autoload.php';
+
+    $mongoClient = (new MongoDB\Client );
+    $db =$mongoClient -> ecommerce;
+    $collection = $db -> Products;
+
+    $id = filter_input (INPUT_POST,'product_id',FILTER_SANITIZE_STRING);
+    $name = filter_input (INPUT_POST,'painting_name',FILTER_SANITIZE_STRING);
+    $category_ID = filter_input (INPUT_POST,'painting_category',FILTER_SANITIZE_STRING);
+    $description = filter_input (INPUT_POST,'painting_des',FILTER_SANITIZE_STRING);
+    $keydetails = filter_input (INPUT_POST,'key_d',FILTER_SANITIZE_STRING);
+    $price = filter_input (INPUT_POST,'price',FILTER_SANITIZE_STRING);
+    $imageurl = filter_input (INPUT_POST,'image_url',FILTER_SANITIZE_STRING);
+    $date = filter_input (INPUT_POST,'date_created',FILTER_SANITIZE_STRING);
+
+    $dataArray =[
+        "_id" => $id,
+        "name" => $name,
+        "category_ID" => $category_ID,
+        "description" => $description,
+        "key_details" => $keydetails,
+        "price" => $price,
+        "imageURL" => $imageurl,
+        "created_at" => $date,
+
+    ];
+
+    $insertResult= $collection->insertOne($dataArray);
+  
+    if ($insertResult->getInsertedCount()==1){
+        echo 'Product added';
+    }
+    else{
+        echo 'Error adding product';
+    }
+
+  ?>
+
+
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet"type="text/css" href="./CSS/addproducts.css">
@@ -19,13 +60,13 @@
         
        <!--Page Label-->
         <legend> ADD PRODUCTS</legend>
+
         
         <!-- Adding ProductID field-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="product_id">PRODUCT ID</label>  
           <div class="col-md-4">
           <input id="product_id" name="product_id" placeholder="PRODUCT ID" class="form-control input-md" required="" type="text">
-            
           </div>
         </div>
         
@@ -34,11 +75,18 @@
           <label class="col-md-4 control-label" for="painting_name">PRODUCT NAME</label>  
           <div class="col-md-4">
           <input id="painting_name" name="painting_name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
-            
           </div>
         </div>
         
-        
+        <!-- Adding product category -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="painting_category">PRODUCT CATEGORY</label>
+          <div class="col-md-4">
+            <select id="painting_category" name="painting_category" class="form-control">
+            </select>
+          </div>
+        </div>
+
          <!-- Adding product description -->
          <div class="form-group">
             <label class="col-md-4 control-label" for="painting_des">PRODUCT DESCRIPTION</label>
@@ -47,56 +95,57 @@
             </div>
           </div>
 
-         <!-- Adding product category -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="painting_category">PRODUCT CATEGORY</label>
-          <div class="col-md-4">
-            <select id="painting_category" name="painting_category" class="form-control">
-            </select>
-          </div>
-        </div>
         
-         <!-- Stock availability-->
+         <!-- Key details-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="inventory">INVENTORY</label>  
+          <label class="col-md-4 control-label" for="key_d">KEY DETAILS</label>  
           <div class="col-md-4">
-          <input id="INVENTORY" name="inventory" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required="" type="text">
-            
+          <input id="key_d" name="key_d" placeholder="KEY DETAILS" class="form-control input-md" required="" type="text">
           </div>
         </div>
          
-         <!-- Date product was added to system-->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="date">DATE</label>  
+        <!-- Key details-->
+       <div class="form-group">
+          <label class="col-md-4 control-label" for="price">PRICE</label>  
           <div class="col-md-4">
-          <input id="date" name="date" placeholder="DATE ADDED" class="form-control input-md" required="" type="text">
-            
+          <input id="price" name="price" placeholder="PRICE" class="form-control input-md" required="" type="text">
           </div>
         </div>
         
-        <!-- Staff adding product -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="approved_by">APPROVED BY</label>  
+         <!-- Key details-->
+       <div class="form-group">
+          <label class="col-md-4 control-label" for="image_url">IMAGE URL</label>  
           <div class="col-md-4">
-          <input id="approved_by" name="approved_by" placeholder="APPROVED BY" class="form-control input-md" required="" type="text">
-            
-        <!-- File Button --> 
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="imagefile">ADD IMAGE</label>
-          <div class="col-md-4">
-            <input id="imagefile" name="imagefile" class="input-file" type="file">
+          <input id="image_url" name="image_url" placeholder="IMAGE URL" class="form-control input-md" required="" type="text">
           </div>
         </div>
+            
         
-        <!--  Add Button -->
+        <!-- Date product was added to system-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="date_created">DATE</label>  
+          <div class="col-md-4">
+          <input id="date_created" name="date_created" placeholder="DATE CREATED" class="form-control input-md" required="" type="text">
+          </div>
+        </div>
+
+           <!-- Staff adding product -->
+           <div class="form-group">
+          <label class="col-md-4 control-label" for="added_by">ADDED BY</label>  
+          <div class="col-md-4">
+          <input id="added_by" name="added_by" placeholder="ADDED BY" class="form-control input-md" required="" type="text">
+          </div>
+        </div> 
+         
+        
+        <!-- add button -->
         <div class="form-group">
           <div class="col-md-4">
-            <button id="addbutton" name="addbutton" class="btn btn-primary">ADD</button>
+            <button  id = "addbutton " type="addbutton" class="btn btn-primary" onclick = "checkForm()">ADD</button>
           </div>
           </div>
         </fieldset>
-
-        </form>
+   </form>
         
      <footer class="footer1">
          <!-- linking footer to the other pages -->

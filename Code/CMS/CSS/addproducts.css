@@ -256,6 +256,14 @@ nav .search-icon{
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .btn btn-primary{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
   /* content header css */
   .content header{
     font-size: 30px;
