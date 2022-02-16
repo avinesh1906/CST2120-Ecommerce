@@ -1,37 +1,61 @@
 <?php 
     require __DIR__ . '/vendor/autoload.php';
 
-    $mongoClient = (new MongoDB\Client );
-    $db =$mongoClient -> ecommerce;
-    $collection = $db -> Products;
+    //Create instance of MongoDB client
+    $mongoClient = (new MongoDB\Client);
 
-    // $records = $mongo->$collection;
-    // $records = iterator_to_array($records);
-    
-    // array_walk(
-    //     $records,
-    //     function (&$record)
-    //     {
-    //       if (isset($record['subDoc'])) {
-    //         $record['subDoc'] = iterator_to_array($record['subDoc']);
-    //       }
-    //     }
-    // );
-    
-    $name = filter_input (INPUT_POST,'name',FILTER_SANITIZE_STRING);
-    $password = filter_input (INPUT_POST,'password',FILTER_SANITIZE_STRING);
+    //Select a database
+    $db = $mongoClient->ecommerce;
 
-    $dataArray =[
-        "name"=> $name,
-        "password"=> $password,
+    //Select collections 
+    $productCollection = $db->Products;
+    $categoryCollection = $db->Category;
 
-    ];
+    $productCursor = $productCollection->find();
 
-    $insertResult= $collection->insertOne($dataArray);
-  
-    if ($insertResult->getInsertedCount()==1){
-        echo'Staff added';
+
+    //Work through the products
+    if ($productCursor->isDead()) {
+        echo 'false';
+    } else {
+        $jsonStr = '['; //Start of array of products in JSON
+        foreach ($productCursor as $product){  
+            $arr = array("name" => $product['name'], 'imageURL' => $product['imageURL'], 'price' => $product['price'],
+            'id' => $product['_id'], 'description' => $product['description'], 'category' => extractCategory($product['category_ID']));
+            $jsonStr .= json_encode($arr);
+            //Separator between products
+            $jsonStr .= ','; 
+        }
+        //Remove last comma
+        $jsonStr = substr($jsonStr, 0, strlen($jsonStr) - 1);
+
+        //Close array
+        $jsonStr .= ']';
+        //Echo final string
+        echo $jsonStr;
     }
-    else{
-        echo 'Error adding staff';
+
+    // function to extract category
+    function extractCategory($input)
+    {
+        global $categoryCollection;
+
+        //Create a PHP array for session criteria
+        $findCartCriteria = [
+            "_id" => new MongoDB\BSON\ObjectId($input)
+        ];
+
+        //Find all of the category that match this criteria
+        $categoryCursor = $categoryCollection->find($findCartCriteria);
+
+        //Work through the categories
+        if ($categoryCursor->isDead()) {
+            echo 'false';
+        } else {
+            // return category name
+            foreach ($categoryCursor as $category){
+                return $category['name'];
+            }
+        }
+
     }

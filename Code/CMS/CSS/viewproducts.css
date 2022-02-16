@@ -3,6 +3,9 @@ body {
     color: #384047;
   }
   
+  .products {
+    display: flex;
+  }
      /*styling the header */
   nav{
     background: #DACC96;
@@ -640,3 +643,4 @@ body {
     }
     
    }
+
