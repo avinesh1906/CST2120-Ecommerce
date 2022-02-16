@@ -125,8 +125,10 @@ function update()
             if(request.status === 200){
                 //Get data from server
                 let responseData = request.responseText;
-                //Add data to page
-                document.getElementById("ServerResponse").innerHTML = responseData;
+                console.log(responseData);
+
+                // redirect to profile page
+                window.location.href="../signin/signin.php";
             }
             else
                 alert("Error communicating with server: " + request.status);
@@ -137,12 +139,8 @@ function update()
         //Send request
         request.send("firstname=" + firstname.value   + "&lastname=" + lastname.value + 
         "&email=" + email.value + "&DOB=" + dob.value + "&gender=" + gender.value +
-        "&telephone=" + telephone.value + "&id=" + id.value);
+        "&telephone=" + telephone.value + "&id=" + id.value + "&func=" + "updateDetails");
 
-        // clear session storage
-        sessionStorage.clear();
-        // redirect to profile page
-        window.location.href="./profile.php";
     } else {
         // disable savebtn
         saveBtn.disabled = true;
@@ -211,7 +209,7 @@ function emailValidation() {
     let request = new XMLHttpRequest();
     //variables
     let details = document.getElementById("email_details");
-
+    let current_Email = document.getElementById("sessionEmail").innerHTML;
     // Regular expression for validating email
     let re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -228,8 +226,7 @@ function emailValidation() {
         details.style.color = "#ED3833";
         return false;
     }
-
-    if (email.value != sessionStorage.email){
+    if (email.value != current_Email){
         request.open("POST", "getEditPersonal.php");
         //Create event handler that specifies what should happen when server responds
         request.onload = () => {
@@ -237,6 +234,7 @@ function emailValidation() {
             if(request.status === 200){
                 //Get data from server
                 let responseData = request.responseText;
+                console.log(responseData);
                 if (responseData == "true"){
                     saveBtn.disabled = true;
                     details.innerHTML = '*This email already has an associated account. <br> <a href="../signin/signin.php">Login Instead?</a>';

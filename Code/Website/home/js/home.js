@@ -23,6 +23,7 @@ let bestsellerBtn = document.getElementsByClassName("bestsellerBtn")[0];
 
 function showRecommendation(){
     if (sessionStorage['Search']){
+        console.log(recommender);
         //Add the search keyword to the recommender
         recommender.addKeyword(sessionStorage.Search);
         generateContent(recommender.getTopKeyword());

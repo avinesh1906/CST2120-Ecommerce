@@ -70,10 +70,8 @@ function update()
         request.onload = () => {
             //Check HTTP status code
             if(request.status === 200){
-                //Get data from server
-                let responseData = request.responseText;
-                //Add data to page
-                document.getElementById("ServerResponse").innerHTML = responseData;
+                // redirect to profile page
+                window.location.href="../signin/signin.php";
             }
             else
                 alert("Error communicating with server: " + request.status);
@@ -84,9 +82,6 @@ function update()
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         //Send request
         request.send("func=" + "update" + "&new_password=" + new_password.value + "&id=" + id.value); 
-        
-        // redirect to home page
-        window.location.href="./profile.php";
 
     } else {
         // disabled changeBtn

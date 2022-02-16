@@ -105,10 +105,8 @@ function update()
         request.onload = () => {
             //Check HTTP status code
             if(request.status === 200){
-                //Get data from server
-                let responseData = request.responseText;
-                //Add data to page
-                document.getElementById("ServerResponse").innerHTML = responseData;
+                // redirect to profile page
+                window.location.href="../signin/signin.php";
             }
             else
                 alert("Error communicating with server: " + request.status);
@@ -120,9 +118,6 @@ function update()
         //Send request
         request.send("address=" + address.value   + "&city=" + city.value + 
         "&postalCode=" + postalCode.value + "&country=" + country.value + "&id=" + id.value);
-        
-        // redirect to profile page
-        window.location.href="./profile.php";
         
     } else {
         // disable save btn
