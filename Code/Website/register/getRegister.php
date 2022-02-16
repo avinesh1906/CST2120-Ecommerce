@@ -43,6 +43,7 @@
         "password" => $password
     ];
 
+    // function call
     if(isset($_POST['func'])){
         $func = $_POST['func'];
         if ($func == "email") {

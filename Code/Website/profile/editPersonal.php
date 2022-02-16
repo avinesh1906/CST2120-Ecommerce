@@ -18,17 +18,19 @@
     <div id="line"></div>
 </div>
 <div class="personal">
-        <div class="form">            
-        </div>
-        <!-- button class -->
-        <div class="btn">
-            <button onclick="location.href='./profile.php'"> Cancel</button>
-            <button id ="saveBtn"> Save Changes</button>
-        </div>
+    <div class="form">            
+    </div>
+    <!-- button class -->
+    <div class="btn">
+        <button onclick="location.href='./profile.php'"> Cancel</button>
+        <button id ="saveBtn"> Save Changes</button>
+    </div>
+    <!-- Server response -->
     <div id="ServerResponse">
 
     </div>
 </div>
+<!-- session email div -->
 <div id="sessionEmail" style="display:none"><?php echo $_SESSION['email'] ?></div>
 <?php
     generateJavaScript($pageName);

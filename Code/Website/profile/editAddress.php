@@ -26,6 +26,7 @@
         <button onclick="location.href='./profile.php'"> Cancel</button>
         <button id ="saveBtn"> Save changes</button>
     </div>
+    <!-- server response -->
     <div id="ServerResponse">
 
     </div>

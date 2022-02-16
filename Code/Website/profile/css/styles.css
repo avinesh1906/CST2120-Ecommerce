@@ -172,6 +172,7 @@
     margin-bottom: 2%;
 }
 
+/* common flex display */
 .cartItems .details,
 .cartItems .item,
 .cartItems .item .description .size,
@@ -181,16 +182,19 @@
     display: flex;
 }
 
+/* order title css */
 .order .title {
     text-align: center;
     font-size: 30px;
     padding: 1% 1% 1%;
 }
 
+/* order subtitle css */
 .order .subtitle {
     display: flex;
 }
 
+/* common width css */
 .order .subtitle .product,
 .cartItems .details,
 .cartItems .qty .counter .number {
@@ -286,8 +290,39 @@
     font-size: 24px;
 }
 
+/* no item css */
 #noItem {
     text-align: center;
     padding-top: 10%;
     font-size: 50px;
+}
+
+/* no logged user msg css*/
+.noLoggedUser {
+    padding-top: 3%;
+    text-align: center;
+    display: none;
+}
+
+/* no logged header css */
+.noLoggedUser #header {
+    font-size: 35px;
+}
+
+/* no logged body css */
+.noLoggedUser #body {
+    font-size: 30px;
+}
+
+/* redirect link css */
+.noLoggedUser .redirectLink a{
+    color: #54BAB9;
+    text-decoration: none;
+    padding: 0.5%;
+}
+
+/* redirect link hover css */
+.noLoggedUser .redirectLink a:hover{
+    color: #22577E;
+    text-decoration: underline;
 }

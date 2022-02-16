@@ -16,6 +16,7 @@
     <!-- Title bottom border line -->
     <div id="line"></div>
 </div>
+<!-- password class -->
 <div class="password">
     <div class="form">
         <!-- Current Password -->
@@ -57,10 +58,12 @@
         </div>
 
     </div>
+    <!-- btn class -->
     <div class="btn">
         <button onclick="location.href='./profile.php'"> Cancel</button>
         <button id="changeBtn" > Change</button>
     </div>
+    <!-- server response -->
     <div id="ServerResponse">
 
     </div>

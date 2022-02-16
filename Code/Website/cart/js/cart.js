@@ -1,10 +1,13 @@
 // Entire script will be in script mode
 "use strict";
 
+// function call
 extractDetails();
 
+// function to extract details from db
 function extractDetails()
 {
+    // variables
     let session_ID = document.getElementById("sessionID").innerText;
     let noItem = document.getElementById("noItem");
 
@@ -19,12 +22,18 @@ function extractDetails()
         //Check HTTP status code
         if (request.status === 200) {
             let serverResponse = request.responseText;
+            // check if server response is not false
             if (serverResponse != 'false'){
+                // hide noitem div
                 noItem.style.display = "none";
+                // show cart footer div
                 document.getElementsByClassName("cartFooter")[0].style.display = "block";
+                // call displayProduct along with server response
                 displayProduct(request.responseText);
             } else {
+                // show no item div
                 noItem.style.display = "block";
+                // hise the cart body and cart footer
                 document.getElementsByClassName("cartBody")[0].style.display = "none";
                 document.getElementsByClassName("cartFooter")[0].style.display = "none";
             }
@@ -45,7 +54,9 @@ function displayProduct(itemDetails){
     // create the html to display
     let htmlStr = '';
 
+    // loop thorough cart array
     for (let i = 0; i < cartArray.length; ++i) {
+        // create the content for cart items
         htmlStr+=' <div class="item"> ';
         htmlStr+='        <!-- item details -->';
         htmlStr+='        <div class="details">';
@@ -63,6 +74,7 @@ function displayProduct(itemDetails){
         htmlStr+='                <div class="category">'+ cartArray[i].category +'</div>';
         htmlStr+='                <div id="price"> Rs '+ cartArray[i].price +' </div>';
         htmlStr+='                <div class="size">';
+        // check the size 
         if (cartArray[i].size == "A2"){
             htmlStr+='                    420 x 594 mm ';
         } else if (cartArray[i].size == "A3"){
@@ -93,9 +105,11 @@ function displayProduct(itemDetails){
     //  display the html into the class card
     document.getElementsByClassName("cartItems")[0].innerHTML = htmlStr;
     let subTotal = 0; 
+    // calculate the sub total
     for (let i = 0; i < cartArray.length; ++i) {
         subTotal += (cartArray[i].qty* cartArray[i].price);
     }
+    // create the subtotal string
     let subTotalStr = '';
     subTotalStr+='<a id="title">Subtotal: </a>';
     subTotalStr+='Rs '+ subTotal +'';
@@ -105,8 +119,10 @@ function displayProduct(itemDetails){
 
 }
 
+// delete a cart item
 function deleteItem($input)
 {
+    // variables
     let session_ID = document.getElementById("sessionID").innerText;
     let alert = document.getElementById("alert");
 
@@ -120,8 +136,11 @@ function deleteItem($input)
     request.onload = () => {
         //Check HTTP status code
         if (request.status === 200) {
+            // show alert
             alert.style.display = "block";
+            // hide alert after 2000 ms
             setTimeout(hideElement, 2000) //milliseconds until timeout//
+            // function call
             extractDetails();
         } else
             alert("Error communicating with server: " + request.status);
@@ -130,6 +149,7 @@ function deleteItem($input)
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     request.send("func=" + "deleteItem" + "&session_ID=" + session_ID + "&arrayIndex=" + $input);
 
+    // function to hide the alert
     function hideElement() {
         alert.style.display = 'none'
     }

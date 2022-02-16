@@ -24,14 +24,15 @@
     $categoryCursor = $categoryCollection->find($findCategoryCriteria);
 
     foreach ($categoryCursor as $cate){
-        $portraitID =  $cate['_id'];    
+        $cateID =  $cate['_id'];    
     }
 
-    //Create a PHP array to search only portrait category from Products
+    //Create a PHP array to search specifc category id from Products
     $findProductCriteria = [
-        "category_ID" => new MongoDB\BSON\ObjectId($portraitID)
+        "category_ID" => new MongoDB\BSON\ObjectId($cateID)
     ];
 
+    // call functions depeding on input func
     if(isset($_POST['func'])){
         $func = $_POST['func'];
         if ($func == "priceAsc") {
@@ -45,50 +46,62 @@
         }
     }
     
+    // function for price ascending order
     function priceAsc()
     {
         global $productCollection;
 
+        // price sort array 
         $priceSortAsc = array(
             "sort" => array("price" => 1)
         );
 
+        // call function
         sendContent($priceSortAsc);
     }
 
+    // price desc order func
     function priceDesc()
     {
         global $productCollection;
 
-        $priceSortAsc = array(
+        // price sort desc
+        $priceSortDesc = array(
             "sort" => array("price" => -1)
         );
 
-        sendContent($priceSortAsc);
+        // call function
+        sendContent($priceSortDesc);
     }
 
+    // function for alphabetical ascending order
     function alphaAsc()
     {
         global $productCollection;
 
-        $priceSortAsc = array(
+        // create array for alphabet asc order
+        $alphaSortAsc = array(
             "sort" => array("name" => 1)
         );
 
-        sendContent($priceSortAsc);
+        // call function
+        sendContent($alphaSortAsc);
     }
-    
+
+    // function descending alphabetical order
     function alphaDesc()
     {
         global $productCollection;
 
-        $priceSortAsc = array(
+        // array for alpha descending order
+        $alphaSortDesc = array(
             "sort" => array("name" => -1)
         );
 
-        sendContent($priceSortAsc);
+        sendContent($alphaSortDesc);
     }
 
+    // function for send content
     function sendContent($queryArr)
     {
         global $productCollection;

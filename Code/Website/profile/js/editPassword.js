@@ -12,17 +12,6 @@ let user_password =" ";
 //Create request object
 let request = new XMLHttpRequest();
 
-//Create event handler that specifies what should happen when server responds
-request.onload = () => {
-    //Check HTTP status code
-    if(request.status === 200){
-        //Get data from server
-        user_password = request.responseText;
-    }
-    else
-        alert("Error communicating with server: " + request.status);
-};
-
 // function to generate the content of the portrait body
 function generateContent(){
 
@@ -57,17 +46,19 @@ function displayContent(jsonUser){
     // create the html to display personal information
     let htmlStr = '';
     htmlStr += '<input type="hidden" id="id" value="'+ user[0]._id.$oid  + '">';
-    
+    user_password = user[0].password;
     //  display the html into the class body
     document.getElementsByClassName("infotext")[0].outerHTML += htmlStr;
 }
 
+// function for update pwd
 function update()
 {   
     // id variables
     let new_password = document.getElementById("new_password");
     let id = document.getElementById("id");
 
+    // verify conditions
     if (passwordValidation() && confirmPassword()){
         //Create request object
         let request = new XMLHttpRequest();
@@ -79,10 +70,8 @@ function update()
         request.onload = () => {
             //Check HTTP status code
             if(request.status === 200){
-                //Get data from server
-                let responseData = request.responseText;
-                //Add data to page
-                document.getElementById("ServerResponse").innerHTML = responseData;
+                // redirect to profile page
+                window.location.href="../signin/signin.php";
             }
             else
                 alert("Error communicating with server: " + request.status);
@@ -93,11 +82,9 @@ function update()
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         //Send request
         request.send("func=" + "update" + "&new_password=" + new_password.value + "&id=" + id.value); 
-        
-        // redirect to home page
-        window.location.href="./profile.php";
 
     } else {
+        // disabled changeBtn
         changeBtn.disabled = true;
     }
 }
@@ -107,7 +94,7 @@ function oldPassword() {
     // variables 
     let details = document.getElementById("currentPWD_details");
     let current_pwd = document.getElementById("current_password");
-    let email = sessionStorage.email;
+    let email = document.getElementById("sessionEmail").value;
 
     //Set up request with HTTP method and URL 
     request.open("POST", "getEditPassword.php");

@@ -1,9 +1,11 @@
+/* product container css */
 .productContainer{
     display: flex;
     padding: 2% 3% 1%;
     width: 100%;
 }
 
+/* product image css */
 .productImage{
     border: solid 5px black;
     max-width: 65%;
@@ -13,6 +15,7 @@
     margin-left: 3%;
 }
 
+/* product details css */
 .productDetails{
     max-width: 70%;
     min-width: 35%;
@@ -20,68 +23,82 @@
     padding: 1%;
 }
 
+/* product details company detail css */
 .productDetails .companyDetails{
     font-size: 20px;
 }
 
+/* product name css */
 .productDetails .productName{
     font-size: 35px;
 }
 
+/* product price css */
 .productDetails .productPrice{
     font-size: 30px;
     margin-bottom: 2%;
 }
 
+/* product size css */
 .productDetails .productSize{
     font-size: 25px;
     margin-bottom: 2%;
 }
 
+/* confirmation btn container css */
 .productDetails .confirmationBtn{
     font-size: 25px;
 }
 
+/* button css */
 .productDetails .confirmationBtn button{
     font-size: 25px;
     width: 95%;
     margin: 3% 2% 2%;
 }
 
+/* size option css */
 .productDetails .productSize .sizeOption{
     margin-left: 3%;
     user-select:none;
 }
 
+/* product qty css */
 .productDetails .productQty {
     font-size: 25px;
 }
 
+/* counter qty css */
 .productDetails .productQty .counter{
     display: flex;
     margin-top: 1%;
     margin-left: 3%;
 }
 
+/* qty number css */
 .productDetails .productQty .counter .qtyNumber{
     margin: 0% 2%;
 }
 
+/* minus and add btn css */
 .productDetails .productQty .counter .minus button,
 .productDetails .productQty .counter .add button{
     width: 35px;
 }
 
+/* confirmation button css */
 .productDetails .confirmationBtn button{
     background-color: #555555;
     color: #D9E4DD;
 }
 
+/* confirmation btn hover css */
 .productDetails .confirmationBtn button:hover{
     background-color: #D9E4DD;
     color: #555555;
 }
 
+/* product review title css */
 .productReview .title{
     display: flex;
     max-width: 100%;
@@ -92,16 +109,19 @@
     font-size: 18px;
 }
 
+/* add revirew css */
 .productReview .title #addReview{
     text-align: right;
     color: #D9E4DD
 }
 
+/* add review hover css */
 .productReview .title #addReview:hover,
 .productReview .title #customerReview:hover{
     color: #79B4B7;
 }
 
+/* product review link css */
 .productReview #customerReview,
 .productReview #addReview {
     width: 50%;
@@ -112,27 +132,31 @@
     margin: 1% 1% 1%;
     padding: 0.5% 1%;
     font-size: 20px;
-
 }
 
+/* review body + review list title css */
 .productReview .reviewBody .reviewListTitle{
     font-size: x-large;
 }
 
+/* review list details css */
 .productReview .reviewBody .reviewListDetails{
     font-size: 18px;
     display: flex;
 }
 
+/* date of review */
 .productReview .reviewBody .reviewListDetails #date{
     color: #316B83;
     padding-left: 0.5%;
 }
 
+/* review list description css */
 .productReview .reviewBody .reviewListDesc{
     font-size: 20px;
 }
 
+/* common css */
 .productReview .reviewBody .reviewQty .reviewList,
 .productReview .writeReview{
     border: 2px solid #CDC9C3;
@@ -141,36 +165,44 @@
     margin-bottom: 1%;
 }
 
+/* write review css */
 .productReview .writeReview{
     display: none;
 }
 
+/* writereview title css */
 .productReview .writeReview .reviewTitle{
     font-size: 25px;
 }
 
+/* form details css */
 .productReview .writeReview .form_details {
     margin-bottom: 1%;
 }
 
+/* write review input css */
 .productReview .writeReview input{
     width: 50%;
 }
 
+/* writereview body css */
 .productReview .writeReview input#writereviewBody{
     height: 50px;
 }
 
+/* submit review btn css */
 .productReview .writeReview .submitReviewBtn{
     margin-top: 1%;
     text-align: right;
 }
 
+/* submit review btn hover */
 .productReview .writeReview .submitReviewBtn button:hover{
     color: #555555;
     background-color: #F8F0DF;
 }
 
+/* alert css */
 #alert {
     text-align: center;
     display: none;

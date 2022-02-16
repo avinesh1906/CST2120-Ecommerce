@@ -33,8 +33,10 @@ function generateContent(){
 
 }
 
+// function to display content
 function displayContent(jsonProduct)
-{
+{   
+    // check if jsonProduct is false
     if (jsonProduct == 'false'){
         document.getElementById("noMatch").style.display = "block";
         document.getElementById("searchContainer").style.display = "none";
@@ -70,6 +72,7 @@ function displayContent(jsonProduct)
 
 }
 
+// function to redirect product to specific page
 function redirectProduct(prodID)
 {   
     //Create request object

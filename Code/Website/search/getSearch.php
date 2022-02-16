@@ -21,6 +21,7 @@
     //Create a PHP array for session criteria
     $findCartCriteria = array('$text' => array('$search' => $searchTxt));
     
+    // check if searchTxt is null or not
     if ($searchTxt == "null"){
         //Find all of the product that match this criteria
         $productCursor = $productCollection->find();
@@ -28,7 +29,6 @@
         //Find all of the product that match this criteria
         $productCursor = $productCollection->find($findCartCriteria);
     }
-
 
     //Work through the products
     if ($productCursor->isDead()) {
@@ -51,6 +51,7 @@
         echo $jsonStr;
     }
 
+    // function to extract category
     function extractCategory($input)
     {
         global $categoryCollection;
@@ -67,6 +68,7 @@
         if ($categoryCursor->isDead()) {
             echo 'false';
         } else {
+            // return category name
             foreach ($categoryCursor as $category){
                 return $category['name'];
             }

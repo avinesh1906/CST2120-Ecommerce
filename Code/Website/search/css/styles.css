@@ -1,12 +1,15 @@
+/* each product css */
 .eachProduct {
     padding: 2%;
     align-items: center;
 }
 
+/* card css */
 .card {
     margin-left: 1%;
 }
 
+/* card img css */
 .card .col-md-4 img {
     padding: 3%;
 }

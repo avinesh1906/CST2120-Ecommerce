@@ -14,6 +14,7 @@ $cartItemCollection = $db->Cart_Items;
 $productCollection = $db->Products;
 $categoryCollection = $db->Category;
 
+// call different function depending on func input
 if(isset($_POST['func'])){
     $func = $_POST['func'];
     if ($func == "getDetails") {
@@ -23,6 +24,7 @@ if(isset($_POST['func'])){
     }
 }
 
+// function getDetails to create list of products
 function getDetails()
 {
     global $cartItemCollection;
@@ -39,17 +41,23 @@ function getDetails()
     $cartItemCursor = $cartItemCollection->find($findCartCriteria);
 
     //Work through the products
+    // check if cartItemCursor is empty
     if ($cartItemCursor->isDead()) {
         echo 'false';
     } else {
         $jsonStr = '['; //Start of array of products in JSON
+        // declaration of array
         $arr = array();
+        // loop through cart items
         foreach ($cartItemCursor as $item){  
+            // check whether cart item is zero
             if (sizeof($item['product_Arr']) == 0 ){
                 echo 'false';
             }
             else {
+                // loop through the array product_Arr
                 foreach ($item['product_Arr'] as $each){
+                    // extract the product details depending on prodID
                     $productDetails = generateProductDetails($each['prodID']);
                     // create the array to display on cart
                     $arr = array("name" => $productDetails['name'], 'imageURL' => $productDetails['imageURL'], 'price' => $productDetails['price'], 'category' => $productDetails['category'],
@@ -73,6 +81,7 @@ function getDetails()
 
 }
 
+// function to extract single product details
 function generateProductDetails($prodID)
 {
     global $productCollection;
@@ -92,21 +101,25 @@ function generateProductDetails($prodID)
         //Output each product as a JSON object with comma in between
         $jsonStr = '['; //Start of array of products in JSON
 
-        foreach ($productCursor as $prod){ 
+        // loop through productCursor 
+        foreach ($productCursor as $prod){
+            // create an array for specific field 
             $arr = array('name' => $prod['name'], 'imageURL' => $prod['imageURL'],'price' => $prod['price'], 'category' => extractCategory($prod['category_ID']));
         }
 
+        // return the array
         return $arr;
     }
 }
 
-function extractCategory($input)
+// extract the category depending on id
+function extractCategory($id)
 {
     global $categoryCollection;
 
     //Create a PHP array for session criteria
     $findCartCriteria = [
-        "_id" => new MongoDB\BSON\ObjectId($input)
+        "_id" => new MongoDB\BSON\ObjectId($id)
     ];
 
     //Find all of the category that match this criteria
@@ -116,6 +129,7 @@ function extractCategory($input)
     if ($categoryCursor->isDead()) {
         echo 'false';
     } else {
+        // return the category name
         foreach ($categoryCursor as $category){
             return $category['name'];
         }
@@ -123,6 +137,7 @@ function extractCategory($input)
 
 }
 
+// function to delete a specific item from cart
 function deleteItem(){
     global $cartItemCollection;
     global $productCollection;
@@ -143,6 +158,7 @@ function deleteItem(){
     if ($cartItemCursor->isDead()) {
         echo 'false';
     } else {
+        // extract cart details
         foreach ($cartItemCursor as $cart){
             $prod_ID = json_encode($cart['product_Arr'][$arrayIndex]['prodID']);
             $size = json_encode($cart['product_Arr'][$arrayIndex]['size']);
@@ -165,10 +181,10 @@ function deleteItem(){
         $updateRes = $productCollection->updateOne($updateProductCriteria, $productData);
     }
     
+    // delete the specific index of the product_Arr
     $dataArray = array(
         '$unset' => array("product_Arr.$arrayIndex" => 1)
     );
-    
     $nullArray = array(
         '$pull' => array("product_Arr" => null)
     );
@@ -177,5 +193,4 @@ function deleteItem(){
     $cartItemCollection->updateOne($findCartCriteria, $dataArray);
     $updateRes =$cartItemCollection->updateOne($findCartCriteria, $nullArray);
     
-
 }

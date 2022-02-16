@@ -13,7 +13,7 @@ $db = $mongoClient->ecommerce;
 $productCollection = $db->Products;
 $reviewCollection = $db->Review;
 
-
+// call function depending on func input
 if(isset($_POST['func'])){
     $func = $_POST['func'];
     if ($func == "addReview") {
@@ -25,6 +25,7 @@ if(isset($_POST['func'])){
     }
 }
 
+// get product id function
 function getId(){
     global $productCollection;
 
@@ -64,6 +65,7 @@ function getId(){
     echo $jsonStr;
 }
 
+// function for add review 
 function addReview(){
 
     global $reviewCollection;
@@ -85,7 +87,7 @@ function addReview(){
         "date" => date("l jS \of F Y")
     ];
 
-    //Add the new product to the database
+    //Add the new review to the database
     $insertResult = $reviewCollection->insertOne($dataArray);
 
     //Echo result back to user
@@ -97,6 +99,7 @@ function addReview(){
     }
 }
 
+// view review function
 function viewReview()
 {
     global $reviewCollection;
@@ -109,7 +112,7 @@ function viewReview()
         "product_ID" => new MongoDB\BSON\ObjectId($prodId)
     ];
     
-    //Find all of the category that match this criteria
+    //Find all of the review that match this criteria
     $reviewCursor = $reviewCollection->find($findProductCriteria);
 
     //Work through the products

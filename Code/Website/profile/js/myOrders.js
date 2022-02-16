@@ -1,8 +1,10 @@
 // Entire script will be in script mode
 "use strict";
 
+// function call
 extractDetails();
 
+// function to extract details for my orders
 function extractDetails()
 {
     let sessionEmail = document.getElementById("sessionEmail").innerText;
@@ -22,6 +24,7 @@ function extractDetails()
             if (serverResponse != 'false'){
                 noItem.style.display = "none";
                 document.getElementsByClassName("order")[0].style.display = "block";
+                console.log(request.responseText);
                 displayProduct(request.responseText);
             } else {
                 noItem.style.display = "block";
@@ -44,6 +47,7 @@ function displayProduct(itemDetails){
     // create the html to display
     let htmlStr = '';
 
+    // work through cartArray
     for (let i = 0; i < cartArray.length; ++i) {
         htmlStr+=' <div class="item"> ';
         htmlStr+='        <!-- item details -->';

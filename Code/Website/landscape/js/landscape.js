@@ -57,6 +57,7 @@ function displayContent(jsonProduct){
     document.getElementsByClassName("row")[0].innerHTML = htmlStr;
 }
 
+// function to redirect product to specific page
 function redirectProduct(prodID)
 {   
     //Create request object

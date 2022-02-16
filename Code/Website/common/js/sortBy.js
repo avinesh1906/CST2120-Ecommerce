@@ -1,6 +1,7 @@
 // Entire script will be in script mode
 "use strict";
 
+// function to sort ascending price
 function priceAsc(categoryName){
     //Create request object
     let request = new XMLHttpRequest();
@@ -12,7 +13,9 @@ function priceAsc(categoryName){
     request.onload = () => {
         //Check HTTP status code
         if (request.status === 200) {
+            // create the div id
             let displayDiv = categoryName + 'Content';
+            // display content
             displayNewContent(request.responseText, displayDiv);
         } else
             alert("Error communicating with server: " + request.status);
@@ -22,6 +25,7 @@ function priceAsc(categoryName){
     request.send("func=" + "priceAsc"+ "&categoryName="+categoryName);
 }
 
+// function to generate price descending order
 function priceDesc(categoryName){
     //Create request object
     let request = new XMLHttpRequest();
@@ -43,6 +47,7 @@ function priceDesc(categoryName){
     request.send("func=" + "priceDesc"+ "&categoryName="+categoryName);
 }
 
+// function to generate alphabetical by ascending oder
 function alphaAsc(categoryName){
     //Create request object
     let request = new XMLHttpRequest();
@@ -64,6 +69,7 @@ function alphaAsc(categoryName){
     request.send("func=" + "alphaAsc"+ "&categoryName="+categoryName);
 }
 
+// function to generate alphabetical by descending order
 function alphaDesc(categoryName){
     //Create request object
     let request = new XMLHttpRequest();
@@ -84,8 +90,6 @@ function alphaDesc(categoryName){
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     request.send("func=" + "alphaDesc"+ "&categoryName="+categoryName);
 }
-
-
 
 // function to load content of the category into page
 function displayNewContent(jsonProduct, displayDiv){
@@ -111,7 +115,6 @@ function displayNewContent(jsonProduct, displayDiv){
             htmlStr += '</div>';
         htmlStr += '</div>';
     }
-    console.log(displayDiv);
     //  display the html into the class card
     document.getElementById(displayDiv).innerHTML = htmlStr;
 }

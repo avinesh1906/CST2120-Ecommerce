@@ -439,6 +439,7 @@
             <a href="../signin/signin.php">Login Instead?</a>
         </div> 
     </div>
+    <!-- server response -->
     <p>
         <span id="ServerResponse"></span>
     </p>
