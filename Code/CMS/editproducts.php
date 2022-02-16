@@ -20,84 +20,90 @@
         <!--Page Label-->
         <legend> EDIT PRODUCTS</legend>
         
-       <!-- Editing ProductID field-->
+        <!-- Changing ProductID field-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="product_id"> CHANGE PRODUCT ID</label>  
+          <label class="col-md-4 control-label" for="product_id">PRODUCT ID</label>  
           <div class="col-md-4">
           <input id="product_id" name="product_id" placeholder="PRODUCT ID" class="form-control input-md" required="" type="text">
-            
           </div>
         </div>
         
-        <!-- Changing product name-->
+       <!-- Changing product name -->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="painting_name"> CHANGE PRODUCT NAME</label>  
+          <label class="col-md-4 control-label" for="painting_name">PRODUCT NAME</label>  
           <div class="col-md-4">
           <input id="painting_name" name="painting_name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
-            
           </div>
         </div>
         
         
+        <!-- Changing product category -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="painting_category">PRODUCT CATEGORY</label>
+            <div class="col-md-4">                     
+            <input id="painting_category" name="painting_category" placeholder="PAINTING CATEGORY" class="form-control input-md" required="" type="text">
+            </div>
+          </div>
+
          <!-- Changing product description -->
          <div class="form-group">
-            <label class="col-md-4 control-label" for="painting_des"> CHANGE PRODUCT DESCRIPTION</label>
+            <label class="col-md-4 control-label" for="painting_des">PRODUCT DESCRIPTION</label>
             <div class="col-md-4">                     
               <textarea class="form-control" id="painting_des" name="painting_des"></textarea>
             </div>
           </div>
 
-        <!-- Changing product category -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="painting_category"> CHANGE PRODUCT CATEGORY</label>
-          <div class="col-md-4">
-            <select id="painting_category" name="painting_category" class="form-control">
-            </select>
-          </div>
-        </div>
         
-        <!-- Changing quantity remaining-->
+         <!-- Key details-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="inventory">QUANTITY REMAINING</label>  
+          <label class="col-md-4 control-label" for="key_d">KEY DETAILS</label>  
           <div class="col-md-4">
-          <input id="inventory" name="inventory" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required="" type="text">
-            
+          <input id="key_d" name="key_d" placeholder="KEY DETAILS" class="form-control input-md" required="" type="text">
           </div>
         </div>
          
-        <!-- Adding date product was edited-->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="date">DATE</label>  
+        <!-- Price-->
+       <div class="form-group">
+          <label class="col-md-4 control-label" for="price">PRICE</label>  
           <div class="col-md-4">
-          <input id="date" name="date" placeholder="DATE EDITED" class="form-control input-md" required="" type="text">
-            
+          <input id="price" name="price" placeholder="PRICE" class="form-control input-md" required="" type="text">
           </div>
         </div>
         
-        <!-- User editing product details -->
+         <!-- Key details-->
+       <div class="form-group">
+          <label class="col-md-4 control-label" for="image_url">IMAGE URL</label>  
+          <div class="col-md-4">
+          <input id="image_url" name="image_url" placeholder="IMAGE URL" class="form-control input-md" required="" type="text">
+          </div>
+        </div>
+            
+        
+        <!-- Date product was edited in system-->
         <div class="form-group">
+          <label class="col-md-4 control-label" for="modified_at">DATE</label>  
+          <div class="col-md-4">
+          <input id="modified_at" name="modified_at" placeholder="DATE EDITED" class="form-control input-md" required="" type="text">
+          </div>
+        </div>
+
+           <!-- Staff editing product -->
+           <div class="form-group">
           <label class="col-md-4 control-label" for="edited_by">EDITED BY</label>  
           <div class="col-md-4">
           <input id="edited_by" name="edited_by" placeholder="EDITED BY" class="form-control input-md" required="" type="text">
-            
-         <!-- File Button --> 
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="imagefile">CHANGE IMAGE</label>
-          <div class="col-md-4">
-            <input id="imagefile" name="imagefile" class="input-file" type="file">
           </div>
-        </div>
-      
+        </div> 
+         
         
-        <!-- Edit button -->
+        <!-- edit button -->
         <div class="form-group">
           <div class="col-md-4">
-            <button id="deletebutton" name="deletebutton" class="btn btn-primary">EDIT</button>
+            <button  id = "editbutton " type="editbutton" class="btn btn-primary" onclick = "checkForm()">EDIT</button>
           </div>
           </div>
         </fieldset>
-
-        </form>
+      </form>
         
      <footer class="footer1">
           <!-- linking footer to the other pages -->

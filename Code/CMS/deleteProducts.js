@@ -1,4 +1,3 @@
-// Entire script will be in script mode
 "use strict";
 
 function checkForm(){
@@ -8,7 +7,7 @@ function checkForm(){
     let key_details= document.getElementById("key_d");
     let price = document.getElementById("price");
     let imageurl = document.getElementById("image_url");
-    let date_created = document.getElementById("date_created")
+    let deleted_at = document.getElementById("deleted_at")
     //Create request object 
     let request = new XMLHttpRequest();
         
@@ -24,11 +23,11 @@ function checkForm(){
     };
     
     //Set up request with HTTP method and URL 
-    request.open("POST", "getAddProducts.php");
+    request.open("POST", "getDeleteProducts.php");
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     //Send request
-    request.send("painting_name=" + name.innerText + "&painting_category=" + category.innerText +
-     "&painting_des=" + description.innerHTML + "&key_d=" + key_details.innerText + "&price=" + price.innerText
-     + "&image_url=" + imageurl.innerText + "&date_created"+ date_created.innerText );
-}     
+    request.send("painting_name=" + name + "&painting_category=" + category +
+     "&description=" + description + "&key_d=" + key_details + "&price=" + price
+     + "&image_url=" + imageurl + "&deleted_at"+ deleted_at );
+}

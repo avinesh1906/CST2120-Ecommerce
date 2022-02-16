@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Products </title>
+
     <?php include ("PHP/common.php");
     navbar();
     ?>
@@ -38,14 +39,14 @@
           </div>
         </div>
         
+        
         <!-- Adding product category -->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="painting_category">PRODUCT CATEGORY</label>
-          <div class="col-md-4">
-            <select id="painting_category" name="painting_category" class="form-control">
-            </select>
+            <label class="col-md-4 control-label" for="painting_category">PRODUCT CATEGORY</label>
+            <div class="col-md-4">                     
+            <input id="painting_category" name="painting_category" placeholder="PAINTING CATEGORY" class="form-control input-md" required="" type="text">
+            </div>
           </div>
-        </div>
 
          <!-- Adding product description -->
          <div class="form-group">
@@ -64,7 +65,7 @@
           </div>
         </div>
          
-        <!-- Key details-->
+        <!-- Price-->
        <div class="form-group">
           <label class="col-md-4 control-label" for="price">PRICE</label>  
           <div class="col-md-4">
@@ -160,5 +161,6 @@
         
         </div>  
         </footer>
+        <script src="addProducts.js"></script>
   </body>
 </html>

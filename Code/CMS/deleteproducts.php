@@ -20,25 +20,31 @@
         <!--Page Label-->
         <legend> DELETE PRODUCTS</legend>
         
-       
+        <!-- Adding ProductID field-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="product_id">PRODUCT ID</label>  
           <div class="col-md-4">
           <input id="product_id" name="product_id" placeholder="PRODUCT ID" class="form-control input-md" required="" type="text">
-            
           </div>
         </div>
         
-        <!-- Adding Product Name field-->
+       <!-- Adding product name -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="painting_name">PRODUCT NAME</label>  
           <div class="col-md-4">
           <input id="painting_name" name="painting_name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
-            
           </div>
         </div>
         
         
+        <!-- Adding product category -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="painting_category">PRODUCT CATEGORY</label>
+            <div class="col-md-4">    
+            <input id="painting_category" name="painting_category" placeholder="PAINTING CATEGORY" class="form-control input-md" required="" type="text">
+            </div>
+          </div>
+
          <!-- Adding product description -->
          <div class="form-group">
             <label class="col-md-4 control-label" for="painting_des">PRODUCT DESCRIPTION</label>
@@ -47,57 +53,58 @@
             </div>
           </div>
 
-        <!-- Adding product category -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="painting_category">PRODUCT CATEGORY</label>
-          <div class="col-md-4">
-            <select id="painting_category" name="painting_category" class="form-control">
-            </select>
-          </div>
-        </div>
         
-        <!-- Stock availability-->
+         <!-- Key details-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="inventory">QUANTITY REMAINING</label>  
+          <label class="col-md-4 control-label" for="key_d">KEY DETAILS</label>  
           <div class="col-md-4">
-          <input id="inventory" name="inventory" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required="" type="text">
-            
+          <input id="key_d" name="key_d" placeholder="KEY DETAILS" class="form-control input-md" required="" type="text">
           </div>
         </div>
          
-        <!-- Date product was deleted from system-->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="date">DATE</label>  
+        <!-- Price-->
+       <div class="form-group">
+          <label class="col-md-4 control-label" for="price">PRICE</label>  
           <div class="col-md-4">
-          <input id="date" name="date" placeholder="DATE DELETED" class="form-control input-md" required="" type="text">
-            
+          <input id="price" name="price" placeholder="PRICE" class="form-control input-md" required="" type="text">
           </div>
         </div>
         
-        <!-- Staff removing product -->
+         <!-- Key details-->
+       <div class="form-group">
+          <label class="col-md-4 control-label" for="image_url">IMAGE URL</label>  
+          <div class="col-md-4">
+          <input id="image_url" name="image_url" placeholder="IMAGE URL" class="form-control input-md" required="" type="text">
+          </div>
+        </div>
+            
+        
+        <!-- Date product was deleted from system-->
         <div class="form-group">
+          <label class="col-md-4 control-label" for="deleted_at">DATE</label>  
+          <div class="col-md-4">
+          <input id="deleted_at" name="deleted_at" placeholder="DATE REMOVED" class="form-control input-md" required="" type="text">
+          </div>
+        </div>
+
+           <!-- Staff deleting product -->
+           <div class="form-group">
           <label class="col-md-4 control-label" for="removed_by">REMOVED BY</label>  
           <div class="col-md-4">
           <input id="removed_by" name="removed_by" placeholder="REMOVED BY" class="form-control input-md" required="" type="text">
-            
-         <!-- File Button --> 
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="imagefile">REPLACE IMAGE</label>
-          <div class="col-md-4">
-            <input id="imagefile" name="imagefile" class="input-file" type="file">
           </div>
-        </div>
-      
+        </div> 
+         
         
         <!-- delete button -->
         <div class="form-group">
           <div class="col-md-4">
-            <button id="deletebutton" name="deletebutton" class="btn btn-primary">DELETE</button>
+            <button  id = "deletebutton " type="deletebutton" class="btn btn-primary" onclick = "checkForm()">DELETE</button>
           </div>
           </div>
         </fieldset>
-
-        </form>
+    </form>
+      
         
      <footer class="footer1">
              <!-- linking footer to the other pages -->
