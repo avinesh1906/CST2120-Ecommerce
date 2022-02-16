@@ -16,20 +16,11 @@
 </head>
 <body>
 
-     <form class="form-horizontal">
+     <div class="form-horizontal">
         <fieldset>
         
        <!--Page Label-->
         <legend> ADD PRODUCTS</legend>
-
-        
-        <!-- Adding ProductID field-->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="product_id">PRODUCT ID</label>  
-          <div class="col-md-4">
-          <input id="product_id" name="product_id" placeholder="PRODUCT ID" class="form-control input-md" required="" type="text">
-          </div>
-        </div>
         
        <!-- Adding product name -->
         <div class="form-group">
@@ -44,7 +35,13 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="painting_category">PRODUCT CATEGORY</label>
             <div class="col-md-4">                     
-            <input id="painting_category" name="painting_category" placeholder="PAINTING CATEGORY" class="form-control input-md" required="" type="text">
+            <select name="cars" id="painting_category">
+              <option value="Portrait">Portrait</option>
+              <option value="Landscape">Landscape</option>
+              <option value="Oil">Oil</option>
+              <option value="Abstract">Abstract</option>
+              <option value="Historical">Historical</option>
+            </select>
             </div>
           </div>
 
@@ -67,38 +64,39 @@
          
         <!-- Price-->
        <div class="form-group">
-          <label class="col-md-4 control-label" for="price">PRICE</label>  
+          <label class="col-md-4 control-label" for="price">PRICE (Rs)</label>  
           <div class="col-md-4">
-          <input id="price" name="price" placeholder="PRICE" class="form-control input-md" required="" type="text">
+          <input id="price" name="price" placeholder="PRICE" class="form-control input-md" required="" type="number">
           </div>
         </div>
-        
-         <!-- Key details-->
-       <div class="form-group">
-          <label class="col-md-4 control-label" for="image_url">IMAGE URL</label>  
-          <div class="col-md-4">
-          <input id="image_url" name="image_url" placeholder="IMAGE URL" class="form-control input-md" required="" type="text">
-          </div>
-        </div>
-            
-        
-        <!-- Date product was added to system-->
+                
+        <!-- Inventory -->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="date_created">DATE</label>  
+          <label class="col-md-4 control-label" for="A2">Inventory (A2)</label>  
           <div class="col-md-4">
-          <input id="date_created" name="date_created" placeholder="DATE CREATED" class="form-control input-md" required="" type="text">
+          <input id="A2" name="image_url" placeholder="Inventory (A2)" class="form-control input-md" required="" type="number">
           </div>
         </div>
-
-           <!-- Staff adding product -->
-           <div class="form-group">
-          <label class="col-md-4 control-label" for="added_by">ADDED BY</label>  
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="A3">Inventory (A3)</label>  
           <div class="col-md-4">
-          <input id="added_by" name="added_by" placeholder="ADDED BY" class="form-control input-md" required="" type="text">
+          <input id="A3" name="image_url" placeholder="Inventory (A3)" class="form-control input-md" required="" type="number">
           </div>
-        </div> 
-         
-        
+        </div>
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="A4">Inventory (A4)</label>  
+          <div class="col-md-4">
+          <input id="A4" name="image_url" placeholder="Inventory (A4)" class="form-control input-md" required="" type="number">
+          </div>
+        </div>
+        <!-- upload image -->
+        <div class="form-group">
+          <form action="upload_image.php" method="post" enctype="multipart/form-data">
+              Select image to upload:
+              <input type="file" name="imageToUpload">
+              <input type="submit" value="Upload Image" name="submit">
+          </form>
+        </div>
         <!-- add button -->
         <div class="form-group">
           <div class="col-md-4">
@@ -106,7 +104,7 @@
           </div>
           </div>
         </fieldset>
-   </form>
+</div>
         
      <footer class="footer1">
          <!-- linking footer to the other pages -->
@@ -161,6 +159,6 @@
         
         </div>  
         </footer>
-        <script src="addProducts.js"></script>
+        <script src="./addProducts.js"></script>
   </body>
 </html>
