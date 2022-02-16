@@ -22,10 +22,12 @@ let latestBtn = document.getElementsByClassName("latestBtn")[0];
 let bestsellerBtn = document.getElementsByClassName("bestsellerBtn")[0];
 
 function showRecommendation(){
-    //Add the search keyword to the recommender
-    recommender.addKeyword(sessionStorage.Search);
     if (sessionStorage['Search']){
+        //Add the search keyword to the recommender
+        recommender.addKeyword(sessionStorage.Search);
         generateContent(recommender.getTopKeyword());
+    } else {
+        document.getElementsByClassName("recommendation")[0].style.display = "none";
     }
         
 }
@@ -197,7 +199,7 @@ function displayRecommendationContent(jsonProduct)
     // check if jsonProduct is false
     if (jsonProduct == 'false'){
         // hide recommendation
-        document.getElementById("recommendation").style.display = "none";
+        document.getElementsByClassName("recommendation")[0].style.display = "none";
     } else {
         // Convert JSON to array of product objects
         let productArray = JSON.parse(jsonProduct);
