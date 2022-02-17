@@ -14,8 +14,7 @@
         echo '<li><a href="login.php">Login</a></li>';
         echo '<li><a href="addproducts.php">Add Products</a></li>';
         echo '<li><a href="viewproducts.php">View Products</a></li>';
-        echo '<li><a href="deleteproducts.php">Delete Products</a></li>';
-        echo '<li><a href="editproducts.php">Edit Products</a></li>';
+        echo '<li><a href="vieworder.php">View Order</a></li>';
         echo '</div>';
         echo '<div class="search-icon">';
         echo '<span class="fas fa-search"></span>';

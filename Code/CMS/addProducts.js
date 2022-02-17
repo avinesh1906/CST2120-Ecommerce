@@ -46,8 +46,8 @@ function submitIMG() {
         //Check HTTP status code
         if(request.status === 200){
             // redirect to home page
-            //  window.location.href="./index.php";
-            console.log("uploaded");
+             window.location.href="./index.php";
+
         }
         else
             alert("Error communicating with server: " + request.status);
