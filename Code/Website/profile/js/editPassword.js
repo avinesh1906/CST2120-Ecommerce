@@ -1,6 +1,7 @@
 // Entire script will be in script mode
 "use strict";
 
+// listen for onclick changeBtn
 let changeBtn = document.getElementById("changeBtn");
 changeBtn.onclick = update;
 

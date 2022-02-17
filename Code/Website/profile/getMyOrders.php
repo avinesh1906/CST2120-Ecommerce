@@ -16,6 +16,7 @@ $productCollection = $db->Products;
 $categoryCollection = $db->Category;
 $cartItemCollection = $db->Cart_Items;
 
+// select function depending func input
 if(isset($_POST['func'])){
     $func = $_POST['func'];
     if ($func == "getDetails") {
@@ -23,6 +24,7 @@ if(isset($_POST['func'])){
     } 
 }
 
+// function to get customerID
 function getCustomerID()
 {
     global $customerCollection;
@@ -35,10 +37,10 @@ function getCustomerID()
         "email" => $sessionEmail
     ];
 
-    //Find all of the category that match this criteria
+    //Find all of the customer that match this criteria
     $customerCursor = $customerCollection->find($findCartCriteria);
 
-    //Work through the products
+    //Work through the customers
     if ($customerCursor->isDead()) {
         echo 'false';
     } else {
@@ -50,6 +52,7 @@ function getCustomerID()
 
 }
 
+// function to extract order for that specific customer
 function extractOrder($customer_id)
 {   
     global $orderCollection;
@@ -59,18 +62,18 @@ function extractOrder($customer_id)
         "customer_ID" =>  new MongoDB\BSON\ObjectId($customer_id)
     ];
 
-    //Find all of the category that match this criteria
+    //Find all of the order that match this criteria
     $orderCursor = $orderCollection->find($findCustomerCriteria);
 
-    //Work through the products
+    //Work through the orders
     if ($orderCursor->isDead()) {
         echo 'false';
     } else {
-         //Start of array of products in JSON
+         //Start of array of order in JSON
         $jsonStr = '[';
         foreach ($orderCursor as $item){  
             $jsonStr .= getDetails($item['session_ID']);
-            //Separator between products
+            //Separator between order
             $jsonStr .= ',';
         }
 
@@ -84,6 +87,7 @@ function extractOrder($customer_id)
     }
 }
 
+// function to get Details of a specific session_ID
 function getDetails($session_ID)
 {
     global $cartItemCollection;
@@ -93,13 +97,14 @@ function getDetails($session_ID)
         "session_ID" => $session_ID
     ];
     
-    //Find all of the category that match this criteria
+    //Find all of the cart that match this criteria
     $cartItemCursor = $cartItemCollection->find($findCartCriteria);
 
-    //Work through the products
+    //Work through the carts
     if ($cartItemCursor->isDead()) {
         echo 'false';
     } else {
+        // work through single item in the cart
         foreach ($cartItemCursor as $item){  
             $arr = array();
             if (sizeof($item['product_Arr']) == 0 ){
@@ -113,8 +118,7 @@ function getDetails($session_ID)
                     $arr += array("name" => $productDetails['name'], 'imageURL' => $productDetails['imageURL'], 'price' => $productDetails['price'], 'category' => $productDetails['category'],
                     'size' => $each['size'], 'qty' => $each['qty']);
                     //Convert PHP representation of product into JSON
-                    $jsonStr = json_encode($arr);
-                                                                       
+                    $jsonStr = json_encode($arr);                                                  
                 }
                 return $jsonStr;
             }
@@ -122,6 +126,7 @@ function getDetails($session_ID)
     }
 }
 
+// function to generate product details of a specific product ID
 function generateProductDetails($prodID)
 {
     global $productCollection;
@@ -131,7 +136,7 @@ function generateProductDetails($prodID)
         "_id" => new MongoDB\BSON\ObjectId($prodID)
     ];
 
-    //Find all of the category that match this criteria
+    //Find all of the product that match this criteria
     $productCursor = $productCollection->find($findCartCriteria);
 
     //Work through the products
@@ -149,13 +154,14 @@ function generateProductDetails($prodID)
     }
 }
 
-function extractCategory($input)
+// function to extract category
+function extractCategory($id)
 {
     global $categoryCollection;
 
     //Create a PHP array for session criteria
     $findCartCriteria = [
-        "_id" => new MongoDB\BSON\ObjectId($input)
+        "_id" => new MongoDB\BSON\ObjectId($id)
     ];
 
     //Find all of the category that match this criteria

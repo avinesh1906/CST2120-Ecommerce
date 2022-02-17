@@ -6,16 +6,18 @@ let profileEmail =  document.getElementById("sessionEmail").innerText;
 let noLoggedUser = document.getElementsByClassName("noLoggedUser")[0];
 let content = document.getElementsByClassName("content")[0];
 
+// check if there's any logged user
 if (profileEmail == 0){
+    // hide and show class
     noLoggedUser.style.display = "block";
     content.style.display = "none";
 } else {
+    // hide and show class
     noLoggedUser.style.display = "none";
     content.style.display = "block";
     // function call 
     generateContent();
 }
-
 
 // function to generate the content of the portrait body
 function generateContent(){

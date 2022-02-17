@@ -1,6 +1,7 @@
 // Entire script will be in script mode
 "use strict";
 
+// extract search from search storage
 let searchTxt = sessionStorage.getItem("Search");
 
 // function call 

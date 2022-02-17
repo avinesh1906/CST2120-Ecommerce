@@ -1,49 +1,57 @@
 // Entire script will be in script mode
 "use strict";
 
+// import Recommender module from recommender.js
 import {Recommender} from '../../common/js/recommender.js';
 
 //Create recommender object - it loads its state from local storage
 let recommender = new Recommender();
 
+// function call when index.php is loaded
 generateFeaturedContent();
 generateLatestContent();
 generateBestsellerContent();
-
 showRecommendation();
 
+// variables
 let option = document.getElementById("top-product-item");
 let featured = document.getElementsByClassName("featured")[0];
 let latest = document.getElementsByClassName("latest")[0];
 let bestseller = document.getElementsByClassName("bestseller")[0];
 
+// button variables
 let featuredBtn = document.getElementsByClassName("featuredBtn")[0];
 let latestBtn = document.getElementsByClassName("latestBtn")[0];
 let bestsellerBtn = document.getElementsByClassName("bestsellerBtn")[0];
 
+// function to display recommendation
 function showRecommendation(){
+    // if there is any search
     if (sessionStorage['Search']){
-        console.log(recommender);
         //Add the search keyword to the recommender
         recommender.addKeyword(sessionStorage.Search);
         generateContent(recommender.getTopKeyword());
     } else {
+        // hide the class recommendation is no search found
         document.getElementsByClassName("recommendation")[0].style.display = "none";
     }
-        
 }
 
+// event listener for option (top product)
 option.addEventListener('click', function(e) {
+    // call function featured
     if (e.target.name == "featured" ){
         featuredBtn.setAttribute('id', 'active');
         latestBtn.removeAttribute('id');
         bestsellerBtn.removeAttribute('id');
         featureFunction();
+    // call function latest
     } else if (e.target.name == "latest" ){
         latestBtn.setAttribute('id', 'active');
         featuredBtn.removeAttribute('id');
         bestsellerBtn.removeAttribute('id');
         latestFunction();
+    // else call bestseller function
     } else {
         bestsellerBtn.setAttribute('id','active');
         featuredBtn.removeAttribute('id');
@@ -52,19 +60,25 @@ option.addEventListener('click', function(e) {
     }
 });
 
+// function featureFunction
 function featureFunction() {
+    // hide and show classes
     featured.style.display = "block";
     latest.style.display = "none";
     bestseller.style.display = "none";
 }
 
+// function latestFunction
 function latestFunction() {
+    // hide and show classes
     featured.style.display = "none";
     latest.style.display = "block";
     bestseller.style.display = "none";
 }
 
+// function bestsellerFunction
 function bestsellerFunction() {
+    // hide and show classes
     featured.style.display = "none";
     latest.style.display = "none";
     bestseller.style.display = "block";
@@ -225,7 +239,7 @@ function displayRecommendationContent(jsonProduct)
             htmlStr += '</div>';
         }
 
-        // //  display the html into the class card
+        // //  display the html into the class homeRecommendation
         document.getElementById("homeRecommendation").innerHTML = htmlStr;
     }
 

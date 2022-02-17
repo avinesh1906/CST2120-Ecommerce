@@ -275,6 +275,7 @@ function generateFooter($pagename){
     ';
 }
 
+// function to generate javascript
 function generateJavaScript($title){
     // Array Dictionary 
     $linkNames = array(
@@ -296,6 +297,8 @@ function generateJavaScript($title){
         "My Orders" => "./js/myOrders.js",
         "Search" => "./js/search.js"
     );
+    // check if home or not
+    // add module if home
     if ($title == "Home") {
         echo '<script type="module" src = "'. $linkNames[$title] .'">'; 
     } else {
@@ -305,6 +308,8 @@ function generateJavaScript($title){
     echo '</script>';
     
     echo '<script ';
+
+    // if register add type/js 
     if ($title == "Home") {
         echo 'src = "./common/js/common.js">';
     } else if ($title == "Register"){
@@ -314,10 +319,13 @@ function generateJavaScript($title){
     }
     echo '</script>';
     
+    // if specific product
+    // add add specific product.js
     if($title == "Specific Product"){
         echo '<script src = "../common/js/specificProduct.js"></script>';
     }    
 
+    // if only categories, add sortBy.js
     if ($title == "Portrait" || $title == "Landscape" || $title == "Oil" 
     || $title == "Abstract" || $title == "Historical") {
         echo '<script src = "../common/js/sortBy.js"></script>'; 

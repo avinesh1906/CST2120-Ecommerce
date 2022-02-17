@@ -24,7 +24,6 @@ function extractDetails()
             if (serverResponse != 'false'){
                 noItem.style.display = "none";
                 document.getElementsByClassName("order")[0].style.display = "block";
-                console.log(request.responseText);
                 displayProduct(request.responseText);
             } else {
                 noItem.style.display = "block";

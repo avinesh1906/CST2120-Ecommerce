@@ -31,6 +31,7 @@
 
     </div>
 </div>
+<!-- session email -->
 <div id="sessionEmail" style="display:none"><?php echo $_SESSION['email'] ?></div>
 <?php
     generateJavaScript($pageName);

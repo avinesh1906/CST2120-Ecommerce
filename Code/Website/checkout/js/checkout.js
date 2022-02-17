@@ -361,6 +361,7 @@ function postalCodeValidation(){
     return true;
 }
 
+// function to validate country
 function countryValidation(){
     // variables 
     let details = document.getElementById("country_details");

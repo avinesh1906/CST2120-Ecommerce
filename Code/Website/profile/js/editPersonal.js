@@ -1,6 +1,7 @@
 // Entire script will be in script mode
 "use strict";
 
+// listen for onclick saveBtn
 let saveBtn = document.getElementById("saveBtn");
 saveBtn.onclick = update;
 
