@@ -12,10 +12,7 @@
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-
-
-
+<!-- login form -->
    <form action="login.php" method="post">
 
    

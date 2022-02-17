@@ -1,5 +1,6 @@
 "use strict";
 
+// function to validate delet products
 function checkForm(){
     let name = document.getElementById("painting_name");
     let category = document.getElementById("painting_category");

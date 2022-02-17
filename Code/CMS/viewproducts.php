@@ -13,6 +13,11 @@
         h3 {text-align: center;}
         .product {text-align: center;}
         div {text-align: center;}
+
+        .productItem:hover {
+          background-color:  #D4ECDD;
+          color: #112031;
+        }
         
     </style>
     <link rel="stylesheet"type="text/css" href="./CSS/addproducts.css">

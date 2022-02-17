@@ -1,6 +1,7 @@
 // Entire script will be in script mode
 "use strict";
 
+// function to validate form
 function checkForm(){
     let name = document.getElementById("painting_name");
     let category = document.getElementById("painting_category");

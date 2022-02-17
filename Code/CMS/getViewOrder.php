@@ -1,7 +1,7 @@
 <?php
 
 //Include libraries
-    require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 
 //Create instance of MongoDB client
@@ -17,6 +17,7 @@ $categoryCollection = $db->Category;
 $cartItemCollection = $db->Cart_Items;
 
 
+// call function depending on func input
 if(isset($_POST['func'])){
     $func = $_POST['func'];
     if ($func == "getDetails") {
@@ -24,8 +25,7 @@ if(isset($_POST['func'])){
     } 
 }
 
-
-
+// function to extract Order
 function extractOrder()
 {   
     global $orderCollection;
@@ -55,6 +55,7 @@ function extractOrder()
     }
 }
 
+// function to getDetails
 function getDetails($session_ID)
 {
     global $cartItemCollection;
@@ -93,6 +94,7 @@ function getDetails($session_ID)
     }
 }
 
+// function to generatePrductDetails
 function generateProductDetails($prodID)
 {
     global $productCollection;
@@ -120,6 +122,7 @@ function generateProductDetails($prodID)
     }
 }
 
+// function to extractCategory
 function extractCategory($input)
 {
     global $categoryCollection;

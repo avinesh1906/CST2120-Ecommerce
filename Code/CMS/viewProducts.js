@@ -16,7 +16,6 @@ function generateContent(){
     request.onload = () => {
         //Check HTTP status code
         if (request.status === 200) {
-            console.log(request.responseText);
             //Add data from server to page
             displayContent(request.responseText);
         } else
@@ -30,13 +29,14 @@ function generateContent(){
 // function to display content
 function displayContent(jsonProduct)
 {   
+    console.log(jsonProduct);
         // Convert JSON to array of product objects
         let productArray = JSON.parse(jsonProduct);
 
         // create the html to display
         let htmlStr = '';
         for (let i = 0; i < productArray.length; ++i) {
-            htmlStr += '<div class="productItem" style="display: flex; border: 2px solid black; margin: 5px">';
+            htmlStr += '<div class="productItem" onclick="redirectProduct(\''+productArray[i].id.$oid+'\')" style="display: flex; border: 2px solid black; margin: 5px">';
             htmlStr += '<div class="product-img">';
             htmlStr += '    <img src="'+ productArray[i].imageURL.substring(1) +'"alt="'+ productArray[i].name +'"width="250">';
             htmlStr += '</div>';
@@ -56,3 +56,27 @@ function displayContent(jsonProduct)
 
 }
 
+// function to redirect to specific page
+function redirectProduct(prodID)
+{   
+    //Create request object
+    let request = new XMLHttpRequest();
+
+    //Set up request and send it
+    request.open("POST", "./getEditProduct.php");
+    
+    //Create event handler that specifies what should happen when server responds
+    request.onload = () => {
+        //Check HTTP status code
+        if (request.status === 200) {
+            //Add data from server to page
+            sessionStorage.Product = request.responseText;
+            // redirect to home page
+            window.location.href="./editProduct.php";
+        } else
+            alert("Error communicating with server: " + request.status);
+    };
+    
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.send("func=" + "getId"+ "&id="+prodID);
+}
