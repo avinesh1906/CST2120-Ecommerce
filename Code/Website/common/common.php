@@ -172,7 +172,7 @@ function generateLoggedMsg($pagename){
         </script>';
     } else {
         echo'<div class="notLogged">
-            <a>Register or Sign in for recommendation and product track</a>
+            <a>Register or Sign in for product track</a>
         </div>';
         echo '<script type="text/javascript">
             let current_page = document.getElementsByName("Sign In");
